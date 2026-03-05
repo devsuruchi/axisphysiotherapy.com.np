@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Point to your sitemap location
+Sitemap: https://axisphysiotherapy.com.np/sitemap.xml
