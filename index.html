@@ -24,21 +24,25 @@
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
 
     <!-- NAVIGATION BAR -->
+<!-- NAVIGATION BAR -->
 <nav class="fixed w-full z-[100] top-0 glass">
     <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-        <div class="flex items-center gap-3">
+        
+        <!-- CLICKABLE LOGO/HEADER -->
+        <a href="#" class="flex items-center gap-3 group transition-transform active:scale-95">
             <div class="flex flex-col">
-                <span class="font-extrabold text-2xl tracking-tighter text-purple-900 leading-none">AXIS</span>
+                <!-- Branding -->
+                <span class="font-extrabold text-2xl tracking-tighter text-purple-900 leading-none group-hover:text-purple-600 transition-colors">AXIS</span>
                 <span class="text-[10px] tracking-[0.2em] font-bold text-purple-600 uppercase">Physiotherapy</span>
             </div>
-        </div>
+        </a>
 
         <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-8 font-semibold text-sm text-slate-700">
             <a href="#about" class="hover:text-purple-600 transition">About</a>
             <a href="#services" class="hover:text-purple-600 transition">Services</a>
             <a href="#conditions" class="hover:text-purple-600 transition">Conditions</a>
-            <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a> <!-- Added FAQ Link -->
+            <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a>
             <a href="#team" class="hover:text-purple-600 transition">Team</a>
             <a href="#blogs" class="hover:text-purple-600 transition">Blogs</a>
             <a href="#career" class="hover:text-purple-600 transition">Career</a>
@@ -52,13 +56,13 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div x-show="mobileMenu" x-cloak class="lg:hidden absolute top-20 left-0 w-full bg-white border-b shadow-2xl p-6 flex flex-col space-y-4 font-bold text-purple-900">
+    <div x-show="mobileMenu" x-cloak x-transition class="lg:hidden absolute top-20 left-0 w-full bg-white border-b shadow-2xl p-6 flex flex-col space-y-4 font-bold text-purple-900">
+        <a href="#" @click="mobileMenu = false">Home</a> <!-- Added Home link for Mobile -->
         <a href="#about" @click="mobileMenu = false">About</a>
         <a href="#services" @click="mobileMenu = false">Services</a>
         <a href="#conditions" @click="mobileMenu = false">Conditions Treated</a>
-        <a href="#faqs" @click="mobileMenu = false">FAQs</a> <!-- Added FAQ Link -->
+        <a href="#faqs" @click="mobileMenu = false">FAQs</a>
         <a href="#team" @click="mobileMenu = false">Our Team</a>
-        <a href="#career" @click="mobileMenu = false">Career</a>
         <hr>
         <a href="tel:+97715907651" class="flex items-center gap-2"><i data-lucide="phone" size="18"></i> 01-5907651</a>
     </div>
