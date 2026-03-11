@@ -24,46 +24,46 @@
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
 
     <!-- NAVIGATION BAR -->
-    <nav class="fixed w-full z-[100] top-0 glass">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="flex flex-col">
-                    <!-- Replace with <img src="logo.png" class="h-12"> -->
-                    <span class="font-extrabold text-2xl tracking-tighter text-purple-900 leading-none">AXIS</span>
-                    <span class="text-[10px] tracking-[0.2em] font-bold text-purple-600 uppercase">Physiotherapy</span>
-                </div>
+<nav class="fixed w-full z-[100] top-0 glass">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="flex flex-col">
+                <span class="font-extrabold text-2xl tracking-tighter text-purple-900 leading-none">AXIS</span>
+                <span class="text-[10px] tracking-[0.2em] font-bold text-purple-600 uppercase">Physiotherapy</span>
             </div>
-
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center space-x-8 font-semibold text-sm text-slate-700">
-                <a href="#about" class="hover:text-purple-600 transition">About</a>
-                <a href="#services" class="hover:text-purple-600 transition">Services</a>
-                <a href="#conditions" class="hover:text-purple-600 transition">Conditions</a>
-                <a href="#team" class="hover:text-purple-600 transition">Team</a>
-                <a href="#blogs" class="hover:text-purple-600 transition">Blogs</a>
-                <a href="#career" class="hover:text-purple-600 transition">Career</a>
-                <a href="https://wa.me/9779868547991" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-200">Book Appointment</a>
-                <a href="#Frequently Asked Questions/FAQs" class="hover:text-purple-600 transition">FAQs</a>
-            </div>
-
-            <!-- Mobile Toggle -->
-            <button class="lg:hidden p-2 text-purple-900" @click="mobileMenu = !mobileMenu">
-                <i data-lucide="menu"></i>
-            </button>
         </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div x-show="mobileMenu" x-cloak class="lg:hidden absolute top-20 left-0 w-full bg-white border-b shadow-2xl p-6 flex flex-col space-y-4 font-bold text-purple-900">
-            <a href="#about" @click="mobileMenu = false">About</a>
-            <a href="#services" @click="mobileMenu = false">Services</a>
-            <a href="#conditions" @click="mobileMenu = false">Conditions Treated</a>
-            <a href="#team" @click="mobileMenu = false">Our Team</a>
-            <a href="#career" @click="mobileMenu = false">Career</a>
-            <hr>
-            <a href="tel:+97715907651" class="flex items-center gap-2"><i data-lucide="phone" size="18"></i> 01-5907651</a>
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8 font-semibold text-sm text-slate-700">
+            <a href="#about" class="hover:text-purple-600 transition">About</a>
+            <a href="#services" class="hover:text-purple-600 transition">Services</a>
+            <a href="#conditions" class="hover:text-purple-600 transition">Conditions</a>
+            <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a> <!-- Added FAQ Link -->
+            <a href="#team" class="hover:text-purple-600 transition">Team</a>
+            <a href="#blogs" class="hover:text-purple-600 transition">Blogs</a>
+            <a href="#career" class="hover:text-purple-600 transition">Career</a>
+            <a href="https://wa.me/9779868547991" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-200">Book Appointment</a>
         </div>
-    </nav>
 
+        <!-- Mobile Toggle -->
+        <button class="lg:hidden p-2 text-purple-900" @click="mobileMenu = !mobileMenu">
+            <i data-lucide="menu"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div x-show="mobileMenu" x-cloak class="lg:hidden absolute top-20 left-0 w-full bg-white border-b shadow-2xl p-6 flex flex-col space-y-4 font-bold text-purple-900">
+        <a href="#about" @click="mobileMenu = false">About</a>
+        <a href="#services" @click="mobileMenu = false">Services</a>
+        <a href="#conditions" @click="mobileMenu = false">Conditions Treated</a>
+        <a href="#faqs" @click="mobileMenu = false">FAQs</a> <!-- Added FAQ Link -->
+        <a href="#team" @click="mobileMenu = false">Our Team</a>
+        <a href="#career" @click="mobileMenu = false">Career</a>
+        <hr>
+        <a href="tel:+97715907651" class="flex items-center gap-2"><i data-lucide="phone" size="18"></i> 01-5907651</a>
+    </div>
+</nav>
+    
     <!-- HERO SECTION -->
     <section class="relative h-[95vh] flex items-center justify-center overflow-hidden pt-20">
         <!-- Background: Replace URL with your actual video/image -->
