@@ -290,7 +290,7 @@
 
     <!-- FAQS -->
     <section class="py-24 max-w-4xl mx-auto px-6" x-data="{ active: 0 }">
-        <h2 class="text-4xl font-black text-center mb-16 tracking-tight">Common Questions</h2>
+        <h2 class="text-4xl font-black text-center mb-16 tracking-tight">Frequently Asked Questions (FAQs)</h2>
         <div class="space-y-4">
             <div class="bg-white rounded-3xl overflow-hidden border border-slate-200">
                 <button @click="active = (active === 1 ? 0 : 1)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50">
@@ -305,6 +305,42 @@
                     <i data-lucide="chevron-down" :class="active === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i>
                 </button>
                 <div x-show="active === 2" class="px-8 pb-6 text-slate-500 text-sm italic">Absolutely. We offer home visits across Lalitpur and Kathmandu for patients with mobility challenges or busy schedules.</div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200">
+                <button @click="active = (active === 2 ? 0 : 2)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50">
+                    <span :class="active === 2 ? 'text-purple-700' : ''">Do I need a doctor’s referral to see a physiotherapist?</span>
+                    <i data-lucide="chevron-down" :class="active === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i>
+                </button>
+                <div x-show="active === 2" class="px-8 pb-6 text-slate-500 text-sm italic">No, you do not need a referral to book an appointment with us. As licensed physiotherapy professionals, we are trained first-contact practitioners. This means we have the clinical expertise to independently assess, screen, and diagnose musculoskeletal and neurological conditions. However, some insurance providers still require a doctor's note before they will reimburse the costs. It’s always best to check your specific policy first.</div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200">
+                <button @click="active = (active === 2 ? 0 : 2)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50">
+                    <span :class="active === 2 ? 'text-purple-700' : ''">How do I know if a therapist is qualified?</span>
+                    <i data-lucide="chevron-down" :class="active === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i>
+                </button>
+                <div x-show="active === 2" class="px-8 pb-6 text-slate-500 text-sm italic">Look for credentials. A licensed professional will usually have a degree (like a BPT, MPT, DPT) and must be registered with a national or state regulatory board in our case, its with NHPC (Nepal Health Proffesional Corporation). You can usually verify their license number on a government website.</div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200">
+                <button @click="active = (active === 2 ? 0 : 2)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50">
+                    <span :class="active === 2 ? 'text-purple-700' : ''">How many sessions will I need for my recovery?</span>
+                    <i data-lucide="chevron-down" :class="active === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i>
+                </button>
+                <div x-show="active === 2" class="px-8 pb-6 text-slate-500 text-sm italic">Every individual and condition is unique. During your initial assessment, we will provide a personalized treatment plan with an estimated timeline. While minor strains may show significant improvement in 3 to 6 sessions, chronic neurological or post-surgical conditions often require a longer, consistent rehabilitation program to reach your goals.</div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200">
+                <button @click="active = (active === 2 ? 0 : 2)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50">
+                    <span :class="active === 2 ? 'text-purple-700' : ''">Is physiotherapy painful?</span>
+                    <i data-lucide="chevron-down" :class="active === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i>
+                </button>
+                <div x-show="active === 2" class="px-8 pb-6 text-slate-500 text-sm italic">Our goal is to reduce your pain, not increase it. While some manual techniques or new exercises may cause mild discomfort or "therapeutic soreness" (similar to a workout), we always work within your pain tolerance. Communication is key—we encourage you to tell us exactly how you are feeling during every treatment.</div>
+            </div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200">
+                <button @click="active = (active === 2 ? 0 : 2)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50">
+                    <span :class="active === 2 ? 'text-purple-700' : ''">How long is each session?</span>
+                    <i data-lucide="chevron-down" :class="active === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i>
+                </button>
+                <div x-show="active === 2" class="px-8 pb-6 text-slate-500 text-sm italic">An initial assessment typically takes 30-40 mins to ensure a thorough diagnosis. Follow-up treatment sessions generally last between 1 hour to 1 hour 30 mins, depending on the complexity of the treatment required.</div>
             </div>
         </div>
     </section>
