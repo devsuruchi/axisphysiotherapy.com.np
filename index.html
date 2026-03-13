@@ -317,50 +317,78 @@
         </div>
     </section>
 
-    <!-- SERVICES & PRICING -->
-    <section id="services" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Clinical Services</h2>
-            <div class="w-20 h-1.5 bg-purple-600 mx-auto rounded-full"></div>
+    <!-- SERVICES SECTION: CLINICAL EXCELLENCE GRID -->
+<section id="services" class="py-24 max-w-7xl mx-auto px-6 scroll-mt-20">
+    <div class="text-center mb-20">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <span class="h-[1px] w-8 bg-purple-600"></span>
+            <span class="text-purple-600 uppercase tracking-[0.3em] text-[10px] font-black">Expert Rehabilitation</span>
+            <span class="h-[1px] w-8 bg-purple-600"></span>
         </div>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Clinical Services</h2>
+        <p class="text-slate-500 italic font-light max-w-2xl mx-auto">
+            Providing the <strong>best physiotherapy near me</strong> with advanced evidence-based treatments and personalized recovery protocols.
+        </p>
+    </div>
+    
+    <!-- Optimized 4-Column Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Service Card 1 -->
-            <div class="p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500">
-                <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-8"><i data-lucide="hand"></i></div>
-                <h3 class="text-2xl font-bold mb-4">Manual & Massage</h3>
-                <ul class="text-slate-500 space-y-2 mb-8 text-sm italic">
-                    <li>• Deep Tissue Massage</li>
-                    <li>• Sports Massage Therapy</li>
-                    <li>• Manual Mobilization</li>
-                    <li>• Chiropractic Care</li>
-                </ul>
-                <div class="text-purple-700 font-bold uppercase text-[10px] tracking-widest">Restore Movement</div>
+        <!-- Card 1: Manual & Structural -->
+        <div class="group p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                <i data-lucide="hand"></i>
             </div>
-            <!-- Service Card 2 - Highlight -->
-            <div class="p-10 bg-purple-900 rounded-[2.5rem] text-white shadow-2xl shadow-purple-200 scale-105 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4 opacity-10"><i data-lucide="zap" size="100"></i></div>
-                <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-white mb-8"><i data-lucide="zap"></i></div>
-                <h3 class="text-2xl font-bold mb-4">Electrotherapy</h3>
-                <p class="text-purple-100 mb-8 text-sm leading-relaxed">Advanced IFT, TENS, EMS, and clinical Ultrasound technology for targeted pain management.</p>
-                <div class="text-white font-bold uppercase text-[10px] tracking-widest bg-purple-700 px-3 py-1 rounded-full inline-block">High-Tech Relief</div>
-            </div>
-            <!-- Service Card 3 -->
-            <div class="p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500">
-                <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-8"><i data-lucide="home"></i></div>
-                <h3 class="text-2xl font-bold mb-4">Home Visit Care</h3>
-                <p class="text-slate-500 mb-8 text-sm leading-relaxed">Personalized professional care delivered comfortably at your home in Lalitpur and Kathmandu.</p>
-                <div class="text-purple-700 font-bold uppercase text-[10px] tracking-widest italic">In-Home Rehabilitation</div>
-            </div>
-            <!-- Service Card 4 -->
-            <div class="p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition group">
-    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition"><i data-lucide="heart"></i></div>
-    <h3 class="text-2xl font-bold mb-4">Pelvic Floor</h3>
-    <p class="text-slate-500 mb-6 text-sm italic font-light">
-        Specialized <strong>pelvic floor physiotherapy</strong> for postnatal recovery and core strengthening in Lalitpur.
-    </p>
-</div>
+            <h3 class="text-xl font-bold mb-4 text-slate-900">Manual & Structural</h3>
+            <ul class="text-slate-500 space-y-2 mb-6 text-sm italic font-light leading-relaxed">
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-purple-400 rounded-full"></span> Manual Mobilization</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-purple-400 rounded-full"></span> Deep Tissue Massage</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-purple-400 rounded-full"></span> Sports Rehabilitation</li>
+            </ul>
+            <div class="text-[10px] font-bold text-purple-600 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full inline-block">Restore Mobility</div>
         </div>
+
+        <!-- Card 2: Electrotherapy (The Highlight) -->
+        <div class="group p-8 bg-purple-900 rounded-[2.5rem] text-white shadow-xl shadow-purple-200 lg:scale-105 hover:scale-110 transition-all duration-500 relative overflow-hidden">
+            <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-white group-hover:rotate-45 transition-transform duration-700">
+                <i data-lucide="zap" size="80"></i>
+            </div>
+            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-white mb-8 shadow-inner">
+                <i data-lucide="zap"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Electrotherapy</h3>
+            <p class="text-purple-100/80 mb-8 text-sm leading-relaxed font-light italic">
+                Advanced clinical IFT, TENS, and EMS technology for targeted pain management and muscle re-education.
+            </p>
+            <div class="text-[10px] font-bold text-white uppercase tracking-widest bg-white/10 border border-white/20 px-3 py-1 rounded-full inline-block">High-Tech Relief</div>
+        </div>
+
+        <!-- Card 3: Physio Home Care -->
+        <div class="group p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                <i data-lucide="home"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-slate-900">Physio Home Care</h3>
+            <p class="text-slate-500 mb-8 text-sm leading-relaxed font-light italic">
+                Professional <strong>physiotherapy at home</strong> across Lalitpur and Kathmandu for patients requiring specialized <strong>physio home care</strong>.
+            </p>
+            <div class="text-[10px] font-bold text-purple-600 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full inline-block">Doorstep Service</div>
+        </div>
+
+        <!-- Card 4: Pelvic Floor -->
+        <div class="group p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                <i data-lucide="heart"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-slate-900">Pelvic Floor</h3>
+            <p class="text-slate-500 mb-8 text-sm leading-relaxed font-light italic">
+                Specialized <strong>pelvic floor physiotherapy</strong> in Lalitpur focused on postnatal recovery and core-pelvic health restoration.
+            </p>
+            <div class="text-[10px] font-bold text-purple-600 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full inline-block">Specialized Care</div>
+        </div>
+
+    </div>
+</section>
         
         <!-- Pricing & Discounts -->
         <div class="mt-16 p-10 bg-indigo-50 rounded-[3rem] border border-indigo-100 flex flex-col md:flex-row justify-between items-center gap-8 shadow-inner">
@@ -677,39 +705,6 @@
     </div>
 </section>
 
-        <!-- Clinical Support Team -->
-        <div class="mt-24 pt-16 border-t border-slate-100">
-            <h5 class="text-center text-slate-400 text-[10px] font-black tracking-[0.4em] uppercase mb-12">Clinical Support Team</h5>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-6 text-center">
-                <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 transition hover:bg-purple-50 group">
-                    <h5 class="font-bold text-slate-800 text-sm">Mina Pun</h5>
-                    <p class="text-[9px] text-purple-500 font-bold uppercase tracking-wider mb-2">Therapist</p>
-                    <p class="text-[8px] text-slate-400 italic">NHPC: Verified</p>
-                </div>
-                <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 transition hover:bg-purple-50">
-                    <h5 class="font-bold text-slate-800 text-sm">Natisha Maharaja</h5>
-                    <p class="text-[9px] text-purple-500 font-bold uppercase tracking-wider mb-2">Therapist</p>
-                    <p class="text-[8px] text-slate-400 italic">NHPC: Verified</p>
-                </div>
-                <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 transition hover:bg-purple-50">
-                    <h5 class="font-bold text-slate-800 text-sm">Mathura Silwal</h5>
-                    <p class="text-[9px] text-purple-500 font-bold uppercase tracking-wider mb-2">Therapist</p>
-                    <p class="text-[8px] text-slate-400 italic">NHPC: Verified</p>
-                </div>
-                <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 transition hover:bg-purple-50">
-                    <h5 class="font-bold text-slate-800 text-sm">Shining Sharma</h5>
-                    <p class="text-[9px] text-purple-500 font-bold uppercase tracking-wider mb-2">Asst. Physio</p>
-                    <p class="text-[8px] text-slate-400 italic">NHPC: Verified</p>
-                </div>
-                <div class="bg-slate-50 p-4 rounded-3xl border border-slate-100 transition hover:bg-purple-50">
-                    <h5 class="font-bold text-slate-800 text-sm">Dr. Sabita Mahat</h5>
-                    <p class="text-[9px] text-purple-500 font-bold uppercase tracking-wider mb-2">Physiotherapist</p>
-                    <p class="text-[8px] text-slate-400 italic">NHPC: Verified</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
     <!-- TESTIMONIALS -->
     <section class="py-24 bg-purple-50/50">
         <div class="max-w-7xl mx-auto px-6">
