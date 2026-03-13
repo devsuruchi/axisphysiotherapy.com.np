@@ -13,37 +13,76 @@
     <meta name="apple-mobile-web-app-title" content="Axis Physiotherapy" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- SEO / Schema.org for Google (Local Business) -->
-    <script type="application/ld+json">
+    <!-- ADVANCED SEO SCHEMA: ORGANIZATION & SATELLITE LOCATIONS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PhysiotherapyClinic",
+  "name": "Axis Physiotherapy Pvt. Ltd.",
+  "alternateName": "Axis Physio Nepal",
+  "image": "https://axisphysiotherapy.com.np/axis-physio-clinic-interior.jpg",
+  "url": "https://axisphysiotherapy.com.np",
+  "telephone": "+977-1-5907651",
+  "priceRange": "$$",
+  "taxID": "610007697",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pulchowk-03, Opposite Everest Bank",
+    "addressLocality": "Lalitpur",
+    "addressRegion": "Bagmati",
+    "postalCode": "44600",
+    "addressCountry": "NP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 27.6782,
+    "longitude": 85.3135
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Lalitpur" },
+    { "@type": "City", "name": "Kathmandu" },
+    { "@type": "City", "name": "Balaju" },
+    { "@type": "City", "name": "Nayabazaar" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "19:00"
+  },
+  "memberOf": [
     {
-      "@context": "https://schema.org",
-      "@type": "PhysiotherapyClinic",
-      "name": "Axis Physiotherapy Pvt. Ltd.",
-      "image": "https://axisphysiotherapy.com.np/axis-physio-clinic-interior.jpg",
+      "@type": "Organization",
+      "name": "Nepal Health Professional Council (NHPC)",
+      "url": "https://nhpc.gov.np"
+    }
+  ],
+  "subOrganization": [
+    {
+      "@type": "MedicalOrganization",
+      "name": "Physiotherapy Department - Silverline Hospital",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Pulchowk-03",
-        "addressLocality": "Lalitpur",
+        "streetAddress": "Balaju Chowk",
+        "addressLocality": "Kathmandu",
         "addressCountry": "NP"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 27.6782,
-        "longitude": 85.3135
+      "url": "https://silverlinehospital.com.np/department/physiotherapy"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "Physiotherapy Wing - Karuna City Clinic",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nayabazaar",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "NP"
       },
-      "telephone": "+977-1-5907651",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "19:00"
-        }
-      ],
-      "priceRange": "$$"
+      "url": "https://www.karunacityclinic.com/"
     }
-    </script>
-
+  ]
+}
+</script>
     <!-- Mobile Browser Theme Color (Matches your Purple Theme) -->
     <meta name="theme-color" content="#581C87">
 
@@ -99,6 +138,7 @@
                 <i data-lucide="clock" size="14"></i> Sun-Fri: 8:00 AM - 7:00 PM
             </span>
             <span class="text-purple-800">|</span>
+            <a href="#partnerships" class="hover:text-purple-600 transition text-purple-700 font-bold">Hospital Partners</a>
             <a href="https://wa.me/9779863201528" class="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-md hover:bg-purple-600 hover:text-white transition-all">
                 WhatsApp Support
             </a>
@@ -585,7 +625,76 @@
         </div>
     </div>
 </section>
-    
+    <!-- PARTNERSHIPS & CLINICAL NETWORK -->
+<section id="partnerships" class="py-24 bg-slate-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <span class="h-[1px] w-8 bg-purple-600"></span>
+                <span class="text-purple-600 uppercase tracking-[0.3em] text-[10px] font-black">Our Extended Network</span>
+                <span class="h-[1px] w-8 bg-purple-600"></span>
+            </div>
+            <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">Hospital Partnerships</h2>
+            <p class="text-slate-500 italic font-light max-w-2xl mx-auto">
+                Beyond our Pulchowk facility, Axis Physiotherapy proudly manages and operates specialized physiotherapy departments at leading healthcare institutions across Kathmandu.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- Partner 1: Silverline Hospital -->
+            <div class="group relative bg-white rounded-[3rem] p-8 md:p-12 border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                    <i data-lucide="building-2" size="120"></i>
+                </div>
+                
+                <div>
+                    <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-500">
+                        <i data-lucide="hospital"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 tracking-tight">Silverline Hospital</h3>
+                    <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Balaju Chowk, Kathmandu
+                    </p>
+                    <p class="text-slate-600 font-light leading-relaxed mb-8">
+                        Axis Physiotherapy operates the full-service department at Silverline, providing advanced inpatient and outpatient rehabilitation for orthopedic and neurological recovery.
+                    </p>
+                </div>
+
+                <a href="https://silverlinehospital.com.np/department/physiotherapy" target="_blank" class="inline-flex items-center gap-2 text-purple-600 font-bold text-sm hover:translate-x-2 transition-transform">
+                    Visit Department Page <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Partner 2: Karuna City Clinic -->
+            <div class="group relative bg-white rounded-[3rem] p-8 md:p-12 border border-slate-200 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                    <i data-lucide="stethoscope" size="120"></i>
+                </div>
+
+                <div>
+                    <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-500">
+                        <i data-lucide="clinic-medical" class="lucide-clinic"></i>
+                        <!-- Fallback icon if clinic-medical is unavailable -->
+                        <i data-lucide="activity"></i> 
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 tracking-tight">Karuna City Clinic</h3>
+                    <p class="text-purple-600 font-bold text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i> Nayabazaar, Kathmandu
+                    </p>
+                    <p class="text-slate-600 font-light leading-relaxed mb-8">
+                        We handle the complete physiotherapy wing at Karuna City Clinic, offering specialized wellness programs and injury management in the Nayabazaar area.
+                    </p>
+                </div>
+
+                <a href="https://www.karunacityclinic.com/" target="_blank" class="inline-flex items-center gap-2 text-purple-600 font-bold text-sm hover:translate-x-2 transition-transform">
+                    Visit Clinic Website <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
     <!-- TEAM SECTION: CLINICAL EXPERTISE & NHPC VERIFIED -->
 <section id="team" class="py-24 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
