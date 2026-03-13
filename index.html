@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axis Physiotherapy | Health. Fitness. Wellness. | Pulchowk, Lalitpur</title>
-    <meta name="description" content="Best Physiotherapy clinic in Pulchowk, Lalitpur. Specialized in PIVD, ACL, Stroke Rehab, and Home Visits. Free Consultation available.">
-
+    <meta name="description" content="Axis Physiotherapy offers the best physiotherapy near me in Pulchowk, Lalitpur. Specialized in PIVD, ACL, Pelvic Floor Physiotherapy, and physio home care.">
     <!-- Primary Favicon Tags (Fixed Paths) -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,7 +12,38 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Axis Physiotherapy" />
     <link rel="manifest" href="/site.webmanifest" />
-    
+
+    <!-- SEO / Schema.org for Google (Local Business) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PhysiotherapyClinic",
+      "name": "Axis Physiotherapy Pvt. Ltd.",
+      "image": "https://axisphysiotherapy.com.np/axis-physio-clinic-interior.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pulchowk-03",
+        "addressLocality": "Lalitpur",
+        "addressCountry": "NP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.6782,
+        "longitude": 85.3135
+      },
+      "telephone": "+977-1-5907651",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "19:00"
+        }
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+
     <!-- Mobile Browser Theme Color (Matches your Purple Theme) -->
     <meta name="theme-color" content="#581C87">
 
@@ -53,11 +83,25 @@
 </head>
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
 
+    <!-- TOP INFO BAR -->
+    <div class="hidden lg:block bg-purple-950 text-purple-200 py-2 text-[10px] uppercase tracking-widest border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center font-bold">
+            <div class="flex gap-8">
+                <span class="flex items-center gap-2"><i data-lucide="mail" size="12"></i> info@axisphysiotherapy.com.np</span>
+                <span class="flex items-center gap-2"><i data-lucide="phone" size="12"></i> 01-5907651</span>
+            </div>
+            <div class="flex gap-6">
+                <span>Sun-Fri: 8:00 AM - 7:00 PM</span>
+                <span class="text-purple-400">|</span>
+                <a href="https://wa.me/9779863201528" class="hover:text-white">WhatsApp Support</a>
+            </div>
+        </div>
+    </div>
+
 <!-- NAVIGATION BAR -->
 <nav class="fixed w-full z-[100] top-0 glass">
     <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
         
-        <!-- CLICKABLE LOGO/HEADER -->
         <!-- CLICKABLE LOGO & BRANDING -->
 <a href="#" class="flex items-center gap-3 group transition-transform active:scale-95">
     <!-- The Actual Logo Image -->
