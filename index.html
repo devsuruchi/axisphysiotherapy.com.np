@@ -50,9 +50,9 @@
 </head>
 <!-- Update your body tag to include showCareer: false -->
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false, showLegal: false, showCareer: false, activeFaq: 0 }">
-    <!-- TOP INFO BAR -->
-    <div class="hidden lg:block bg-purple-950 text-purple-200 py-2.5 text-[10px] uppercase tracking-[0.2em] border-b border-white/5 relative z-[110]">
-        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center font-bold">
+    <!-- TOP INFO BAR (Desktop Only) -->
+    <div class="hidden lg:block bg-purple-950 text-purple-200 py-2.5 text-[10px] uppercase tracking-[0.3em] border-b border-white/5 relative z-[110]">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center font-black">
             <div class="flex gap-8">
                 <a href="mailto:info@axisphysiotherapy.com.np" class="flex items-center gap-2 hover:text-white transition-colors">
                     <i data-lucide="mail" size="14"></i> info@axisphysiotherapy.com.np
@@ -62,9 +62,9 @@
                 </a>
             </div>
             <div class="flex gap-6 items-center">
-                <span class="opacity-70 font-medium">Sun-Fri: 8:00 AM - 7:00 PM</span>
+                <span class="opacity-60 font-medium tracking-normal lowercase">Sun-Fri: 8:00 AM - 7:00 PM</span>
                 <span class="text-purple-800">|</span>
-                <a href="#partnerships" class="text-purple-300 hover:text-white transition-colors underline decoration-purple-800">Hospital Partners</a>
+                <a href="#partnerships" class="text-purple-300 hover:text-white transition-colors underline decoration-purple-800 underline-offset-4">Hospital Partners</a>
             </div>
         </div>
     </div>
@@ -72,26 +72,63 @@
     <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 w-full z-[100] glass shadow-sm">
         <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+            
+            <!-- CLICKABLE LOGO -->
             <a href="#" class="flex items-center gap-3 group transition-transform active:scale-95">
                 <img src="logo.png" alt="Axis Physiotherapy Logo" class="h-10 md:h-12 w-auto object-contain">
                 <div class="flex flex-col border-l-2 border-purple-100 pl-3 text-left">
-                    <span class="font-extrabold text-xl tracking-tighter text-purple-900 leading-none uppercase group-hover:text-purple-600 transition-colors">AXIS</span>
-                    <span class="text-[10px] tracking-[0.2em] font-bold text-purple-600 uppercase">Physiotherapy</span>
+                    <span class="font-black text-xl tracking-tighter text-purple-900 leading-none uppercase group-hover:text-purple-600 transition-colors">AXIS</span>
+                    <span class="text-[10px] tracking-[0.2em] font-bold text-purple-600 uppercase font-sans">Physiotherapy</span>
                 </div>
             </a>
+
+            <!-- DESKTOP MENU (Includes Careers) -->
             <div class="hidden lg:flex items-center space-x-6 font-semibold text-sm text-slate-700">
                 <a href="#about" class="hover:text-purple-600 transition">About</a>
                 <a href="#services" class="hover:text-purple-600 transition">Services</a>
                 <a href="#chiropractic-care" class="hover:text-purple-600 transition">Chiropractic</a>
                 <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a>
                 <a href="#team" class="hover:text-purple-600 transition">Team</a>
+                <button @click="showCareer = true" class="hover:text-purple-600 transition">Careers</button>
                 <a href="https://wellness-adobe.com" target="_blank" class="hover:text-purple-600 transition">Blogs</a>
-                <a href="https://wa.me/9779863201528" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg">Book Appointment</a>
+                <a href="https://wa.me/9779863201528" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-200 font-bold uppercase tracking-tighter text-xs">Book Appointment</a>
             </div>
-            <button class="lg:hidden p-2 text-purple-900" @click="mobileMenu = !mobileMenu"><i data-lucide="menu"></i></button>
+
+            <!-- MOBILE TOGGLE -->
+            <button class="lg:hidden p-2 text-purple-900" @click="mobileMenu = !mobileMenu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div x-show="mobileMenu" 
+             x-cloak 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 translate-x-full"
+             x-transition:enter-end="opacity-100 translate-x-0"
+             class="lg:hidden fixed inset-0 z-[120] bg-white p-6 flex flex-col space-y-6 font-bold text-purple-900">
+            
+            <div class="flex justify-between items-center mb-8">
+                <span class="italic text-2xl font-black uppercase tracking-tighter">Menu</span>
+                <button @click="mobileMenu = false" class="p-2 bg-purple-50 rounded-full"><i data-lucide="x"></i></button>
+            </div>
+            
+            <a href="#" @click="mobileMenu = false" class="text-2xl border-b pb-2">Home</a>
+            <a href="#about" @click="mobileMenu = false" class="text-2xl border-b pb-2">About</a>
+            <a href="#services" @click="mobileMenu = false" class="text-2xl border-b pb-2">Services</a>
+            <a href="#faqs" @click="mobileMenu = false" class="text-2xl border-b pb-2">FAQs</a>
+            <button @click="mobileMenu = false; showCareer = true" class="text-left text-2xl border-b pb-2 uppercase tracking-tighter">Careers</button>
+            
+            <div class="pt-6 space-y-4">
+                <a href="tel:+97715907651" class="flex items-center gap-4 bg-purple-50 p-5 rounded-[2rem] shadow-sm">
+                    <i data-lucide="phone"></i> 01-5907651
+                </a>
+                <a href="https://wa.me/9779863201528" class="flex items-center justify-center gap-3 bg-green-500 text-white p-5 rounded-[2rem] shadow-lg">
+                    <i data-lucide="message-circle"></i> WhatsApp Booking
+                </a>
+            </div>
         </div>
     </nav>
-
     <!-- HERO SECTION (65vh, Corrected Fonts) -->
     <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0"><img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Best Physiotherapy Near Me"></div>
