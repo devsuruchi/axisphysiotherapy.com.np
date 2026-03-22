@@ -955,7 +955,7 @@
         <!-- Section Header (Yesterday's Font Contrast) -->
         <div class="mb-16">
             <h2 class="text-4xl md:text-6xl font-black text-purple-950 uppercase tracking-tighter leading-none mb-4">
-                Verified Feedback
+                What Our Patient Say
             </h2>
             <p class="text-slate-500 mb-6 italic font-light tracking-[0.3em] uppercase text-[10px] font-sans">
                 Real patient stories from our google profile
@@ -1007,6 +1007,7 @@
 
     </div>
 </section>
+
     
     <!-- FAQS -->
     <section id="faqs" class="py-24 max-w-4xl mx-auto px-6" x-data="{ active: 0 }">
@@ -1091,6 +1092,129 @@
         </div>
     </div>
 </section>
+    <!-- RECRUITMENT / CAREER MODAL (Yesterday's Style - No Italics) -->
+<div x-show="showCareer" 
+     x-cloak 
+     class="fixed inset-0 z-[400] overflow-y-auto px-4" 
+     role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+        <!-- Background Blur -->
+        <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showCareer = false"></div>
+
+        <!-- Modal Container (Thick Borders & Rounded Corners) -->
+        <div class="inline-block align-bottom bg-white rounded-[3rem] text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border-[12px] border-purple-100/30">
+            <div class="bg-white px-6 py-12 md:p-16">
+                
+                <!-- Header -->
+                <div class="flex justify-between items-start mb-12 border-b pb-8">
+                    <div>
+                        <h3 class="text-3xl md:text-5xl font-black text-purple-950 uppercase tracking-tighter leading-none">
+                            Join our team
+                        </h3>
+                        <p class="text-slate-500 text-sm mt-4 font-light tracking-wide uppercase">
+                            Submit your clinical credentials below
+                        </p>
+                    </div>
+                    <button @click="showCareer = false" class="text-slate-200 hover:text-purple-600 transition">
+                        <i data-lucide="x-circle" class="w-12 h-12"></i>
+                    </button>
+                </div>
+
+                <!-- THE FORM -->
+                <form action="https://formspree.io/f/mzdjqqeg" method="POST" enctype="multipart/form-data" class="space-y-8 max-h-[60vh] overflow-y-auto pr-4 custom-scrollbar">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Full Name -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Full Name</label>
+                            <input type="text" name="name" required placeholder="Name Surname" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none transition font-sans font-medium">
+                        </div>
+
+                        <!-- Age / Sex -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Age</label>
+                                <input type="number" name="age" required class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Sex</label>
+                                <select name="sex" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium appearance-none">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Degree -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Highest Degree</label>
+                            <input type="text" name="degree" required placeholder="e.g. BPT, MPT, DPT" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium">
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Contact Number</label>
+                            <input type="tel" name="contact" required placeholder="+977-98XXXXXXXX" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium">
+                        </div>
+
+                        <!-- Address -->
+                        <div class="col-span-full space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Current Address</label>
+                            <input type="text" name="address" required placeholder="City, Local Area" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium">
+                        </div>
+
+                        <!-- Position -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Interested Position</label>
+                            <select name="position" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium appearance-none">
+                                <option>Consultant Physiotherapist</option>
+                                <option>Assistant Physiotherapist</option>
+                                <option>Chiropractic Specialist</option>
+                                <option>Massage Therapist</option>
+                                <option>Front Desk / Admin</option>
+                            </select>
+                        </div>
+
+                        <!-- Experience -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Work Experience (Years)</label>
+                            <input type="number" name="experience" required placeholder="0" class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium">
+                        </div>
+                    </div>
+
+                    <!-- Cover Letter -->
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Short Cover Letter</label>
+                        <textarea name="cover_letter" rows="3" placeholder="Tell us about your specialization..." class="w-full bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:border-purple-600 outline-none font-medium"></textarea>
+                    </div>
+
+                    <!-- CV Upload Area (Premium Design) -->
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-purple-900 ml-1">Upload CV (PDF/Word)</label>
+                        <div class="relative w-full bg-purple-50 border-2 border-dashed border-purple-200 p-12 rounded-[2rem] text-center group hover:border-purple-600 transition-colors">
+                            <input type="file" name="cv_file" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            <div class="space-y-3">
+                                <i data-lucide="upload-cloud" class="mx-auto text-purple-400 group-hover:scale-110 transition-transform w-10 h-10"></i>
+                                <p class="text-sm font-black text-purple-900 uppercase tracking-widest leading-none">Click to attach resume</p>
+                                <p class="text-[9px] text-slate-400 uppercase font-bold">Max file size: 5MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-xl uppercase tracking-[0.2em] hover:bg-purple-950 transition-all shadow-2xl active:scale-95">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+            <!-- Footer of Modal -->
+            <div class="bg-purple-50 px-10 py-6 text-center border-t border-purple-100">
+                <p class="text-[10px] text-purple-400 font-black uppercase tracking-[0.4em]">Axis Clinical Recruitment &copy; 2026</p>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- LOCATION & CONTACT SECTION -->
 <section id="contact" class="py-24 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
     <div>
