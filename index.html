@@ -167,18 +167,23 @@
 
         <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-8 font-semibold text-sm text-slate-700">
-            <a href="#about" class="hover:text-purple-600 transition">About</a>
-            <a href="#services" class="hover:text-purple-600 transition">Services</a>
-            <a href="#chiropractic-care" class="hover:text-purple-600 transition text-purple-700">Chiropractic</a>
-            <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a>
-            <a href="#team" class="hover:text-purple-600 transition">Team</a>
-            <button @click="showCareer = true" class="hover:text-purple-600 transition uppercase tracking-widest text-[11px] font-black">Careers</button>
-            <a href="https://wellness-adobe.com" target="_blank" class="hover:text-purple-600 transition">Blogs</a>
-            <a href="https://wa.me/9779863201528" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-200">
-                Book Appointment
-            </a>
-        </div>
-
+    <a href="#about" class="hover:text-purple-600 transition">About</a>
+    <a href="#services" class="hover:text-purple-600 transition">Services</a>
+    <a href="#chiropractic-care" class="hover:text-purple-600 transition text-purple-700">Chiropractic</a>
+    <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a>
+    <a href="#team" class="hover:text-purple-600 transition">Team</a>
+    
+    <!-- Added Careers Button -->
+    <button @click="showCareer = true" class="hover:text-purple-600 transition font-semibold text-sm uppercase tracking-tight">
+        Careers
+    </button>
+    
+    <a href="https://wellness-adobe.com" target="_blank" class="hover:text-purple-600 transition">Blogs</a>
+    
+    <a href="https://wa.me/9779863201528" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-200 font-bold uppercase tracking-tighter text-xs">
+        Book Appointment
+    </a>
+</div>
         <!-- Mobile Toggle -->
         <button class="lg:hidden p-2 text-purple-900" @click="mobileMenu = !mobileMenu">
             <i data-lucide="menu"></i>
