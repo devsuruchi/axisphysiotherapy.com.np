@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axis Physiotherapy | Best Physiotherapy Clinic in Pulchowk, Lalitpur</title>
     <meta name="description" content="Axis Physiotherapy offers the best physiotherapy near me in Pulchowk, Lalitpur. Specialized in PIVD, ACL, Pelvic Floor Physiotherapy, and physio home care.">
-    
-    <!-- Canonical Tag -->
     <link rel="canonical" href="https://axisphysiotherapy.com.np/" />
-
+    
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#581C87">
 
     <!-- SEO SCHEMA -->
@@ -48,8 +44,7 @@
         [x-cloak] { display: none !important; }
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .nepali-font { font-family: 'Mukta', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(88, 28, 135, 0.1); }
-        .purple-gradient { background: linear-gradient(135deg, #581C87 0%, #2E1065 100%); }
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(88, 28, 135, 0.1); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false, showLegal: false, activeFaq: 0 }">
@@ -76,14 +71,13 @@
     <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 w-full z-[100] glass shadow-sm">
         <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group transition-transform active:scale-95">
+            <a href="#" class="flex items-center gap-3 group">
                 <img src="logo.png" alt="Axis Physiotherapy Logo" class="h-10 md:h-12 w-auto object-contain">
                 <div class="flex flex-col border-l-2 border-purple-100 pl-3">
-                    <span class="font-extrabold text-xl tracking-tighter text-purple-900 leading-none">AXIS</span>
+                    <span class="font-extrabold text-xl tracking-tighter text-purple-900 leading-none uppercase">AXIS</span>
                     <span class="text-[10px] tracking-[0.2em] font-bold text-purple-600 uppercase">Physiotherapy</span>
                 </div>
             </a>
-
             <div class="hidden lg:flex items-center space-x-6 font-semibold text-sm text-slate-700">
                 <a href="#about" class="hover:text-purple-600 transition">About</a>
                 <a href="#services" class="hover:text-purple-600 transition">Services</a>
@@ -93,16 +87,11 @@
                 <a href="https://wellness-adobe.com" target="_blank" class="hover:text-purple-600 transition">Blogs</a>
                 <a href="https://wa.me/9779863201528" class="bg-purple-600 text-white px-5 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg">Book Appointment</a>
             </div>
-
             <button class="lg:hidden p-2 text-purple-900" @click="mobileMenu = !mobileMenu"><i data-lucide="menu"></i></button>
         </div>
-
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu Overlay -->
         <div x-show="mobileMenu" x-cloak x-transition class="lg:hidden fixed inset-0 z-[110] bg-white p-6 flex flex-col space-y-4 font-bold text-purple-900">
-            <div class="flex justify-between items-center mb-6">
-                <span class="italic text-xl">Axis Clinic</span>
-                <button @click="mobileMenu = false"><i data-lucide="x"></i></button>
-            </div>
+            <div class="flex justify-between items-center mb-6"><span class="italic text-xl">Axis Clinic</span><button @click="mobileMenu = false"><i data-lucide="x"></i></button></div>
             <a href="#" @click="mobileMenu = false">Home</a>
             <a href="#about" @click="mobileMenu = false">About</a>
             <a href="#services" @click="mobileMenu = false">Services</a>
@@ -112,27 +101,22 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (65vh, Optimized) -->
+    <!-- HERO SECTION (65vh) -->
     <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Best Physiotherapy Clinic Near Me">
-        </div>
+        <div class="absolute inset-0 z-0"><img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Axis Physiotherapy Pulchowk"></div>
         <div class="relative z-10 text-center text-white px-4 w-full max-w-7xl">
-            <div class="mb-4 md:mb-8 space-y-1 md:space-y-2 animate-pulse">
+            <div class="mb-4 space-y-2 animate-pulse">
                 <p class="nepali-font text-base sm:text-2xl font-light text-purple-200">नमस्ते! एक्सिस फिजियोथेरापीमा तपाईंलाई स्वागत छ।</p>
                 <p class="nepali-font text-base sm:text-2xl font-light text-purple-200">ज्वजलपा! एक्सिस फिजियोथेरापीइ लसकुस।</p>
             </div>
-            <h1 class="text-3xl sm:text-6xl md:text-8xl font-extrabold mb-3 tracking-tighter leading-tight">Health. Fitness. Wellness.</h1>
-            <p class="text-sm sm:text-xl max-w-2xl mx-auto mb-6 font-light text-slate-200">
-                Premium recovery and the best <strong>physiotherapy clinic near me</strong> in Pulchowk, Lalitpur.
-            </p>
-            
+            <h1 class="text-3xl sm:text-7xl font-extrabold mb-4 tracking-tighter leading-tight">Health. Fitness. Wellness.</h1>
+            <p class="text-sm sm:text-xl max-w-2xl mx-auto mb-8 font-light text-slate-200">Premium recovery and the most trusted <strong>physiotherapy clinic near me</strong> in Pulchowk.</p>
             <div class="grid grid-cols-2 gap-3 md:flex md:flex-row md:gap-4 justify-center items-center w-full max-w-lg mx-auto md:max-w-none">
                 <a href="#free-consultation" class="col-span-2 md:w-auto flex items-center justify-center bg-white text-purple-900 border-2 border-purple-400 px-4 py-3.5 md:px-10 md:py-5 rounded-full text-sm font-black hover:bg-purple-600 hover:text-white transition shadow-2xl active:scale-95">Consultation (FREE)</a>
-                <a href="#services" class="flex items-center justify-center bg-purple-600 px-4 py-3 md:px-10 md:py-5 rounded-full text-xs font-bold hover:bg-purple-700 transition">Services</a>
+                <a href="#services" class="flex items-center justify-center bg-purple-600 text-white px-4 py-3 md:px-10 md:py-5 rounded-full text-xs font-bold hover:bg-purple-700 transition">Services</a>
                 <a href="#deep-tissue-massage" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-full text-xs font-bold hover:bg-white/20 transition gap-2"><i data-lucide="hand" class="w-4 h-4"></i> Massage</a>
                 <a href="#chiropractic-care" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-full text-xs font-bold hover:bg-white/20 transition gap-2"><i data-lucide="activity" class="w-4 h-4"></i> Chiro</a>
-                <a href="tel:+97715907651" class="col-span-2 md:col-span-1 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-full text-xs font-bold hover:bg-white/20 transition gap-2"><i data-lucide="phone" class="w-4 h-4"></i> Call 01-5907651</a>
+                <a href="tel:+97715907651" class="col-span-2 md:col-span-1 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-full text-xs font-bold hover:bg-white/20 transition gap-2"><i data-lucide="phone" class="w-4 h-4"></i> Call Now</a>
             </div>
         </div>
     </section>
@@ -140,13 +124,8 @@
     <!-- TRUST BAR -->
     <div class="bg-white py-8 border-b">
         <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-around items-center gap-8">
-            <div class="flex items-center gap-3">
-                <div class="flex text-yellow-500"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-                <span class="font-bold text-slate-700 underline decoration-purple-500 decoration-2 underline-offset-4">5.0 Google Rating</span>
-            </div>
-            <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="text-slate-500 font-medium flex items-center gap-2 hover:text-purple-700 transition-colors group">
-                <i data-lucide="map-pin" class="text-purple-600 group-hover:scale-110 transition-transform"></i> Pulchowk-03, Lalitpur
-            </a>
+            <div class="flex items-center gap-3"><div class="flex text-yellow-500"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div><span class="font-bold text-slate-700 underline decoration-purple-500">5.0 Google Rating</span></div>
+            <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="text-slate-500 font-medium flex items-center gap-2 hover:text-purple-700 transition group"><i data-lucide="map-pin" class="text-purple-600 group-hover:scale-110 transition"></i> Pulchowk-03, Lalitpur</a>
             <div class="bg-purple-100 text-purple-700 px-4 py-1.5 rounded-full font-bold uppercase tracking-widest text-[10px]">Consultation Fee: <span class="text-purple-900 uppercase">FREE</span></div>
         </div>
     </div>
@@ -154,94 +133,59 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="py-24 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center overflow-hidden">
         <div class="relative group order-2 md:order-1">
-            <div class="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white shadow-purple-100">
-                <img src="exercise-axis.jpg" alt="Best Physiotherapy near me in Lalitpur" class="w-full h-full object-cover">
-            </div>
+            <div class="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white shadow-purple-100"><img src="exercise-axis.jpg" alt="Best Physiotherapy near me Lalitpur" class="w-full h-full object-cover"></div>
         </div>
         <div class="order-1 md:order-2">
             <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-8 leading-tight tracking-tight italic underline decoration-purple-200 decoration-8 underline-offset-4">Clinical Excellence</h2>
-            <p class="text-lg text-slate-600 mb-8 leading-relaxed font-light italic">
-                Axis Physiotherapy Pvt. Ltd. is a premier <strong>physiotherapy clinic near me</strong> in Pulchowk. Whether you visit us or require <strong>physiotherapy at home</strong>, we provide expert <strong>physio home care</strong> across Lalitpur and Kathmandu.
-            </p>
-            <div class="grid grid-cols-2 gap-6">
-                <div class="p-6 bg-purple-50 rounded-3xl border border-purple-100">
-                    <h4 class="font-bold text-purple-900 text-sm italic">Licensed NHPC</h4>
-                    <p class="text-[10px] text-slate-500 font-medium">Expert Clinical Team</p>
-                </div>
-                <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
-                    <h4 class="font-bold text-slate-900 text-sm italic">Home Visits</h4>
-                    <p class="text-[10px] text-slate-500 font-medium">Lalitpur & Kathmandu</p>
-                </div>
-            </div>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed font-light italic">Axis Physiotherapy Pvt. Ltd. is a premier <strong>physiotherapy clinic near me</strong> in Pulchowk. We provide expert <strong>physio home care</strong> and <strong>physiotherapy at home</strong> across Kathmandu and Lalitpur.</p>
+            <div class="grid grid-cols-2 gap-6"><div class="p-6 bg-purple-50 rounded-3xl border border-purple-100"><h4 class="font-bold text-purple-900 text-sm">Licensed NHPC</h4><p class="text-[10px] text-slate-500 font-medium uppercase tracking-tighter">Verified Specialists</p></div><div class="p-6 bg-slate-50 rounded-3xl border border-slate-200"><h4 class="font-bold text-slate-900 text-sm">Home Visits</h4><p class="text-[10px] text-slate-500 font-medium uppercase tracking-tighter">Lalitpur & Kathmandu</p></div></div>
         </div>
     </section>
 
-    <!-- FREE CONSULTATION CONTENT -->
+    <!-- FREE CONSULTATION SECTION -->
     <section id="free-consultation" class="py-24 max-w-7xl mx-auto px-6 scroll-mt-24">
         <div class="relative overflow-hidden bg-white rounded-[3.5rem] border border-purple-100 shadow-2xl">
             <div class="grid lg:grid-cols-2 gap-0">
                 <div class="p-8 md:p-16 lg:p-20 bg-purple-50/50">
-                    <span class="bg-purple-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase mb-8 inline-block">Initial Visit</span>
-                    <h2 class="text-4xl md:text-6xl font-light text-slate-900 mb-8 leading-tight italic">Welcome to Axis. <span class="font-black text-purple-600 block uppercase">Your Visit is FREE.</span></h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-10 font-light italic">We invite you to our clinic for a professional assessment conducted by specialized physiotherapists capable of screening, diagnosing, and treatment planning.</p>
+                    <span class="bg-purple-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 inline-block">First Visit Guide</span>
+                    <h2 class="text-4xl md:text-6xl font-light text-slate-900 mb-8 leading-tight italic tracking-tighter">Welcome to Axis. <br><span class="font-black text-purple-600 uppercase">Your Visit is FREE.</span></h2>
+                    <p class="text-slate-600 text-lg leading-relaxed font-light italic">Assessment and diagnosis conducted by licensed specialists capable of clinical screening and treatment planning.</p>
                 </div>
                 <div class="p-8 md:p-16 lg:p-20 bg-white">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3 italic uppercase tracking-tighter"><i data-lucide="briefcase-medical" class="text-purple-600"></i> What to Bring?</h3>
-                    <div class="grid gap-4 mb-10">
-                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl"><i data-lucide="file-text" class="text-purple-400"></i> <span class="font-bold text-sm">Referral & OPD Cards</span></div>
-                        <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl"><i data-lucide="image" class="text-purple-400"></i> <span class="font-bold text-sm">X-Rays & MRI Scans</span></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8 italic uppercase tracking-tighter flex items-center gap-3"><i data-lucide="briefcase-medical" class="text-purple-600"></i> What to Bring?</h3>
+                    <div class="grid gap-4 mb-10 text-sm font-bold text-slate-700">
+                        <div class="flex items-center gap-4 p-5 bg-slate-50 rounded-2xl"><i data-lucide="file-text" class="text-purple-400"></i> Referral Card, OPD Card & Diagnostic Papers</div>
+                        <div class="flex items-center gap-4 p-5 bg-slate-50 rounded-2xl"><i data-lucide="image" class="text-purple-400"></i> X-Rays & MRI Scans</div>
                     </div>
-                    <a href="tel:+97715907651" class="block w-full bg-purple-900 text-white text-center py-5 rounded-3xl font-black text-xl hover:bg-purple-700 transition shadow-xl">Book Your Free Slot</a>
+                    <a href="tel:+97715907651" class="block w-full bg-purple-900 text-white text-center py-5 rounded-3xl font-black text-xl hover:bg-purple-700 transition shadow-xl uppercase tracking-widest">Book Free Slot</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CLINICAL SERVICES GRID -->
+    <!-- CLINICAL SERVICES (4-COL GRID) -->
     <section id="services" class="py-24 max-w-7xl mx-auto px-6 scroll-mt-20">
-        <div class="text-center mb-16 uppercase tracking-[0.3em]">
-            <h2 class="text-4xl font-black text-slate-900 mb-4">Clinical Services</h2>
-            <div class="w-20 h-1.5 bg-purple-600 mx-auto rounded-full"></div>
-        </div>
+        <div class="text-center mb-16 uppercase tracking-[0.3em] font-black text-slate-900"><h2>Clinical Services</h2><div class="w-20 h-1.5 bg-purple-600 mx-auto rounded-full mt-4"></div></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500">
-                <i data-lucide="hand" class="text-purple-600 mb-6"></i>
-                <h3 class="text-xl font-bold mb-4">Manual Therapy</h3>
-                <p class="text-slate-500 text-xs italic font-light">Advanced joint mobilization, clinical massage, and structural rehabilitation.</p>
-            </div>
-            <div class="p-8 bg-purple-900 text-white rounded-[2.5rem] shadow-xl scale-105 relative">
-                <i data-lucide="zap" class="text-white mb-6"></i>
-                <h3 class="text-xl font-bold mb-4 uppercase tracking-tighter">Electrotherapy</h3>
-                <p class="text-purple-100 text-xs italic font-light">Clinical IFT, TENS, and EMS for targeted pain management.</p>
-            </div>
-            <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500">
-                <i data-lucide="home" class="text-purple-600 mb-6"></i>
-                <h3 class="text-xl font-bold mb-4">Physio Home Care</h3>
-                <p class="text-slate-500 text-xs italic font-light">Expert <strong>physiotherapy at home</strong> across Kathmandu Valley.</p>
-            </div>
-            <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500">
-                <i data-lucide="heart" class="text-purple-600 mb-6"></i>
-                <h3 class="text-xl font-bold mb-4">Pelvic Floor</h3>
-                <p class="text-slate-500 text-xs italic font-light italic">Specialized <strong>pelvic floor physiotherapy</strong> for postnatal and core health.</p>
-            </div>
+            <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500"><i data-lucide="hand" class="text-purple-600 mb-6"></i><h3 class="text-xl font-bold mb-4 italic">Manual Therapy</h3><p class="text-slate-500 text-xs font-light italic">Advanced joint mobilization and sports rehabilitation.</p></div>
+            <div class="p-8 bg-purple-900 text-white rounded-[2.5rem] shadow-xl scale-105 relative"><i data-lucide="zap" class="text-white mb-6"></i><h3 class="text-xl font-bold mb-4 uppercase italic">Electrotherapy</h3><p class="text-purple-100 text-xs font-light italic">Advanced TENS, EMS, and clinical IFT technology.</p></div>
+            <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500"><i data-lucide="home" class="text-purple-600 mb-6"></i><h3 class="text-xl font-bold mb-4 italic">Physio Home Care</h3><p class="text-slate-500 text-xs font-light italic">Professional <strong>physiotherapy at home</strong> across Kathmandu valley.</p></div>
+            <div class="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl transition duration-500"><i data-lucide="heart" class="text-purple-600 mb-6"></i><h3 class="text-xl font-bold mb-4 italic">Pelvic Floor</h3><p class="text-slate-500 text-xs font-light italic">Specialized <strong>pelvic floor physiotherapy</strong> for core health.</p></div>
         </div>
     </section>
 
-    <!-- PARTNERSHIPS -->
+    <!-- PARTNERSHIPS & TEAM -->
     <section id="partnerships" class="py-24 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-slate-900 mb-4 uppercase italic">Hospital Partnerships</h2>
-                <p class="text-slate-500 font-light max-w-2xl mx-auto italic">Beyond Pulchowk, we manage specialized departments at leading institutions.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-                <div class="bg-white rounded-[3rem] p-10 shadow-sm hover:shadow-xl transition-all border border-slate-100">
+            <h2 class="text-4xl font-black text-center mb-16 uppercase italic text-slate-900">Hospital Partnerships</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-[3rem] p-10 shadow-sm hover:shadow-xl border border-slate-100 transition-all">
                     <i data-lucide="hospital" class="text-purple-600 mb-6"></i>
                     <h3 class="text-2xl font-bold mb-2 italic">Silverline Hospital</h3>
                     <p class="text-purple-600 font-bold text-[10px] uppercase mb-6 tracking-widest">Balaju Chowk, Kathmandu</p>
                     <a href="https://silverlinehospital.com.np/department/physiotherapy" target="_blank" class="text-purple-900 font-black text-xs uppercase hover:underline">Visit Department <i data-lucide="arrow-right" class="inline w-3 h-3"></i></a>
                 </div>
-                <div class="bg-white rounded-[3rem] p-10 shadow-sm hover:shadow-xl transition-all border border-slate-100">
+                <div class="bg-white rounded-[3rem] p-10 shadow-sm hover:shadow-xl border border-slate-100 transition-all">
                     <i data-lucide="activity" class="text-purple-600 mb-6"></i>
                     <h3 class="text-2xl font-bold mb-2 italic">Karuna City Clinic</h3>
                     <p class="text-purple-600 font-bold text-[10px] uppercase mb-6 tracking-widest">Nayabazaar, Kathmandu</p>
@@ -251,165 +195,101 @@
         </div>
     </section>
 
-    <!-- TEAM SECTION -->
     <section id="team" class="py-24 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-black text-center mb-20 text-slate-900 uppercase">Licensed Specialists</h2>
+            <h2 class="text-4xl font-black text-center mb-20 text-slate-900 uppercase italic">Our Licensed Specialists</h2>
             <div class="grid grid-cols-2 lg:grid-cols-5 gap-12 text-center">
-                <div class="group">
-                    <img src="sherin-dp.jpg" alt="Sherin Shrestha - Director" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl transition group-hover:scale-105 mb-4">
-                    <h4 class="font-bold text-slate-900">Sherin Shrestha</h4>
-                    <p class="text-[10px] text-purple-600 font-black uppercase mb-1">Director</p>
-                    <a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic">NHPC Verified</a>
-                </div>
-                <div class="group">
-                    <img src="suruchipp.jpeg" alt="Dr. Suruchi Dev" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl transition group-hover:scale-105 mb-4">
-                    <h4 class="font-bold text-slate-900">Dr. Suruchi Dev</h4>
-                    <p class="text-[10px] text-purple-600 font-black uppercase mb-1">Consultant Physio</p>
-                    <a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic">NHPC: A-1169 PHY</a>
-                </div>
-                <div class="group">
-                    <img src="pankesh-dp.jpg" alt="Dr. Pankesh Sharma" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl transition group-hover:scale-105 mb-4">
-                    <h4 class="font-bold text-slate-900">Dr. Pankesh Sharma</h4>
-                    <p class="text-[10px] text-purple-600 font-black uppercase mb-1">Physiotherapist</p>
-                    <a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic">NHPC: A-1890 PHY</a>
-                </div>
-                <div class="group">
-                    <img src="pasang-dp.jpg" alt="Dr. Pasang Doma Sherpa" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl transition group-hover:scale-105 mb-4">
-                    <h4 class="font-bold text-slate-900">Dr. Pasang Sherpa</h4>
-                    <p class="text-[10px] text-purple-600 font-black uppercase mb-1">Consultant Physio</p>
-                    <a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic">NHPC: S-334 PHY</a>
-                </div>
-                <div class="group">
-                    <img src="khushbu-dp.jpg" alt="Dr. Khushbu KC" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl transition group-hover:scale-105 mb-4">
-                    <h4 class="font-bold text-slate-900">Dr. Khushbu KC</h4>
-                    <p class="text-[10px] text-purple-600 font-black uppercase mb-1">Physiotherapist</p>
-                    <a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic">NHPC: A-2229 PHY</a>
-                </div>
+                <div class="group"><img src="sherin-dp.jpg" alt="Sherin Shrestha" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl group-hover:scale-105 transition mb-4"><h4 class="font-bold text-slate-900">Sherin Shrestha</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-1">Director</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic">NHPC Verified</a></div>
+                <div class="group"><img src="suruchipp.jpeg" alt="Dr. Suruchi Dev" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl group-hover:scale-105 transition mb-4"><h4 class="font-bold text-slate-900">Dr. Suruchi Dev</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-1">Consultant Physio</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic font-bold">NHPC: A-1169 PHY</a></div>
+                <div class="group"><img src="pankesh-dp.jpg" alt="Dr. Pankesh Sharma" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl group-hover:scale-105 transition mb-4"><h4 class="font-bold text-slate-900">Dr. Pankesh Sharma</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-1">Physiotherapist</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic font-bold">NHPC: A-1890 PHY</a></div>
+                <div class="group"><img src="pasang-dp.jpg" alt="Dr. Pasang Sherpa" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl group-hover:scale-105 transition mb-4"><h4 class="font-bold text-slate-900">Dr. Pasang Sherpa</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-1">Consultant Physio</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic font-bold">NHPC: S-334 PHY</a></div>
+                <div class="group"><img src="khushbu-dp.jpg" alt="Dr. Khushbu KC" class="w-36 h-36 mx-auto rounded-full border-4 border-white shadow-xl group-hover:scale-105 transition mb-4"><h4 class="font-bold text-slate-900">Dr. Khushbu KC</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-1">Physiotherapist</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic font-bold">NHPC: A-2229 PHY</a></div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-16 text-center border-t pt-12 text-slate-400 opacity-80">
-                <div><h5 class="font-bold text-xs">Mina Pun</h5><p class="text-[8px]">Therapist</p></div>
-                <div><h5 class="font-bold text-xs">Natisha Maharaja</h5><p class="text-[8px]">Therapist</p></div>
-                <div><h5 class="font-bold text-xs">Mathura Silwal</h5><p class="text-[8px]">Therapist</p></div>
-                <div><h5 class="font-bold text-xs">Shining Sharma</h5><p class="text-[8px]">Asst. Physio</p></div>
-                <div><h5 class="font-bold text-xs">Dr. Sabita Mahat</h5><p class="text-[8px]">Physiotherapist</p></div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mt-16 text-center border-t pt-12 text-slate-400 italic text-[10px]">
+                <div>Mina Pun, Therapist</div><div>Natisha Maharaja, Therapist</div><div>Mathura Silwal, Therapist</div><div>Shining Sharma, Assistant</div><div>Dr. Sabita Mahat, Physio</div>
             </div>
         </div>
     </section>
 
-    <!-- ELEGANT MASSAGE SECTION -->
-    <section id="deep-tissue-massage" class="py-20 px-4 md:px-8 max-w-7xl mx-auto scroll-mt-24">
-        <div class="relative overflow-hidden bg-slate-900 rounded-[3rem] shadow-2xl border border-purple-500/20">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#4c1d95_0%,#0f172a_100%)] opacity-70"></div>
-            <div class="relative z-10 grid lg:grid-cols-2 gap-0">
-                <div class="p-8 md:p-16 lg:p-20 flex flex-col justify-center text-white">
-                    <div class="flex items-center gap-3 mb-6"><span class="h-[1px] w-8 bg-purple-400"></span><span class="text-purple-400 uppercase tracking-[0.3em] text-[10px] font-bold">Clinical Therapy</span></div>
-                    <h2 class="text-4xl md:text-6xl font-light mb-6 tracking-tight italic">Deep Tissue <span class="font-extrabold text-purple-300 underline decoration-purple-900 decoration-8 underline-offset-4">Restoration</span></h2>
-                    <p class="text-slate-300 text-lg leading-relaxed mb-10 max-w-md font-light">Target chronic tension and restore mobility. Expert Full Body and Targeted sessions supervised by clinicians.</p>
-                    <a href="tel:+97715907651" class="bg-white text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-purple-400 transition w-fit shadow-xl">Book Massage</a>
-                </div>
-                <div class="relative min-h-[400px] lg:min-h-full overflow-hidden group">
-                    <img src="Deep_tissue_massage_wellnesss_Adobe.jpeg" alt="Clinical Massage Axis" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 brightness-75">
-                    <div class="absolute bottom-12 left-12 right-12 glass p-8 rounded-[2rem] border border-white/10 backdrop-blur-xl">
-                        <h4 class="text-white font-bold text-xl mb-2 italic tracking-tighter">Scientific Precision</h4>
-                        <p class="text-slate-300 text-sm font-light">Safety and effectiveness supervised by licensed physiotherapists.</p>
-                    </div>
+    <!-- DEEP TISSUE & CHIROPRACTIC (ELEGANT) -->
+    <section id="deep-tissue-massage" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
+        <div class="relative overflow-hidden bg-slate-900 rounded-[3rem] shadow-2xl border border-purple-500/20 grid lg:grid-cols-2">
+            <div class="p-10 md:p-20 flex flex-col justify-center text-white">
+                <span class="text-purple-400 uppercase tracking-widest text-[10px] font-bold mb-6">Clinical Therapy</span>
+                <h2 class="text-4xl md:text-6xl font-light mb-6 tracking-tight italic">Deep Tissue <span class="font-extrabold text-purple-300">Restoration</span></h2>
+                <p class="text-slate-300 text-lg font-light mb-10 italic leading-relaxed">Target chronic muscle tension with scientific precision. Our specialists restore your mobility using anatomical restoration techniques.</p>
+                <a href="tel:+97715907651" class="bg-white text-slate-900 px-10 py-4 rounded-full font-bold hover:bg-purple-400 hover:text-white transition w-fit shadow-xl">Call 01-5907651</a>
+            </div>
+            <div class="relative min-h-[400px] overflow-hidden group">
+                <img src="Deep_tissue_massage_wellnesss_Adobe.jpeg" alt="Clinical Massage" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 brightness-75">
+                <div class="absolute bottom-12 left-12 right-12 glass p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-xl">
+                    <h4 class="text-white font-bold text-xl mb-2 italic">Clinical Recovery</h4>
+                    <p class="text-slate-300 text-sm font-light">Supervised by licensed clinical experts for anatomical safety.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ELEGANT CHIROPRACTIC SECTION -->
-    <section id="chiropractic-care" class="py-20 px-4 md:px-8 max-w-7xl mx-auto scroll-mt-24">
-        <div class="relative overflow-hidden bg-slate-900 rounded-[3rem] shadow-2xl border border-indigo-500/20">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,#1e1b4b_0%,#0f172a_100%)] opacity-80"></div>
-            <div class="relative z-10 grid lg:grid-cols-2 gap-0">
-                <div class="relative min-h-[450px] lg:min-h-full overflow-hidden group border-r border-white/5">
-                    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-[0.6]"><source src="chiropractic-demo.mp4" type="video/mp4"></video>
-                    <div class="absolute bottom-10 left-10 right-10 glass p-8 rounded-[2rem] border border-white/10 backdrop-blur-xl">
-                        <h4 class="text-white font-bold text-xl mb-2 italic tracking-tighter uppercase tracking-widest">Chiropractic Excellence</h4>
-                        <p class="text-slate-300 text-sm font-light leading-relaxed">Experience a precision-led approach to neurological well-being and spinal structural optimization.</p>
-                    </div>
+    <section id="chiropractic-care" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
+        <div class="relative overflow-hidden bg-slate-900 rounded-[3rem] shadow-2xl border border-indigo-500/20 grid lg:grid-cols-2">
+            <div class="relative min-h-[400px] group border-r border-white/5">
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50"><source src="chiropractic-demo.mp4" type="video/mp4"></video>
+                <div class="absolute bottom-10 left-10 right-10 glass p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-xl">
+                    <h4 class="text-white font-bold text-xl mb-2 italic uppercase tracking-widest">Anatomical Precision</h4>
+                    <p class="text-slate-300 text-sm font-light">Spinal structural optimization for neurological health.</p>
                 </div>
-                <div class="p-8 md:p-16 lg:p-20 flex flex-col justify-center text-white text-right">
-                    <div class="flex items-center justify-end gap-3 mb-6"><span class="text-indigo-400 uppercase tracking-[0.3em] text-[10px] font-bold">Specialized Care</span><span class="h-[1px] w-8 bg-indigo-400"></span></div>
-                    <h2 class="text-4xl md:text-6xl font-light mb-6 tracking-tight">Chiropractic <span class="font-extrabold italic text-indigo-300 block uppercase">Care</span></h2>
-                    <p class="text-slate-300 text-lg leading-relaxed mb-10 max-w-md font-light ml-auto">Correct vertebral subluxations and alleviate chronic pain at our Lalitpur center with precise non-surgical adjustments.</p>
-                    <a href="tel:+97715907651" class="bg-white text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-indigo-400 transition w-fit shadow-xl ml-auto">Book Adjustment</a>
-                </div>
+            </div>
+            <div class="p-10 md:p-20 flex flex-col justify-center text-white text-right">
+                <span class="text-indigo-400 uppercase tracking-widest text-[10px] font-bold mb-6">Advanced Care</span>
+                <h2 class="text-4xl md:text-6xl font-light mb-6 tracking-tight italic">Chiropractic <span class="font-extrabold text-indigo-300 block uppercase">Care</span></h2>
+                <p class="text-slate-300 text-lg font-light mb-10 italic leading-relaxed ml-auto max-w-md text-right">Experience precision spinal adjustments to alleviate chronic pain and enhance your posture.</p>
+                <a href="tel:+97715907651" class="bg-white text-slate-900 px-10 py-4 rounded-full font-bold hover:bg-indigo-400 transition w-fit shadow-xl ml-auto">Book Adjustment</a>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-black text-center mb-16 text-purple-900 uppercase italic tracking-tighter">What Our Patients Say</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 bg-white rounded-[2.5rem] shadow-sm italic text-slate-600 text-sm leading-relaxed"><div class="flex text-yellow-500 mb-4"><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i></div>"Pain free after 5 sessions of sciata treatment. Best physiotherapy clinic near me!" <div class="mt-6 font-black text-purple-900 not-italic uppercase tracking-widest text-xs">- Amit Bist</div></div>
-                <div class="p-10 bg-white rounded-[2.5rem] shadow-sm italic text-slate-600 text-sm leading-relaxed"><div class="flex text-yellow-500 mb-4"><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i></div>"Extremely clean clinic. Great team for chronic fibromyalgia pain." <div class="mt-6 font-black text-purple-900 not-italic uppercase tracking-widest text-xs">- Usha Rajak</div></div>
-                <div class="p-10 bg-white rounded-[2.5rem] shadow-sm italic text-slate-600 text-sm leading-relaxed"><div class="flex text-yellow-500 mb-4"><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i><i data-lucide="star" fill="currentColor" size="14"></i></div>"Highly recommended for improving quality of life." <div class="mt-6 font-black text-purple-900 not-italic uppercase tracking-widest text-xs">- Anup</div></div>
+    <!-- FIND US (3-GRID: Details, Video, Map) -->
+    <section id="contact" class="py-24 max-w-7xl mx-auto px-6 scroll-mt-20">
+        <h2 class="text-4xl font-black text-center mb-16 text-purple-900 italic uppercase tracking-tighter">Find Us In Pulchowk</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-[3rem] border border-slate-100 shadow-sm space-y-8 flex flex-col justify-between">
+                <div class="space-y-8">
+                    <div class="flex gap-4"><div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 shrink-0"><i data-lucide="map-pin"></i></div><div><p class="font-black text-lg text-slate-800">Pulchowk-03, Lalitpur</p><p class="text-slate-500 italic text-xs">Opposite Everest Bank Ltd.</p></div></div>
+                    <div class="flex gap-4"><div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 shrink-0"><i data-lucide="phone-call"></i></div><div><a href="tel:+97715907651" class="font-black text-lg text-slate-800 hover:text-purple-600 transition">01-5907651</a><p class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">Clinic Landline</p></div></div>
+                </div>
+                <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="flex items-center justify-center gap-3 bg-purple-600 text-white py-5 rounded-2xl font-bold shadow-lg hover:bg-purple-700 transition"><i data-lucide="navigation"></i> Get Directions</a>
             </div>
+            <div class="relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-slate-900 group" x-data="{ isMuted: true }">
+                <video x-ref="v" autoplay loop muted playsinline oncanplay="this.play()" class="w-full h-full object-cover transition duration-1000 group-hover:brightness-110"><source src="location-track.mp4" type="video/mp4"></video>
+                <button @click="isMuted = !isMuted; $refs.v.muted = isMuted; $nextTick(() => lucide.createIcons())" class="absolute bottom-6 right-6 bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-full text-white z-30 shadow-xl"><i :data-lucide="isMuted ? 'volume-x' : 'volume-2'" class="w-6 h-6"></i></button>
+                <div class="absolute top-6 left-6 flex items-center gap-2 glass px-4 py-2 rounded-xl text-white text-[10px] font-black uppercase tracking-widest"><div class="w-2 h-2 bg-red-500 rounded-full animate-ping"></div> Visual Route Guide</div>
+            </div>
+            <div class="h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.435728442387!2d85.3135581112462!3d27.6782006761019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198462462bc9%3A0x7a59456ae21ecd33!2sAxis%20Physiotherapy%20Pvt.Ltd!5e0!3m2!1sen!2snp!4v1710145200000!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
         </div>
     </section>
 
-    <!-- FAQS -->
-    <section id="faqs" class="py-24 max-w-4xl mx-auto px-6 scroll-mt-20">
-        <h2 class="text-4xl font-black text-center mb-16 text-purple-900 uppercase">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden"><button @click="activeFaq = (activeFaq === 1 ? 0 : 1)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50"><span :class="activeFaq === 1 ? 'text-purple-700' : ''">Is the first consultation really free?</span><i data-lucide="chevron-down" :class="activeFaq === 1 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i></button><div x-show="activeFaq === 1" x-cloak class="px-8 pb-6 text-slate-500 text-sm italic">Yes! Professional initial assessment at zero cost.</div></div>
-            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden"><button @click="activeFaq = (activeFaq === 2 ? 0 : 2)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50"><span :class="activeFaq === 2 ? 'text-purple-700' : ''">Do you provide home physiotherapy?</span><i data-lucide="chevron-down" :class="activeFaq === 2 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i></button><div x-show="activeFaq === 2" x-cloak class="px-8 pb-6 text-slate-500 text-sm italic">Absolutely. We offer professional <strong>physio home care</strong> across Lalitpur and Kathmandu.</div></div>
-            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden"><button @click="activeFaq = (activeFaq === 3 ? 0 : 3)" class="w-full px-8 py-6 text-left font-bold flex justify-between items-center transition hover:bg-purple-50"><span :class="activeFaq === 3 ? 'text-purple-700' : ''">Do I need a doctor’s referral?</span><i data-lucide="chevron-down" :class="activeFaq === 3 ? 'rotate-180 text-purple-600' : ''" class="transition-transform"></i></button><div x-show="activeFaq === 3" x-cloak class="px-8 pb-6 text-slate-500 text-sm italic italic leading-relaxed">No, you do not need a referral. As licensed physiotherapy professionals, we are trained first-contact practitioners capable of independent diagnosis.</div></div>
-        </div>
-    </section>
-
-    <!-- Column 2: VISUAL ROUTE GUIDE (Fixed Playback) -->
-<div class="relative h-[500px] lg:h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-slate-900 group order-2" 
-     x-data="{ isMuted: true }">
-    
-    <video 
-        x-ref="routeVideo"
-        autoplay 
-        loop 
-        muted 
-        playsinline 
-        class="w-full h-full object-cover transition-transform duration-1000 brightness-75 group-hover:brightness-100"
-        oncanplay="this.play()"
-    >
-        <source src="location-track.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Floating Unmute Button -->
-    <button @click="isMuted = !isMuted; $refs.routeVideo.muted = isMuted; $nextTick(() => lucide.createIcons())" 
-            class="absolute bottom-6 right-6 bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-full text-white hover:bg-purple-600 transition-all z-30 shadow-xl active:scale-90">
-        <i :data-lucide="isMuted ? 'volume-x' : 'volume-2'" class="w-6 h-6"></i>
-    </button>
-
-    <!-- Top Label -->
-    <div class="absolute top-6 left-6 flex items-center gap-3 glass px-4 py-2 rounded-xl border border-white/20 backdrop-blur-md">
-        <div class="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
-        <span class="text-white text-[10px] font-black uppercase tracking-[0.2em]">Visual Route Guide</span>
-    </div>
-    
-    <!-- Status Overlay -->
-    <div class="absolute bottom-6 left-6 pointer-events-none">
-        <p class="text-white/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-lg backdrop-blur-sm" x-text="isMuted ? 'Sound Off' : 'Sound On'"></p>
-    </div>
-</div>
-    <!-- FOOTER -->
+    <!-- FOOTER (Fully Optimized with PAN & Directions) -->
     <footer class="bg-purple-950 text-white pt-24 pb-12 rounded-t-[4rem]">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Care Programs</h5><ul class="space-y-4 text-purple-200/60 text-sm font-medium"><li>Physiotherapy Near Me</li><li><a href="#" class="font-bold text-purple-300 block py-1">Physiotherapy at Home</a></li><li><a href="#" class="font-bold text-purple-300 block py-1">Pelvic Floor Physio</a></li></ul></div>
-            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Specialties</h5><ul class="space-y-4 text-purple-200/60 text-sm font-medium"><li>Ortho Rehab</li><li>Sports Physiotherapy</li><li>Neuro Rehabilitation</li></ul></div>
-            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Quick Links</h5><ul class="space-y-4 text-purple-200/60 text-sm font-medium"><li><a href="#career" class="hover:text-white transition">Career</a></li><li><a href="#faqs" class="hover:text-white transition">Contact Us</a></li><li class="pt-4 border-t border-white/5"><button @click="showLegal = true" class="text-xs opacity-50 hover:text-white transition">Disclaimer & Privacy</button></li></ul></div>
-            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs uppercase tracking-widest">Clinic Info</h5><div class="space-y-6">
-                <a href="mailto:info@axisphysiotherapy.com.np" class="flex items-center gap-2 text-purple-200/60 hover:text-white transition text-[12px] whitespace-nowrap"><i data-lucide="mail" class="w-4 h-4 text-purple-400"></i> <span>info@axisphysiotherapy.com.np</span></a>
-                <a href="tel:+97715907651" class="flex items-center gap-2 text-purple-200/60 hover:text-white transition text-sm"><i data-lucide="phone" class="w-4 h-4 text-purple-400"></i> <span>01-5907651</span></a>
-                <div class="flex items-center gap-2 text-purple-400 font-bold text-xs pt-2 uppercase tracking-widest"><i data-lucide="file-text" class="w-4 h-4"></i> PAN: 610007697</div>
-            </div></div>
+            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Care Programs</h5><ul class="space-y-4 text-purple-200/60 text-sm"><li>Physiotherapy Near Me</li><li><a href="#" class="font-bold text-purple-300 block">Physiotherapy at Home</a></li><li><a href="#" class="font-bold text-purple-300 block">Pelvic Floor Physio</a></li></ul></div>
+            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Specialties</h5><ul class="space-y-4 text-purple-200/60 text-sm font-medium"><li>Ortho Rehab</li><li>Sports Physiotherapy</li><li>Neuro Rehab</li><li>Geriatric Care</li></ul></div>
+            <div><h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Quick Links</h5><ul class="space-y-4 text-purple-200/60 text-sm font-medium"><li><a href="#career">Career</a></li><li><a href="#faqs">Contact Us</a></li><li class="pt-4 border-t border-white/5"><button @click="showLegal = true" class="text-xs opacity-50 hover:text-white transition">Disclaimer & Privacy</button></li></ul></div>
+            <div>
+                <h5 class="font-black mb-8 uppercase tracking-widest text-purple-400 text-xs">Clinic Info</h5>
+                <div class="space-y-6">
+                    <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="block p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition group text-left">
+                        <span class="block text-white font-bold text-sm mb-1 uppercase tracking-tighter">Get Direction <i data-lucide="navigation" class="inline w-3 h-3"></i></span>
+                        <span class="text-purple-200/60 text-xs italic font-light leading-tight">Pulchowk (Opposite Everest Bank)</span>
+                    </a>
+                    <div class="space-y-3">
+                        <a href="mailto:info@axisphysiotherapy.com.np" class="flex items-center gap-2 text-purple-200/60 hover:text-white transition text-[12px] whitespace-nowrap"><i data-lucide="mail" class="w-4 h-4 text-purple-400 shrink-0"></i> info@axisphysiotherapy.com.np</a>
+                        <a href="tel:+97715907651" class="flex items-center gap-2 text-purple-200/60 hover:text-white transition text-sm"><i data-lucide="phone" class="w-4 h-4 text-purple-400"></i> 01-5907651</a>
+                        <div class="flex items-center gap-2 text-purple-400 font-bold text-xs pt-2 uppercase tracking-widest"><i data-lucide="file-text" class="w-4 h-4"></i> PAN: 610007697</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-purple-400/30 tracking-[0.4em] font-black uppercase text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-purple-400/30 uppercase tracking-[0.4em] font-black text-center md:text-left">
             <p>&copy; 2026 Axis Physiotherapy Pvt. Ltd. <span class="mx-2 hidden md:inline">|</span> PAN: 610007697</p>
             <div class="flex gap-6 grayscale opacity-40"><span>eSewa</span><span>Khalti</span><span>Fonepay</span></div>
         </div>
@@ -424,9 +304,9 @@
                     <h3 class="text-2xl font-black text-purple-900 mb-8 border-b pb-4 uppercase tracking-tighter italic">Disclaimer & Privacy</h3>
                     <div class="space-y-6 text-slate-600 text-sm font-light h-[50vh] overflow-y-auto pr-4 leading-relaxed">
                         <h4 class="font-bold text-purple-900 uppercase tracking-widest text-[10px]">Medical Disclaimer</h4>
-                        <p>Information on this site is for educational purposes only and not a substitute for professional clinical advice. Results vary by individual case.</p>
+                        <p>Information on this site is for educational purposes only and not a substitute for professional clinical advice.</p>
                         <h4 class="font-bold text-purple-900 uppercase tracking-widest text-[10px]">Privacy Policy</h4>
-                        <p>Axis Physiotherapy Pvt. Ltd. protects patient confidentiality in accordance with Nepal's laws. Data collected via WhatsApp is for triage only. We never sell your data.</p>
+                        <p>We respect patient confidentiality. Information shared is for appointment triage only. We never share your data.</p>
                     </div>
                 </div>
                 <div class="bg-purple-50 px-8 py-6 text-right"><button @click="showLegal = false" class="bg-purple-600 text-white px-8 py-3 rounded-2xl font-bold hover:bg-purple-700 transition">I Understand</button></div>
@@ -437,6 +317,11 @@
     <!-- FLOAT WHATSAPP -->
     <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200]"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+        document.addEventListener('alpine:init', () => {
+            Alpine.effect(() => { lucide.createIcons(); });
+        });
+    </script>
 </body>
 </html>
