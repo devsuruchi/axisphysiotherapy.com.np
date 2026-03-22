@@ -206,81 +206,97 @@
     </div>
 </nav>
     
-    <!-- HERO SECTION: FULLY OPTIMIZED FOR MOBILE, TABLET & DESKTOP -->
+    <!-- HERO SECTION: 65vh WITH DUAL SIDE FLOATING TABS -->
 <section class="relative h-[65vh] flex items-center justify-center overflow-hidden pt-20">
-    <!-- Background -->
+    
+    <!-- 1. Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Axis Physiotherapy Clinic Center in Pulchowk Lalitpur">
+        <img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Best Physiotherapy near me">
     </div>
-    <!-- 2. SIDE FLOATING TEAM BUTTON (Desktop & Tablet) -->
+
+    <!-- 2. LEFT SIDE: FLOATING SOCIAL MEDIA TAB (Desktop & Tablet) -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 z-30 hidden md:block">
+        <div class="flex flex-col items-center gap-6 bg-white/10 backdrop-blur-md border-r border-t border-b border-white/20 py-10 px-3 rounded-r-[2.5rem] group transition-all duration-500">
+            <span class="[writing-mode:vertical-lr] font-bold text-[10px] tracking-[0.3em] text-purple-200 uppercase mb-2 opacity-50">Follow us</span>
+            <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" class="text-white hover:text-purple-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" class="text-white hover:text-purple-400 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" class="text-white hover:text-purple-400 transition-colors"><i data-lucide="music-2" class="w-4 h-4"></i></a>
+            <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" class="text-white hover:text-purple-400 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+        </div>
+    </div>
+
+    <!-- 3. RIGHT SIDE: FLOATING TEAM TAB (Desktop & Tablet) -->
     <div class="absolute right-0 top-1/2 -translate-y-1/2 z-30 hidden md:block">
         <a href="#team" 
            class="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md border-l border-t border-b border-white/20 py-10 px-3 rounded-l-[2.5rem] hover:bg-purple-600 hover:translate-x-[-5px] transition-all duration-500 group">
             <i data-lucide="users" class="w-5 h-5 text-purple-300 group-hover:text-white transition-colors"></i>
-            <span class="[writing-mode:vertical-lr] font-bold text-[11px] tracking-[0.2em] text-white uppercase">
+            <span class="[writing-mode:vertical-lr] rotate-180 font-bold text-[11px] tracking-[0.2em] text-white uppercase leading-none">
                 Meet our team
             </span>
         </a>
     </div>
-    
-    <!-- 3. HERO CONTENT AREA -->
+
+    <!-- 4. HERO CONTENT AREA -->
     <div class="relative z-10 text-center text-white px-4 md:px-6 w-full max-w-7xl flex flex-col items-center h-full justify-center">
-    <div class="relative z-10 text-center text-white px-4 md:px-6 w-full max-w-7xl">
         
-        <!-- Greetings: Responsive sizes -->
-        <div class="mb-4 md:mb-8 space-y-1 md:space-y-2 animate-pulse">
-            <p class="nepali-font text-base sm:text-2xl md:text-3xl font-light text-purple-200">नमस्ते! एक्सिस फिजियोथेरापीमा तपाईंलाई स्वागत छ।</p>
-            <p class="nepali-font text-base sm:text-2xl md:text-3xl font-light text-purple-200">ज्वजलपा! एक्सिस फिजियोथेरापीइ लसकुस।</p>
+        <!-- Greetings -->
+        <div class="mb-4 md:mb-6 space-y-1 animate-pulse font-light tracking-[0.3em] text-purple-200 text-xs sm:text-sm uppercase">
+            <p class="nepali-font font-extralight">नमस्ते! एक्सिस फिजियोथेरापीमा तपाईंलाई स्वागत छ।</p>
+            <p class="nepali-font font-extralight">ज्वजलपा! एक्सिस फिजियोथेरापीइ लसकुस।</p>
         </div>
 
-        <!-- Title: Large on Desktop, scaled on Mobile -->
-        <h1 class="text-3xl sm:text-6xl md:text-8xl font-extrabold mb-3 md:mb-6 tracking-tighter leading-tight text-white">
+        <!-- Headline (Yesterday's Black 900 Straight) -->
+        <h1 class="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tighter leading-tight uppercase whitespace-nowrap">
             Health. Fitness. Wellness.
         </h1>
 
-        <!-- Description -->
-        <p class="text-sm sm:text-xl md:text-2xl max-w-2xl mx-auto mb-6 md:mb-10 font-light text-slate-200">
-    Premium recovery and the most trusted <strong>physiotherapy clinic near me</strong> in Pulchowk, Lalitpur.
-</p>
+        <!-- Sub-headline (Light Weight 300) -->
+        <p class="text-xs sm:text-base md:text-lg max-w-2xl mx-auto mb-8 font-light text-slate-200 leading-relaxed uppercase tracking-wider">
+            Premium recovery and the most trusted <strong>physiotherapy clinic near me</strong> in Pulchowk, Lalitpur.
+        </p>
         
-        <!-- HERO BUTTON GROUP: Optimized for 5 Buttons (Consultation Focus) -->
-<div class="grid grid-cols-2 gap-3 md:flex md:flex-row md:gap-4 justify-center items-center w-full max-w-lg mx-auto md:max-w-none">
-    
-    <!-- 1. FREE CONSULTATION (Full width on mobile to focus attention) -->
-    <a href="#free-consultation" class="col-span-2 md:w-auto flex items-center justify-center bg-white text-purple-900 border-2 border-purple-400 px-4 py-3.5 md:px-10 md:py-5 rounded-full text-sm sm:text-base md:text-lg font-black hover:bg-purple-600 hover:text-white transition shadow-2xl shadow-purple-500/30 active:scale-95">
-        Consultation (FREE)
-    </a>
+        <!-- 5-BUTTON GRID (Optimized for 65vh - No "Services" button) -->
+        <div class="grid grid-cols-2 gap-2.5 md:flex md:flex-row md:gap-3 justify-center items-center w-full max-w-md md:max-w-none">
+            
+            <!-- 1. FREE CONSULTATION (Physical) -->
+            <a href="#free-consultation" class="flex items-center justify-center bg-white text-purple-950 px-2 py-4 md:px-6 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-black hover:bg-purple-600 hover:text-white transition shadow-xl active:scale-95 uppercase tracking-tighter border border-purple-100">
+                Consultation (FREE)
+            </a>
 
-    <!-- 2. Massage (Glass) -->
-    <a href="#deep-tissue-massage" class="w-full md:w-auto flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-3 md:px-10 md:py-5 rounded-full text-xs sm:text-base md:text-lg font-bold hover:bg-white/20 transition shadow-xl gap-2">
-        <i data-lucide="hand" class="w-4 h-4 md:w-5 md:h-5 text-purple-200 shrink-0"></i>
-        Massage
-    </a>
+            <!-- 2. ONLINE CONSULTATION -->
+            <a href="https://wa.me/9779863201528?text=I+want+to+book+an+online+consultation" class="flex items-center justify-center bg-purple-600 text-white px-2 py-4 md:px-6 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-black hover:bg-purple-800 transition shadow-xl active:scale-95 uppercase tracking-tighter gap-1.5">
+                <i data-lucide="video" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i>
+                Online Consult
+            </a>
 
-    <!-- 3. Chiro (Glass) -->
-    <a href="#chiropractic-care" class="w-full md:w-auto flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-3 md:px-10 md:py-5 rounded-full text-xs sm:text-base md:text-lg font-bold hover:bg-white/20 transition shadow-xl gap-2">
-        <i data-lucide="activity" class="w-4 h-4 md:w-5 md:h-5 text-purple-200 shrink-0"></i>
-        Chiro
-    </a>
-    
-    <!-- 4. Call Now (Glass - Full width on mobile footer of group) -->
-    <a href="tel:+97715907651" class="col-span-2 md:col-span-1 md:w-auto flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-3 md:px-10 md:py-5 rounded-full text-xs sm:text-base md:text-lg font-bold hover:bg-white/20 transition shadow-xl gap-2">
-        <i data-lucide="phone" class="w-4 h-4 md:w-5 md:h-5 text-purple-200 shrink-0"></i>
-        Call 01-5907651
-    </a>
-    <!-- 4. SOCIAL MEDIA "FOLLOW US" BAR -->
-        <div class="flex items-center gap-6 opacity-70 hover:opacity-100 transition-opacity duration-500">
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] text-purple-200">Follow us</span>
-            <div class="flex gap-5">
-                <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="music-2" class="w-4 h-4"></i></a>
-                <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
-            </div>
+            <!-- 3. Massage -->
+            <a href="#deep-tissue-massage" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter">
+                <i data-lucide="hand" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i>
+                Massage
+            </a>
+
+            <!-- 4. Chiro -->
+            <a href="#chiropractic-care" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter">
+                <i data-lucide="activity" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i>
+                Chiro
+            </a>
+            
+            <!-- 5. Call Now -->
+            <a href="tel:+97715907651" class="col-span-2 md:col-span-1 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter shadow-inner">
+                <i data-lucide="phone" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i>
+                Call 01-5907651
+            </a>
         </div>
-</div>
-</section>
 
+        <!-- MOBILE SOCIAL BAR (Small and subtle at the very bottom) -->
+        <div class="flex gap-6 mt-10 opacity-50 md:hidden">
+            <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank"><i data-lucide="music-2" class="w-4 h-4"></i></a>
+            <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+        </div>
+    </div>
+</section>
     
     <!-- TRUST BAR -->
     <div class="bg-white py-8 border-b">
