@@ -1270,7 +1270,52 @@
                 <div class="bg-white px-8 pt-12 pb-10 sm:p-16">
                     <div class="flex justify-between items-start mb-10 border-b pb-8"><h3 class="text-4xl font-black uppercase italic tracking-tighter text-purple-950">Career at Axis</h3><button @click="showCareer = false"><i data-lucide="x-circle" class="w-12 h-12 text-slate-200 hover:text-purple-600 transition"></i></button></div>
                     <form action="https://formspree.io/f/mzdjqqeg" method="POST" enctype="multipart/form-data" class="space-y-8 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar font-sans">
-                        <div class="grid md:grid-cols-2 gap-8"><input type="text" name="N" placeholder="Full Name" required class="bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600"><input type="text" name="A" placeholder="Age / Sex" required class="bg-slate-50 border p-5 rounded-2xl outline-none"><input type="text" name="D" placeholder="Qualification" required class="bg-slate-50 border p-5 rounded-2xl outline-none"><input type="text" name="D" placeholder="Position To Apply" required class="bg-slate-50 border p-5 rounded-2xl outline-none <option>Physiotherapist/Consultant Physiotherapist/Therapist/CPT Internship / OJT</option>"><input type="text" name="C" placeholder="Phone Number" required class="bg-slate-50 border p-5 rounded-2xl outline-none"><input type="text" name="Add" placeholder="Address" class="col-span-full bg-slate-50 border p-5 rounded-2xl outline-none"></div>
+                        <div class="grid md:grid-cols-2 gap-8 font-sans">
+    <!-- 1. Full Name -->
+    <div class="space-y-1 text-left">
+        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Full Name</label>
+        <input type="text" name="Name" placeholder="Name Surname" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium">
+    </div>
+
+    <!-- 2. Age / Sex -->
+    <div class="space-y-1 text-left">
+        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Age / Sex</label>
+        <input type="text" name="AgeSex" placeholder="e.g. 28 / Male" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none font-medium">
+    </div>
+
+    <!-- 3. Qualification Dropdown -->
+    <div class="space-y-1 text-left">
+        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Qualification</label>
+        <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium appearance-none">
+            <option value="" disabled selected>Select Qualification</option>
+            <option value="10">10</option>
+            <option value="+2">+2</option>
+            <option value="BPT">BPT</option>
+            <option value="MPT">MPT</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+
+    <!-- 4. Conditional MPT Specialization (Only shows if MPT is selected) -->
+    <div class="space-y-1 text-left transition-all duration-500" x-show="qualification === 'MPT'" x-cloak x-transition>
+        <label class="text-[10px] font-black uppercase tracking-widest text-purple-600 ml-2">MPT Specialization</label>
+        <input type="text" name="Specialization" placeholder="e.g. Neurology, Ortho..." class="w-full bg-purple-50 border border-purple-200 p-5 rounded-2xl outline-none focus:border-purple-600 font-medium">
+    </div>
+
+    <!-- 5. Position To Apply -->
+    <div class="space-y-1 text-left">
+        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Position To Apply</label>
+        <select name="Position" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium appearance-none">
+            <option value="" disabled selected>Select Position</option>
+            <option>Consultant Physiotherapist</option>
+            <option>Physiotherapist</option>
+            <option>Therapist</option>
+            <option>CPT Internship / OJT</option>
+        </select>
+    </div>
+
+    <!-- 6. Phone Number -->
+    <div class
                         <div class="bg-purple-50 p-12 rounded-[2rem] border-2 border-dashed border-purple-200 text-center relative group"><input type="file" name="CV" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"><i data-lucide="upload-cloud" class="mx-auto mb-3 text-purple-400 group-hover:scale-110 transition w-10 h-10"></i><p class="font-black text-purple-950 uppercase text-xs tracking-widest">Attach Resume (PDF/Word)</p></div>
                         <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-xl uppercase hover:bg-purple-950 transition shadow-2xl active:scale-95">Submit Application</button>
                     </form>
