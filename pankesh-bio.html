@@ -1,114 +1,138 @@
-<!-- CONTENT AREA: DESIGNED FOR EASY READING -->
-    <main class="py-20 bg-white border-t border-slate-100 rounded-t-[5rem] shadow-2xl relative z-10 -mt-12">
-        <div class="max-w-3xl mx-auto px-8 md:px-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Pankesh Sharma | Axis Physiotherapy Profile</title>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { font-style: normal !important; } /* STRICT NO ITALICS */
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; background-color: #f8fafc; }
+        h1, h2, h3 { font-weight: 900; letter-spacing: -0.05em; }
+        p { font-weight: 300; line-height: 1.8; letter-spacing: -0.01em; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        
+        /* High-end magazine border */
+        .profile-border { border: 12px solid white; box-shadow: 0 25px 50px -12px rgba(88, 28, 135, 0.15); }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- NAVIGATION: Minimalist -->
+    <nav class="fixed top-0 w-full z-50 p-6 md:p-10 flex justify-between items-center pointer-events-none">
+        <a href="index.html" class="pointer-events-auto bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3 group transition-all hover:bg-purple-600 hover:text-white">
+            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+            <span class="text-[10px] font-black uppercase tracking-widest">Back to Axis</span>
+        </a>
+        <div class="pointer-events-auto hidden md:block">
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-purple-900/30">Clinical Profile</span>
+        </div>
+    </nav>
+
+    <!-- HEADER: Cinematic Intro -->
+    <header class="pt-32 pb-20 md:pt-48 md:pb-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center">
             
-            <!-- THE CLINICAL STORY -->
-            <article class="space-y-12">
-                
-                <!-- Introduction with Drop-Cap (The "Magazine" Hook) -->
-                <div class="relative">
-                    <span class="float-left text-7xl md:text-8xl font-black text-purple-600 mr-4 mt-2 leading-none uppercase">D</span>
-                    <p class="text-xl md:text-2xl text-slate-800 font-light leading-relaxed">
-                        Dr. Pankesh Kumar Sharma, BPT
-Consultant Physiotherapist | NHPC Verified
-Dr. Pankesh Kumar Sharma is a highly skilled and dedicated Physiotherapist currently practicing at Axis Physiotherapy Pvt. Ltd. With a clinical foundation built on a Bachelor of Physiotherapy (BPT) and official verification from the Nepal Health Professional Council (NHPC), Dr. Sharma brings a sophisticated, evidence-based approach to physical rehabilitation and pain management.
-Specialized Clinical Expertise.
-                        
-Dr. Sharma is recognized for his proficiency in advanced manual therapy and specialized intervention techniques. His practice integrates modern physiological science with hands-on clinical excellence to treat a wide array of musculoskeletal and neuromuscular conditions. His core areas of expertise include:
-                        
-•	Dry Needling: Precision-based intramuscular stimulation used to deactivate myofascial trigger points, release chronic muscle tension, and accelerate the body’s natural healing response.
-                        
-•	Cupping Therapy: Utilizing both myofascial decompression and vacuum therapy to improve local circulation, reduce systemic inflammation, and enhance soft tissue mobility.
-
-•	Chiropractic Care & Manual Adjustments: Expert application of spinal and joint manipulations designed to restore structural alignment, alleviate nerve impingement, and optimize overall biomechanical function.
-                        
-•	Advanced Pain Management: Comprehensive care for complex cases involving chronic back pain, cervical spondylosis, sports-related injuries, and post-surgical rehabilitation.
-Professional Philosophy
-At the core of Dr. Sharma’s practice is a commitment to patient-centric recovery. He believes that every individual requires a bespoke treatment plan that addresses the root cause of dysfunction rather than merely suppressing symptoms. By combining his mastery of chiropractic adjustments with specialized soft-tissue modalities, he ensures that patients at Axis Physiotherapy receive the most effective, non-invasive care possible.
-Known for his clinical precision and compassionate communication, Dr. Sharma empowers his patients through education and active rehabilitation, helping them regain their strength, mobility, and quality of life.
-
-
-                    </p>
+            <!-- Big Profile Image -->
+            <div class="md:col-span-5 lg:col-span-4">
+                <div class="profile-border rounded-[4rem] overflow-hidden aspect-[4/5] bg-slate-200">
+                    <img src="pankesh-dp.jpg" alt="Dr. Pankesh Sharma" class="w-full h-full object-cover">
                 </div>
+            </div>
 
-                <!-- Professional Philosophy (The "Simple" explanation) -->
-                <div class="bg-purple-50 p-10 rounded-[3rem] border-l-8 border-purple-600">
-                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-purple-600 mb-4">Patient Philosophy</h3>
-                    <p class="text-lg md:text-xl text-purple-900 font-medium leading-snug uppercase tracking-tight">
-                        "Recovery is not just about fixing an injury; it is about restoring the freedom to move without fear."
-                    </p>
+            <!-- Name & Title -->
+            <div class="md:col-span-7 lg:col-span-8 space-y-6">
+                <div class="inline-block bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                    Licensed Physiotherapist
                 </div>
+                <h1 class="text-5xl md:text-8xl text-slate-950 uppercase leading-none">
+                    Dr. Pankesh <br> <span class="text-purple-600">Sharma</span>
+                </h1>
+                <div class="flex flex-wrap gap-6 pt-4 border-t border-slate-200">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="award" class="text-purple-600 w-4 h-4"></i>
+                        <span class="text-xs font-bold uppercase tracking-widest text-slate-500">NHPC: A-1890 PHY</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="text-purple-600 w-4 h-4"></i>
+                        <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Pulchowk, Lalitpur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-                <!-- Long Bio Content (Organized for readability) -->
-                <div class="space-y-8 text-slate-600 text-lg font-light leading-loose">
+    <!-- CONTENT: The Story -->
+    <main class="py-20 bg-white border-t border-slate-100 rounded-t-[5rem] shadow-2xl relative z-10">
+        <div class="max-w-3xl mx-auto px-6">
+            
+            <!-- Summary Intro -->
+            <div class="mb-20">
+                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-8 text-purple-900 leading-tight">
+                    Professional Background & Clinical Expertise
+                </h2>
+                <div class="space-y-8 text-lg md:text-xl text-slate-600 font-light leading-relaxed">
                     <p>
-                        Specializing in **Orthopedic Rehabilitation**, Dr. Pankesh has successfully treated hundreds of cases involving **PIVD (Disc Prolapse)**, chronic back pain, and complex sports injuries. His methods are based on the latest evidence-based physical therapy standards.
+                        Dr. Pankesh Sharma is a dedicated clinician specializing in advanced physical therapy and movement restoration. (Replace this with your long bio text...)
                     </p>
                     <p>
-                        He believes in the power of education. Every session includes a clear explanation of *why* the pain is occurring and a **personalized roadmap** for recovery. This ensures that patients are empowered to manage their health even after their clinical sessions are complete.
+                        With years of clinical practice in the Kathmandu valley, he has developed a reputation for his precise manual therapy techniques and patient-centric recovery plans.
                     </p>
                 </div>
+            </div>
 
-                <!-- SKILLS & CREDENTIALS (The "Scanning" Section) -->
-                <div class="pt-16 border-t border-slate-100 grid md:grid-cols-2 gap-12">
-                    
-                    <!-- Clinical Specializations -->
-                    <div class="space-y-6">
-                        <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Core Expertise</h4>
-                        <ul class="space-y-4 font-sans font-bold text-slate-800">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 shrink-0"></i>
-                                <span class="uppercase text-sm tracking-tight">Spinal Manipulation</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 shrink-0"></i>
-                                <span class="uppercase text-sm tracking-tight">Sports Injury Rehab</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 shrink-0"></i>
-                                <span class="uppercase text-sm tracking-tight">Post-Surgical Care</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Academic Background -->
-                    <div class="space-y-6">
-                        <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Background</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="text-xs font-black uppercase text-purple-600">Qualification</p>
-                                <p class="text-sm font-bold text-slate-900 leading-tight">Bachelor of Physiotherapy (BPT)</p>
-                            </div>
-                            <div>
-                                <p class="text-xs font-black uppercase text-purple-600">Registration</p>
-                                <p class="text-sm font-bold text-slate-900 leading-tight uppercase">NHPC No: A-1890 PHY</p>
-                            </div>
-                        </div>
-                    </div>
-
+            <!-- Detail Grid -->
+            <div class="grid sm:grid-cols-2 gap-12 border-t border-slate-100 pt-16">
+                <div class="space-y-6">
+                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-purple-600">Specializations</h3>
+                    <ul class="space-y-4 text-sm font-medium text-slate-700">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> PIVD & Back Pain Management</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Sports Injury Rehabilitation</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Post-Surgical Restoration</li>
+                    </ul>
                 </div>
-            </article>
-
-            <!-- FINAL CALL TO ACTION: Large and Inviting -->
-            <div class="mt-28 p-1 md:p-1.5 bg-slate-100 rounded-[3.5rem] overflow-hidden">
-                <div class="bg-slate-950 rounded-[3.2rem] px-8 py-16 md:p-20 text-center relative group">
-                    <!-- Subtle Glow Decoration -->
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-purple-600 rounded-full"></div>
-                    
-                    <div class="relative z-10">
-                        <h4 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-8">
-                            Trust your recovery <br> <span class="text-purple-400 italic">with an expert.</span>
-                        </h4>
-                        <p class="text-slate-400 font-light text-sm mb-12 max-w-sm mx-auto uppercase tracking-widest">
-                            Available for consultation at our Pulchowk clinic.
-                        </p>
-                        <a href="https://wa.me/9779863201528" 
-                           class="bg-white text-slate-950 px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-purple-600 hover:text-white transition-all shadow-2xl active:scale-95 inline-block">
-                            WhatsApp Dr. Pankesh
-                        </a>
+                <div class="space-y-6">
+                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-purple-600">Education</h3>
+                    <div class="text-sm font-light text-slate-600 leading-relaxed">
+                        <p class="font-bold text-slate-900 mb-1">Bachelor of Physiotherapy (BPT)</p>
+                        <p>Specialized Training in Manual Therapy and Orthopedic Assessment.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Booking Call to Action -->
+            <div class="mt-24 p-10 bg-slate-950 rounded-[3rem] text-center text-white relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#581C87_0%,#000_100%)] opacity-50"></div>
+                <div class="relative z-10">
+                    <p class="text-[10px] font-black uppercase tracking-[0.4em] text-purple-400 mb-6">Schedule a session</p>
+                    <h4 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-10 leading-none">
+                        Ready to start <br> your recovery?
+                    </h4>
+                    <a href="https://wa.me/9779863201528" class="bg-white text-slate-950 px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-purple-600 hover:text-white transition-all shadow-2xl active:scale-95 inline-block">
+                        WhatsApp Dr. Pankesh
+                    </a>
                 </div>
             </div>
 
         </div>
     </main>
+
+    <!-- MINIMAL FOOTER -->
+    <footer class="py-20 text-center">
+        <div class="max-w-7xl mx-auto px-6 border-t border-slate-100 pt-10">
+            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-300">
+                &copy; 2026 Axis Physiotherapy Pvt. Ltd. Nepal
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
