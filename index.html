@@ -489,18 +489,44 @@
 
     </div>
 
-    <!-- Pricing Summary (Yesterday's Style) -->
-    <div class="mt-16 p-10 bg-indigo-50 rounded-[3rem] border border-indigo-100 flex flex-col md:flex-row justify-between items-center gap-8 shadow-inner font-sans">
-        <div class="text-center md:text-left">
-            <h4 class="text-2xl font-black text-indigo-950 mb-1 tracking-tighter uppercase">Transparent Pricing</h4>
-            <p class="text-indigo-600 font-medium uppercase text-[10px] tracking-[0.2em]">High-quality care with specialized recovery packages</p>
-        </div>
-        <div class="flex items-center gap-8 text-center font-black">
-            <div class="px-8 border-r border-indigo-200 text-purple-600 text-4xl uppercase">FREE <span class="block text-[10px] text-slate-400 tracking-widest font-bold">First Visit</span></div>
-            <div class="text-indigo-950 text-4xl uppercase">Packages <span class="block text-[10px] text-slate-400 tracking-widest font-bold">Special Discounts</span></div>
-        </div>
+    <!-- PRICING SUMMARY: FULLY RESPONSIVE & HIGH-CONTRAST -->
+<div class="mt-16 p-8 md:p-12 lg:p-16 bg-indigo-50 rounded-[2.5rem] md:rounded-[4rem] border border-indigo-100 flex flex-col lg:flex-row justify-between items-center gap-10 md:gap-12 shadow-inner overflow-hidden">
+    
+    <!-- Text Side -->
+    <div class="text-center lg:text-left space-y-2">
+        <h4 class="text-2xl md:text-4xl font-black text-indigo-950 tracking-tighter uppercase leading-none">
+            Transparent Pricing
+        </h4>
+        <p class="text-indigo-600 font-bold uppercase text-[10px] md:text-xs tracking-[0.2em] leading-relaxed">
+            High-quality care with specialized <br class="hidden md:block"> recovery packages
+        </p>
     </div>
-</section>
+
+    <!-- Pricing Blocks -->
+    <div class="flex flex-col sm:flex-row items-center gap-8 md:gap-12 w-full lg:w-auto">
+        
+        <!-- Block 1: Free Consultation -->
+        <div class="flex flex-col items-center text-center px-0 sm:px-8 w-full sm:w-auto border-b sm:border-b-0 sm:border-r border-indigo-200 pb-8 sm:pb-0">
+            <span class="text-purple-600 text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-2">
+                FREE
+            </span>
+            <span class="text-[10px] md:text-xs font-black uppercase text-slate-400 tracking-[0.3em]">
+                First Visit
+            </span>
+        </div>
+
+        <!-- Block 2: Package Discounts -->
+        <div class="flex flex-col items-center text-center w-full sm:w-auto">
+            <span class="text-indigo-950 text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-2">
+                Special
+            </span>
+            <span class="text-[10px] md:text-xs font-black uppercase text-slate-400 tracking-[0.3em]">
+                Package Discounts
+            </span>
+        </div>
+        
+    </div>
+</div>
         
    <!-- PARTNERSHIPS & CLINICAL NETWORK (Compact & Professional) -->
 <section id="partnerships" class="py-20 bg-slate-50 border-y border-slate-200/60 scroll-mt-20">
@@ -586,23 +612,25 @@
     </div>
 </section>
 
-    <!-- CLINICAL MENTORSHIP: INTERNSHIPS & OJT (ELEGANT VERSION WITH PHOTO) -->
-<section id="training" class="py-24 bg-white scroll-mt-20 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="relative overflow-hidden bg-slate-900 rounded-[4rem] shadow-2xl border-[14px] border-white shadow-purple-100/50 grid lg:grid-cols-2">
+  <!-- CLINICAL MENTORSHIP: INTERNSHIPS & OJT (FULLY OPTIMIZED) -->
+<section id="training" class="py-16 md:py-24 bg-white scroll-mt-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        
+        <!-- The Main Container: Stacks on mobile, Grid on Desktop -->
+        <div class="relative overflow-hidden bg-slate-900 rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-[8px] md:border-[14px] border-white shadow-purple-100/50 grid grid-cols-1 lg:grid-cols-2">
             
-            <!-- LEFT SIDE: TEXT CONTENT -->
-            <div class="p-12 md:p-24 flex flex-col justify-center text-white text-left">
-                <div class="flex items-center gap-3 mb-8">
-                    <span class="h-[1px] w-8 bg-purple-400"></span>
-                    <span class="text-purple-400 uppercase tracking-[0.3em] text-[10px] font-black font-sans">Academic Excellence</span>
+            <!-- LEFT SIDE: TEXT CONTENT (Ordered first on mobile) -->
+            <div class="p-8 md:p-16 lg:p-24 flex flex-col justify-center text-white text-left order-1">
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <span class="h-[1px] w-6 md:w-8 bg-purple-400"></span>
+                    <span class="text-purple-400 uppercase tracking-[0.3em] text-[9px] md:text-[10px] font-black font-sans">Academic Excellence</span>
                 </div>
                 
-                <h2 class="text-5xl md:text-7xl font-light mb-8 tracking-tighter leading-none">
-                    Mentoring the <br> <span class="font-black text-purple-300 block uppercase">Next Generation.</span>
+                <h2 class="text-3xl md:text-5xl lg:text-7xl font-black mb-6 md:mb-8 tracking-tighter leading-none uppercase">
+                    Mentoring the <br> <span class="text-purple-300 block">Next Generation.</span>
                 </h2>
                 
-                <div class="space-y-6 text-slate-300 text-lg font-light leading-relaxed mb-12 font-sans">
+                <div class="space-y-4 md:space-y-6 text-slate-300 text-sm md:text-lg font-light leading-relaxed mb-8 md:mb-12 font-sans">
                     <p>
                         Axis Physiotherapy is committed to clinical education. We provide specialized <strong>Internships</strong> and <strong>On-the-Job Training (OJT)</strong> specifically designed for <strong>CPT students</strong>.
                     </p>
@@ -611,33 +639,32 @@
                     </p>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="flex flex-wrap gap-4 font-sans">
-                    <button @click="showCareer = true" class="bg-white text-slate-950 px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-purple-400 hover:text-white transition-all shadow-2xl active:scale-95">
+                <!-- Action Buttons: Responsive stacking -->
+                <div class="flex flex-col sm:flex-row gap-4 font-sans">
+                    <button @click="showCareer = true" class="w-full sm:w-auto bg-white text-slate-950 px-8 py-4 md:px-10 md:py-5 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-purple-400 hover:text-white transition-all shadow-xl active:scale-95">
                         Apply for Training
                     </button>
-                    <a href="tel:+97715907651" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white/20 transition-all active:scale-95">
+                    <a href="tel:+97715907651" class="w-full sm:w-auto flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white/20 transition-all active:scale-95">
                         Academic Enquiry
                     </a>
                 </div>
             </div>
 
             <!-- RIGHT SIDE: CINEMATIC IMAGE FRAME -->
-            <div class="relative min-h-[500px] overflow-hidden group border-l border-white/5">
-                <!-- Replace with your actual photo file -->
+            <div class="relative h-[350px] md:h-[500px] lg:h-full overflow-hidden group border-t lg:border-t-0 lg:border-l border-white/5 order-2">
                 <img src="training-axis.jpg" 
-                     alt="Clinical Mentorship and OJT for CPT students at Axis" 
+                     alt="Clinical Mentorship Axis" 
                      class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 brightness-75 group-hover:brightness-100">
                 
-                <!-- Floating Yesterday-Style Badge -->
-                <div class="absolute bottom-12 left-12 right-12 glass p-10 rounded-[3rem] border border-white/10 backdrop-blur-2xl">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-10 h-10 bg-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                <!-- Floating Glass Badge: Scales for mobile -->
+                <div class="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 glass p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-white/10 backdrop-blur-2xl">
+                    <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-purple-600 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 md:w-5 md:h-5"></i>
                         </div>
-                        <h4 class="text-white font-black text-xl uppercase tracking-tighter leading-none">CPT Certified OJT</h4>
+                        <h4 class="text-white font-black text-lg md:text-xl uppercase tracking-tighter leading-none">CPT Certified OJT</h4>
                     </div>
-                    <p class="text-slate-300 text-sm font-light leading-relaxed font-sans uppercase tracking-tight">
+                    <p class="text-slate-300 text-[10px] md:text-sm font-light leading-relaxed font-sans uppercase tracking-tight">
                         Bridging the gap between the classroom and the clinical frontline in Nepal.
                     </p>
                 </div>
@@ -646,6 +673,7 @@
         </div>
     </div>
 </section>
+    
 <!-- TEAM SECTION: CLINICAL EXPERTISE & NHPC VERIFIED -->
 <section id="team" class="py-24 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
