@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Pankesh Kumar Sharma | Professional Clinical Profile | Axis Physiotherapy</title>
+    <title>Dr. Pankesh Kumar Sharma | Clinical Profile | Axis Physiotherapy</title>
     
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,7 +12,7 @@
 
     <style>
         [x-cloak] { display: none !important; }
-        * { font-style: normal !important; } /* STRICTLY NO ITALICS */
+        * { font-style: normal !important; } /* STRICT NO ITALICS */
         
         body { 
             font-family: 'Inter', sans-serif; 
@@ -20,18 +20,21 @@
             background-color: #ffffff; 
         }
 
-        /* Yesterday's Typographic Secret */
-        h1, h2, h3 { font-weight: 900; letter-spacing: -0.05em; line-height: 1.1; }
+        /* Yesterday's Typographic Contrast */
+        h1, h2, h3, h4 { font-weight: 900; letter-spacing: -0.05em; line-height: 1.1; }
         p { font-weight: 300; line-height: 1.8; letter-spacing: -0.01em; }
         
         .bio-frame { border: 16px solid #f8fafc; shadow-lg shadow-purple-100; }
-        .expertise-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .expertise-card:hover { transform: translateY(-10px); border-color: #581C87; box-shadow: 0 20px 40px -10px rgba(88, 28, 135, 0.1); }
+        .matrix-line { border-left: 2px solid #f1f5f9; transition: all 0.5s ease; }
+        .matrix-line:hover { border-left-color: #581C87; background: #fafafa; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #581C87; border-radius: 10px; }
     </style>
 </head>
 <body class="text-slate-900 selection:bg-purple-100">
 
-    <!-- NAVIGATION -->
+    <!-- MINIMALIST NAVIGATION -->
     <nav class="p-6 md:p-10 flex justify-between items-center fixed top-0 w-full z-50 pointer-events-none">
         <a href="index.html" class="pointer-events-auto flex items-center gap-3 group bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl border border-slate-100 shadow-sm transition-all hover:bg-slate-950 hover:text-white">
             <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
@@ -39,22 +42,21 @@
         </a>
     </nav>
 
-    <!-- TOP HEADER: THE CLINICIAN'S IDENTITY -->
+    <!-- HEADER: CLINICAL IDENTITY -->
     <header class="max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-48 md:pb-32 grid lg:grid-cols-12 gap-16 items-center">
-        <!-- Profile Picture Column -->
+        <!-- Photo Side -->
         <div class="lg:col-span-5 order-2 lg:order-1">
             <div class="bio-frame rounded-[4rem] overflow-hidden aspect-[4/5] relative group shadow-2xl">
-                <!-- Replace with your actual photo file -->
                 <img src="pankesh-dp.jpg" alt="Dr. Pankesh Kumar Sharma" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                 
-                <!-- Floating Registration Badge -->
-                <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-3xl border border-white shadow-2xl">
+                <!-- Registration Badge -->
+                <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-3xl border border-white shadow-2xl text-left">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg">
                             <i data-lucide="shield-check" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Board Registration</p>
+                            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 leading-none">Board Registration</p>
                             <p class="text-sm font-black text-slate-950 uppercase tracking-tighter leading-none">NHPC: A-1890 PHY</p>
                         </div>
                     </div>
@@ -62,37 +64,36 @@
             </div>
         </div>
 
-        <!-- Name & Headline Column -->
+        <!-- Headline Side -->
         <div class="lg:col-span-7 space-y-8 order-1 lg:order-2">
             <div class="space-y-4 text-left">
                 <span class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-lg shadow-purple-200">
-                    NHPC Licensed Physiotherapist
+                    Physical Therapist, BPT
                 </span>
                 <h1 class="text-6xl md:text-8xl text-slate-950 uppercase leading-[0.9] tracking-tighter">
                     Dr. Pankesh <br> Kumar <span class="text-purple-600">Sharma</span>
                 </h1>
             </div>
             
-            <p class="text-xl md:text-2xl text-slate-400 font-extralight leading-tight uppercase tracking-tight max-w-xl border-l-4 border-purple-100 pl-6 py-2">
+            <p class="text-xl md:text-2xl text-slate-400 font-extralight leading-tight uppercase tracking-tight max-w-xl border-l-4 border-purple-100 pl-6 py-2 text-left">
                 Specialist in Clinical Manual Therapy, <br> Chiropractic Adjustments & Advanced Pain Recovery.
             </p>
 
-            <!-- Enquiry Button -->
             <div class="pt-6">
-                <a href="https://wa.me/9779863201528?text=Enquiry+regarding+Dr+Pankesh+Kumar+Sharma" 
-                   class="bg-slate-950 text-white px-10 py-6 rounded-[2rem] font-black uppercase tracking-widest text-xs hover:bg-purple-600 transition-all shadow-2xl flex items-center gap-4 w-fit active:scale-95">
+                <a href="https://wa.me/9779863201528?text=Enquiry+for+Dr+Pankesh+Kumar+Sharma" 
+                   class="bg-slate-950 text-white px-10 py-5 rounded-[2rem] font-black uppercase tracking-widest text-xs hover:bg-purple-600 transition-all shadow-2xl flex items-center gap-4 w-fit active:scale-95">
                     <i data-lucide="message-circle" class="w-5 h-5 text-green-400"></i>
-                    Send Appointment Enquiry
+                    Clinical Enquiry
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- MAIN CONTENT: PROFESSIONAL NARRATIVE -->
-    <main class="bg-slate-50 py-24 rounded-t-[5rem] border-t border-slate-100 relative z-10 -mt-12">
+    <!-- MAIN CONTENT -->
+    <main class="bg-slate-50 py-24 rounded-t-[5rem] border-t border-slate-100 relative z-10 -mt-12 text-left">
         <div class="max-w-4xl mx-auto px-6">
             
-            <!-- Bio Introduction -->
+            <!-- Professional Narrative -->
             <div class="mb-24 space-y-12">
                 <div class="flex items-center gap-3">
                     <span class="h-[1px] w-12 bg-purple-600"></span>
@@ -108,76 +109,111 @@
                 </div>
             </div>
 
-            <!-- SPECIALIZED CLINICAL EXPERTISE (Beautiful Card System) -->
+            <!-- SPECIALIZATION MATRIX -->
             <div class="mb-32">
-                <div class="text-center mb-16">
-                    <h3 class="text-xs font-black uppercase tracking-[0.5em] text-slate-400 mb-4 text-center">Core Clinical Expertise</h3>
-                    <div class="w-20 h-1 bg-purple-200 mx-auto rounded-full"></div>
+                <div class="mb-16 border-b border-slate-200 pb-8">
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-purple-600 mb-4">Clinical Competence</h3>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-slate-950 leading-none">Specialization Matrix</h2>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Expertise 1 -->
-                    <div class="expertise-card p-10 bg-white rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-start text-left">
-                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8">
-                            <i data-lucide="activity"></i>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Column 1 -->
+                    <div class="matrix-line pl-8 space-y-6">
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-purple-600">Manual Medicine</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm font-bold text-slate-900 uppercase leading-tight">Chiropractic Care</p>
+                            <p class="text-xs text-slate-500 font-light leading-relaxed">Spinal and joint manipulations designed to restore alignment and optimize biomechanical function.</p>
                         </div>
-                        <h4 class="font-black uppercase text-sm tracking-widest text-slate-900 mb-4">Dry Needling</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Precision intramuscular stimulation used to deactivate trigger points, release chronic muscle tension, and accelerate the natural healing response.</p>
                     </div>
-                    <!-- Expertise 2 -->
-                    <div class="expertise-card p-10 bg-white rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-start text-left">
-                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8">
-                            <i data-lucide="target"></i>
+                    <!-- Column 2 -->
+                    <div class="matrix-line pl-8 space-y-6">
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-purple-600">Tissue Restoration</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm font-bold text-slate-900 uppercase leading-tight">Dry Needling & Cupping</p>
+                            <p class="text-xs text-slate-500 font-light leading-relaxed">Intramuscular stimulation and myofascial decompression to accelerate natural healing response.</p>
                         </div>
-                        <h4 class="font-black uppercase text-sm tracking-widest text-slate-900 mb-4">Cupping Therapy</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Utilizing myofascial decompression and vacuum therapy to improve local circulation, reduce inflammation, and enhance soft tissue mobility.</p>
                     </div>
-                    <!-- Expertise 3 -->
-                    <div class="expertise-card p-10 bg-white rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-start text-left">
-                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8">
-                            <i data-lucide="bone"></i>
+                    <!-- Column 3 -->
+                    <div class="matrix-line pl-8 space-y-6">
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-purple-600">Rehabilitation</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm font-bold text-slate-900 uppercase leading-tight">Advanced Recovery</p>
+                            <p class="text-xs text-slate-500 font-light leading-relaxed">Evidence-based protocols for chronic back pain, sports injuries, and post-surgical restoration.</p>
                         </div>
-                        <h4 class="font-black uppercase text-sm tracking-widest text-slate-900 mb-4">Chiropractic Adjustment</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Expert application of spinal and joint manipulations designed to restore structural alignment, alleviate nerve impingement, and optimize biomechanical function.</p>
-                    </div>
-                    <!-- Expertise 4 -->
-                    <div class="expertise-card p-10 bg-white rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-start text-left">
-                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8">
-                            <i data-lucide="zap"></i>
-                        </div>
-                        <h4 class="font-black uppercase text-sm tracking-widest text-slate-900 mb-4">Advanced Pain Recovery</h4>
-                        <p class="text-xs text-slate-500 font-light leading-relaxed">Comprehensive care for complex cases involving chronic back pain, cervical spondylosis, sports injuries, and post-surgical rehabilitation.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- PHILOSOPHY SECTION (High-Contrast Pull Quote) -->
-            <div class="bg-purple-950 rounded-[4rem] p-12 md:p-20 text-white overflow-hidden relative shadow-2xl">
+            <!-- CLINICAL REGISTRY (Ledger Style) -->
+            <div class="mb-32">
+                <div class="bg-white rounded-[3rem] border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="bg-slate-950 p-8 md:px-12 text-white text-left">
+                        <h3 class="text-[10px] font-black uppercase tracking-[0.4em] text-purple-400 mb-2">Verified Interventions</h3>
+                        <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter">Clinical Registry</h2>
+                    </div>
+                    
+                    <div class="divide-y divide-slate-100 text-left">
+                        <!-- Group 1 -->
+                        <div class="p-8 md:px-12 grid md:grid-cols-3 gap-6 items-start hover:bg-slate-50 transition-colors">
+                            <div class="text-[10px] font-black uppercase tracking-widest text-purple-600 mt-1">Advanced Modalities</div>
+                            <div class="md:col-span-2">
+                                <h4 class="font-bold text-slate-900 text-sm uppercase mb-2 leading-none">Needling & Myofascial Release</h4>
+                                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                                    Precision-based dry needling for trigger point deactivation and myofascial decompression via specialized cupping therapy.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Group 2 -->
+                        <div class="p-8 md:px-12 grid md:grid-cols-3 gap-6 items-start hover:bg-slate-50 transition-colors">
+                            <div class="text-[10px] font-black uppercase tracking-widest text-purple-600 mt-1">Structural Care</div>
+                            <div class="md:col-span-2">
+                                <h4 class="font-bold text-slate-900 text-sm uppercase mb-2 leading-none">Manual Adjustments</h4>
+                                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                                    Clinical application of joint manipulations to alleviate nerve impingement and restore structural mobility.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Group 3 -->
+                        <div class="p-8 md:px-12 grid md:grid-cols-3 gap-6 items-start hover:bg-slate-50 transition-colors">
+                            <div class="text-[10px] font-black uppercase tracking-widest text-purple-600 mt-1">Condition Focus</div>
+                            <div class="md:col-span-2">
+                                <h4 class="font-bold text-slate-900 text-sm uppercase mb-2 leading-none">Spondylosis & Sports Injury</h4>
+                                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                                    Evidence-based management of cervical spondylosis, chronic low back pain, and post-operative orthopedic rehabilitation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHILOSOPHY BLOCK -->
+            <div class="bg-purple-950 rounded-[4rem] p-12 md:p-20 text-white overflow-hidden relative shadow-2xl text-left">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#581C87_0%,#000_100%)] opacity-60"></div>
                 <div class="relative z-10">
-                    <span class="text-purple-400 font-black text-[10px] uppercase tracking-[0.4em] mb-8 block">Professional Philosophy</span>
-                    <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-tight mb-12">
-                        Addressing the <span class="text-purple-400 underline decoration-white/20 underline-offset-8">root cause</span> of dysfunction.
+                    <span class="text-purple-400 font-black text-[10px] uppercase tracking-[0.4em] mb-8 block font-sans">Professional Philosophy</span>
+                    <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-12">
+                        Addressing the <br> <span class="text-purple-400 underline decoration-white/20 underline-offset-8">root cause</span>.
                     </h3>
-                    <div class="space-y-8 text-purple-100 font-light text-lg md:text-xl leading-loose italic">
+                    <div class="space-y-8 text-purple-100 font-light text-lg md:text-xl leading-loose">
                         <p>
-                            Dr. Sharma believes that every individual requires a bespoke treatment plan that addresses the root cause rather than merely suppressing symptoms. 
+                            At the core of Dr. Sharma’s practice is a commitment to patient-centric recovery. He believes that every individual requires a bespoke treatment plan that addresses the root cause of dysfunction.
                         </p>
-                        <p class="not-italic text-sm font-medium tracking-wide text-white border-t border-white/10 pt-10">
-                            Known for his clinical precision and compassionate communication, he empowers his patients through education and active rehabilitation, helping them regain their strength, mobility, and quality of life.
+                        <p class="not-italic text-sm font-medium tracking-wide text-white border-t border-white/10 pt-10 uppercase leading-relaxed font-sans">
+                            Empowering patients through education and active rehabilitation to regain their strength and quality of life.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- FINAL CALL TO ACTION -->
+            <!-- CTA SECTION -->
             <div class="mt-32 text-center">
-                <p class="text-slate-400 font-black uppercase text-[10px] tracking-[0.5em] mb-6">Clinic availability: Sunday — Friday</p>
+                <p class="text-slate-400 font-black uppercase text-[10px] tracking-[0.5em] mb-6">Sunday — Friday at Axis Pulchowk</p>
                 <h4 class="text-4xl md:text-6xl font-black text-slate-950 uppercase tracking-tighter mb-10 leading-none">
-                    Restore your movement.
+                    Return to <br> Excellence.
                 </h4>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://wa.me/9779863201528?text=I+want+to+book+an+appointment+with+Dr+Pankesh+Kumar+Sharma" class="bg-purple-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-purple-700 transition shadow-2xl active:scale-95">WhatsApp Enquiry</a>
+                    <a href="https://wa.me/9779863201528?text=I+want+to+book+an+appointment+with+Dr+Pankesh+Kumar+Sharma" class="bg-purple-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-purple-700 transition shadow-2xl active:scale-95">WhatsApp Appointment</a>
                     <a href="tel:+97715907651" class="bg-white text-slate-900 px-12 py-5 rounded-full border border-slate-200 font-black uppercase tracking-widest text-xs hover:bg-slate-50 transition shadow-md">Call Axis Clinic</a>
                 </div>
             </div>
@@ -187,8 +223,8 @@
 
     <!-- FOOTER -->
     <footer class="py-20 text-center bg-white border-t border-slate-100">
-        <p class="text-[9px] font-black uppercase tracking-[0.5em] text-slate-300">
-            &copy; 2026 Axis Physiotherapy Pvt. Ltd. | Nepal Health Professional Council Registered
+        <p class="text-[9px] font-black uppercase tracking-[0.5em] text-slate-300 font-sans">
+            &copy; 2026 Axis Physiotherapy Pvt. Ltd. | Licensed Clinical Profile
         </p>
     </footer>
 
