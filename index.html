@@ -1262,84 +1262,133 @@
         </div>
     </footer>
 
-    <!-- MODALS -->
-    <div x-show="showCareer" x-cloak class="fixed inset-0 z-[400] overflow-y-auto px-4" role="dialog">
+    <!-- MODALS SECTION -->
+    
+    <!-- 1. CAREER APPLICATION MODAL -->
+    <div x-show="showCareer" 
+         x-cloak 
+         x-data="{ qualification: '' }" 
+         class="fixed inset-0 z-[400] overflow-y-auto px-4" 
+         role="dialog">
         <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Background Overlay -->
             <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showCareer = false"></div>
+
+            <!-- Modal Container (Thick 12px Borders) -->
             <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
                 <div class="bg-white px-8 pt-12 pb-10 sm:p-16">
-                    <div class="flex justify-between items-start mb-10 border-b pb-8"><h3 class="text-4xl font-black uppercase italic tracking-tighter text-purple-950">Career at Axis</h3><button @click="showCareer = false"><i data-lucide="x-circle" class="w-12 h-12 text-slate-200 hover:text-purple-600 transition"></i></button></div>
-                    <form action="https://formspree.io/f/mzdjqqeg" method="POST" enctype="multipart/form-data" class="space-y-8 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar font-sans">
+                    
+                    <!-- Header -->
+                    <div class="flex justify-between items-start mb-10 border-b pb-8">
+                        <div>
+                            <h3 class="text-4xl font-black uppercase tracking-tighter text-purple-950 leading-none">Career at Axis</h3>
+                            <p class="text-slate-400 text-[10px] mt-4 font-black uppercase tracking-[0.2em]">Join our professional clinical team</p>
+                        </div>
+                        <button @click="showCareer = false"><i data-lucide="x-circle" class="w-12 h-12 text-slate-200 hover:text-purple-600 transition"></i></button>
+                    </div>
+
+                    <!-- THE FORM -->
+                    <form action="https://formspree.io/f/mzdjqqeg" method="POST" enctype="multipart/form-data" class="space-y-8 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
                         <div class="grid md:grid-cols-2 gap-8 font-sans">
-    <!-- 1. Full Name -->
-    <div class="space-y-1 text-left">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Full Name</label>
-        <input type="text" name="Name" placeholder="Name Surname" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium">
-    </div>
+                            
+                            <!-- Full Name -->
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Full Name</label>
+                                <input type="text" name="Name" placeholder="Name Surname" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium">
+                            </div>
 
-    <!-- 2. Age / Sex -->
-    <div class="space-y-1 text-left">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Age / Sex</label>
-        <input type="text" name="AgeSex" placeholder="e.g. 28 / Male" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none font-medium">
-    </div>
+                            <!-- Age / Sex -->
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Age / Sex</label>
+                                <input type="text" name="AgeSex" placeholder="e.g. 28 / Male" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none font-medium">
+                            </div>
 
-    <!-- 3. Qualification Dropdown -->
-    <div class="space-y-1 text-left">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Qualification</label>
-        <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium appearance-none">
-            <option value="" disabled selected>Select Qualification</option>
-            <option value="10">10</option>
-            <option value="+2">+2</option>
-            <option value="BPT">BPT</option>
-            <option value="MPT">MPT</option>
-            <option value="Others">Others</option>
-        </select>
-    </div>
+                            <!-- Qualification Dropdown -->
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Qualification</label>
+                                <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium appearance-none">
+                                    <option value="" disabled selected>Select Qualification</option>
+                                    <option value="10">10</option>
+                                    <option value="+2">+2</option>
+                                    <option value="BPT">BPT</option>
+                                    <option value="MPT">MPT</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
 
-    <!-- 4. Conditional MPT Specialization (Only shows if MPT is selected) -->
-    <div class="space-y-1 text-left transition-all duration-500" x-show="qualification === 'MPT'" x-cloak x-transition>
-        <label class="text-[10px] font-black uppercase tracking-widest text-purple-600 ml-2">MPT Specialization</label>
-        <input type="text" name="Specialization" placeholder="e.g. Neurology, Ortho..." class="w-full bg-purple-50 border border-purple-200 p-5 rounded-2xl outline-none focus:border-purple-600 font-medium">
-    </div>
+                            <!-- Conditional MPT Specialization -->
+                            <div class="space-y-1 text-left transition-all duration-500" x-show="qualification === 'MPT'" x-cloak x-transition>
+                                <label class="text-[10px] font-black uppercase tracking-widest text-purple-600 ml-2">MPT Specialization</label>
+                                <input type="text" name="Specialization" placeholder="e.g. Neurology, Ortho..." class="w-full bg-purple-50 border border-purple-200 p-5 rounded-2xl outline-none focus:border-purple-600 font-medium">
+                            </div>
 
-    <!-- 5. Position To Apply -->
-    <div class="space-y-1 text-left">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Position To Apply</label>
-        <select name="Position" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium appearance-none">
-            <option value="" disabled selected>Select Position</option>
-            <option>Consultant Physiotherapist</option>
-            <option>Physiotherapist</option>
-            <option>Therapist</option>
-            <option>CPT Internship / OJT</option>
-        </select>
-    </div>
+                            <!-- Position To Apply -->
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Position To Apply</label>
+                                <select name="Position" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none focus:border-purple-600 font-medium appearance-none">
+                                    <option value="" disabled selected>Select Position</option>
+                                    <option>Consultant Physiotherapist</option>
+                                    <option>Physiotherapist</option>
+                                    <option>Therapist</option>
+                                    <option>CPT Internship / OJT</option>
+                                </select>
+                            </div>
 
-    <!-- 6. Phone Number -->
-    <div class
-                        <div class="bg-purple-50 p-12 rounded-[2rem] border-2 border-dashed border-purple-200 text-center relative group"><input type="file" name="CV" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"><i data-lucide="upload-cloud" class="mx-auto mb-3 text-purple-400 group-hover:scale-110 transition w-10 h-10"></i><p class="font-black text-purple-950 uppercase text-xs tracking-widest">Attach Resume (PDF/Word)</p></div>
+                            <!-- Phone Number -->
+                            <div class="space-y-1 text-left">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Phone Number</label>
+                                <input type="tel" name="Contact" placeholder="+977-98XXXXXXXX" required class="w-full bg-slate-50 border p-5 rounded-2xl outline-none font-medium">
+                            </div>
+
+                            <!-- Address -->
+                            <div class="col-span-full space-y-1 text-left">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Current Address</label>
+                                <input type="text" name="Address" placeholder="City, Local Area" class="w-full bg-slate-50 border p-5 rounded-2xl outline-none font-medium">
+                            </div>
+                        </div>
+
+                        <!-- CV Upload Area -->
+                        <div class="space-y-1 text-left">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Upload Resume</label>
+                            <div class="bg-purple-50 p-12 rounded-[2rem] border-2 border-dashed border-purple-200 text-center relative group">
+                                <input type="file" name="CV" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <i data-lucide="upload-cloud" class="mx-auto mb-3 text-purple-400 group-hover:scale-110 transition w-10 h-10"></i>
+                                <p class="font-black text-purple-950 uppercase text-xs tracking-widest leading-none">Attach Resume (PDF/Word)</p>
+                            </div>
+                        </div>
+
                         <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-xl uppercase hover:bg-purple-950 transition shadow-2xl active:scale-95">Submit Application</button>
                     </form>
                 </div>
+                <div class="bg-purple-50 px-10 py-6 text-center border-t border-purple-100 font-black uppercase text-[10px] tracking-[0.4em] text-purple-400">Axis Clinic &copy; 2026</div>
             </div>
         </div>
     </div>
 
-    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto" role="dialog">
-        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+    <!-- 2. LEGAL DISCLOSURE MODAL -->
+    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
-            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
+            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
                 <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
-                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase italic tracking-tighter">Legal Disclosure</h3>
-                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar italic">
-                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3 not-italic">Medical Disclaimer</h4><p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p></div>
-                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3 not-italic">Privacy Standards</h4><p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p></div>
+                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase tracking-tighter">Legal Disclosure</h3>
+                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar">
+                        <div>
+                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Medical Disclaimer</h4>
+                            <p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Privacy Standards</h4>
+                            <p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black"><button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button></div>
+                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black">
+                    <button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button>
+                </div>
             </div>
         </div>
     </div>
-
     <!-- FLOAT WHATSAPP -->
     <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
 
@@ -1349,6 +1398,7 @@
             Alpine.effect(() => { lucide.createIcons(); });
         });
     </script>
+    
     <!-- DYNAMIC TEAM BIO MODAL (Yesterday Style) -->
 <div x-show="selectedMember" x-cloak class="fixed inset-0 z-[600] overflow-y-auto px-4" role="dialog">
     <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
