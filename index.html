@@ -623,60 +623,68 @@
         </div>
     </div>
 </section>
-    <!-- CLINICAL ALUMNI SECTION -->
-<section id="alumni" class="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-20">
+    <!-- CLINICAL ALUMNI SECTION: CLICKABLE & ELEGANT -->
+<section id="alumni" class="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Section Header -->
+        <!-- Section Header (Yesterday's Font Contrast) -->
         <div class="text-center mb-20">
-            <h2 class="text-4xl font-black text-slate-400 uppercase tracking-tighter leading-none mb-4">
+            <h2 class="text-4xl md:text-6xl font-black text-slate-400 uppercase tracking-tighter leading-none mb-6">
                 Clinical Alumni
             </h2>
-            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.4em] max-w-xl mx-auto">
-                Honoring the professionals who have contributed to the legacy of Axis clinical excellence.
+            <div class="w-24 h-2 bg-purple-200 mx-auto rounded-full mb-8"></div>
+            <p class="text-slate-400 font-light text-xs max-w-xl mx-auto uppercase tracking-[0.3em] leading-relaxed">
+                Honoring the professionals who contributed to our legacy of clinical excellence.
             </p>
         </div>
 
-        <!-- Alumni Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-y-16 gap-x-8 text-center font-sans">
+        <!-- ALUMNI GRID (Clickable to individual bio pages) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-y-20 gap-x-8 font-sans">
             
             <!-- Alumni 1 -->
-            <div class="group">
-                <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
-                    <img src="alumni-1.jpg" alt="Former Associate" 
-                         class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100">
+            <a href="alumni-1-bio.html" class="text-center group block outline-none">
+                <div class="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-6">
+                    <!-- Hover Purple Glow -->
+                    <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                    <!-- Image: Grayscale by default, Color on Hover -->
+                    <img src="alumni-1.jpg" alt="Alumni Name" 
+                         class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-all duration-700 group-hover:scale-105 group-hover:border-purple-50 grayscale group-hover:grayscale-0 z-10 opacity-70 group-hover:opacity-100">
                 </div>
-                <h5 class="font-black text-slate-900 text-sm uppercase tracking-tight leading-none">Name Surname</h5>
-                <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-2">Physical Therapist</p>
-                <p class="text-[8px] text-purple-400 font-black uppercase mt-1">Tenure: 2021 — 2023</p>
-            </div>
+                <h4 class="font-black text-slate-900 text-sm uppercase tracking-tighter leading-none group-hover:text-purple-600 transition-colors">
+                    Name Surname
+                </h4>
+                <p class="text-[9px] text-slate-400 font-black uppercase tracking-widest mt-2 leading-tight">Physical Therapist</p>
+                <p class="text-[8px] text-purple-400 font-bold uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Read Legacy Bio +</p>
+            </a>
 
             <!-- Alumni 2 -->
-            <div class="group">
-                <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
-                    <img src="alumni-2.jpg" alt="Former Associate" 
-                         class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100">
+            <a href="alumni-2-bio.html" class="text-center group block outline-none">
+                <div class="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-6">
+                    <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                    <img src="alumni-2.jpg" alt="Alumni Name" 
+                         class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-all duration-700 group-hover:scale-105 group-hover:border-purple-50 grayscale group-hover:grayscale-0 z-10 opacity-70 group-hover:opacity-100">
                 </div>
-                <h5 class="font-black text-slate-900 text-sm uppercase tracking-tight leading-none">Name Surname</h5>
-                <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-2">Assistant Physio</p>
-                <p class="text-[8px] text-purple-400 font-black uppercase mt-1">Tenure: 2022 — 2024</p>
-            </div>
+                <h4 class="font-black text-slate-900 text-sm uppercase tracking-tighter leading-none group-hover:text-purple-600 transition-colors">
+                    Name Surname
+                </h4>
+                <p class="text-[9px] text-slate-400 font-black uppercase tracking-widest mt-2 leading-tight">Assistant Physio</p>
+                <p class="text-[8px] text-purple-400 font-bold uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Read Legacy Bio +</p>
+            </a>
 
-            <!-- Add more alumni here following the same structure -->
+            <!-- Add more alumni by copying the block above -->
 
         </div>
 
-        <!-- Professional Note -->
-        <div class="mt-20 text-center">
-            <div class="inline-block p-8 bg-white rounded-[2.5rem] border border-slate-200 shadow-sm max-w-2xl">
-                <p class="text-slate-400 text-xs font-light leading-relaxed">
-                    At Axis, we take pride in the career growth of our associates. Many of our alumni have moved on to advanced specialized research, international clinical practice, and academic leadership worldwide.
+        <!-- Institutional Note -->
+        <div class="mt-32 text-center">
+            <div class="inline-block p-10 bg-white rounded-[3rem] border border-slate-200 shadow-sm max-w-3xl">
+                <p class="text-slate-400 text-sm font-light leading-relaxed uppercase tracking-wider">
+                    Our alumni have moved forward to advanced clinical research and specialized practice worldwide. Axis remains proud of their ongoing contributions to the global medical community.
                 </p>
             </div>
         </div>
     </div>
 </section>
-
     <!-- FEATURED SERVICE: DEEP TISSUE MASSAGE (ELEGANT VERSION) -->
 <section id="deep-tissue-massage" class="py-20 px-4 md:px-8 max-w-7xl mx-auto scroll-mt-24">
     <div class="relative overflow-hidden bg-slate-900 rounded-[3rem] shadow-2xl border border-purple-500/20">
