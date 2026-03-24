@@ -51,6 +51,12 @@
         .purple-gradient { background: linear-gradient(135deg, #581C87 0%, #2E1065 100%); }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #581C87; border-radius: 10px; }
+        svg.lucide {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 2.5px; /* Makes icons look more professional/clinical */
+}
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false, showLegal: false, showCareer: false, activeFaq: 0, isMuted: true, chiroMuted: true, selectedMember: null }">
@@ -1302,13 +1308,32 @@
             </div>
 
             <!-- Social Media & Get Directions Link -->
-            <div class="mt-12 pt-10 border-t border-slate-100 space-y-8">
-                <div class="flex gap-6 justify-center lg:justify-start grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
-                    <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank"><i data-lucide="music-2" class="w-5 h-5"></i></a>
-                    <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                </div>
+            <!-- LEFT SIDE: FIXED SOCIAL MEDIA TAB -->
+<div class="hidden lg:flex fixed left-0 top-1/2 -translate-y-1/2 z-[500] flex-col items-center gap-6 bg-purple-950/90 backdrop-blur-xl border-r border-t border-b border-white/20 py-10 px-4 rounded-r-[2.5rem] text-white shadow-2xl">
+    <span class="[writing-mode:vertical-lr] font-black text-[10px] tracking-[0.4em] uppercase opacity-40 mb-2 select-none whitespace-nowrap">
+        Follow Axis
+    </span>
+    
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" class="hover:text-purple-400 transition-all hover:scale-125 block">
+        <i data-lucide="facebook" class="w-5 h-5"></i>
+    </a>
+    
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" class="hover:text-purple-400 transition-all hover:scale-125 block">
+        <i data-lucide="instagram" class="w-5 h-5"></i>
+    </a>
+    
+    <!-- TikTok (Lucide uses 'music' for TikTok) -->
+    <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" class="hover:text-purple-400 transition-all hover:scale-125 block">
+        <i data-lucide="music" class="w-5 h-5"></i>
+    </a>
+    
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" class="hover:text-purple-400 transition-all hover:scale-125 block">
+        <i data-lucide="youtube" class="w-5 h-5"></i>
+    </a>
+</div>
                 <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="flex items-center justify-center gap-3 bg-purple-600 text-white py-6 rounded-[2rem] font-black shadow-2xl hover:bg-purple-950 transition-all uppercase tracking-widest text-xs">
                     <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions
                 </a>
@@ -1692,25 +1717,34 @@
         </div>
     </div>
 </div>
-    <!-- Lucide Library -->
+    <!-- Lucide Script -->
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
-    // This function runs multiple times to make sure every icon is found and drawn
-    function refreshIcons() {
+    // Function to force-render icons
+    function initAxisIcons() {
         lucide.createIcons();
+        
+        // Manual fix: if any SVGs have 0 width/height, force them to 20px
+        document.querySelectorAll('svg.lucide').forEach(svg => {
+            if(!svg.getAttribute('width')) svg.setAttribute('width', '20');
+            if(!svg.getAttribute('height')) svg.setAttribute('height', '20');
+        });
     }
 
-    // Run once when page loads
-    window.addEventListener('load', refreshIcons);
+    // Run when DOM is ready
+    document.addEventListener('DOMContentLoaded', initAxisIcons);
+    
+    // Run when everything (images/scripts) is fully loaded
+    window.addEventListener('load', initAxisIcons);
 
-    // Run again when Alpine.js is ready
+    // Run when Alpine.js (your menu/modals) triggers changes
     document.addEventListener('alpine:init', () => {
-        refreshIcons();
+        initAxisIcons();
     });
 
-    // Run one last time after a tiny delay just to be sure
-    setTimeout(refreshIcons, 500);
+    // Final safety check after 1 second
+    setTimeout(initAxisIcons, 1000);
 </script>
 </body>
 </html>
