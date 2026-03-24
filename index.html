@@ -51,8 +51,12 @@
         .purple-gradient { background: linear-gradient(135deg, #581C87 0%, #2E1065 100%); }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #581C87; border-radius: 10px; }
+        /* Prevent Ad-Blockers from hiding icons and force correct sizing */
+        .clinical-social-link i, 
+        .clinical-social-link svg, [data-lucide="instagram"], [data-lucide="facebook"], [data-lucide="youtube"] {    display: inline-block !important; width: 24px !important; height: 24px !important; visibility: visible !important; opacity: 1 !important; }
     </style>
 </head>
+    
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false, showLegal: false, showCareer: false, activeFaq: 0, isMuted: true, chiroMuted: true, selectedMember: null }">
     
     <!-- TOP INFO BAR -->
@@ -1261,60 +1265,73 @@
     
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
         
-        <!-- Column 1: Contact & Social Details -->
-        <div class="bg-white p-10 md:p-12 rounded-[4rem] border border-slate-100 shadow-2xl flex flex-col justify-between hover:shadow-purple-100 transition-all duration-500">
-            <div class="space-y-10">
-                <!-- Address -->
-                <div class="flex gap-5 items-start text-left">
-                    <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 shrink-0">
-                        <i data-lucide="map-pin"></i>
-                    </div>
-                    <div>
-                        <p class="font-black text-xl text-slate-900 leading-none tracking-tighter uppercase">Pulchowk-03</p>
-                        <p class="text-slate-400 font-medium text-sm mt-2 leading-relaxed">Opposite Everest Bank Ltd., Near Labim Mall</p>
-                    </div>
-                </div>
-
-                <!-- Landline -->
-                <div class="flex gap-5 items-start text-left">
-                    <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 shrink-0">
-                        <i data-lucide="phone-call"></i>
-                    </div>
-                    <div>
-                        <a href="tel:+97715907651" class="font-black text-xl text-slate-900 hover:text-purple-600 transition tracking-tighter leading-none">01-5907651</a>
-                        <p class="text-slate-400 text-[10px] font-black tracking-widest uppercase mt-2">Clinic Landline</p>
-                    </div>
-                </div>
-
-                <!-- WhatsApp Trio -->
-                <div class="flex gap-5 items-start text-left">
-                    <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 shrink-0">
-                        <i data-lucide="message-square"></i>
-                    </div>
-                    <div>
-                        <p class="font-black text-slate-900 text-sm tracking-tight leading-relaxed">
-                            9868547991 / 9851193951 <br>
-                            <a href="https://wa.me/9779863201528" class="text-green-600 hover:underline">9863201528 (Main)</a>
-                        </p>
-                        <p class="text-slate-400 text-[10px] font-black tracking-widest uppercase mt-1">Viber & WhatsApp</p>
-                    </div>
-                </div>
+        <!-- Column 1: Contact & Social Details (Fixed for Ad-Blockers) -->
+<div class="bg-white p-10 md:p-12 rounded-[4rem] border border-slate-100 shadow-2xl flex flex-col justify-between hover:shadow-purple-100 transition-all duration-500">
+    <div class="space-y-10">
+        <!-- Address -->
+        <div class="flex gap-5 items-start text-left">
+            <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 shrink-0">
+                <i data-lucide="map-pin"></i>
             </div>
-
-            <!-- Social Media & Get Directions Link -->
-            <div class="mt-12 pt-10 border-t border-slate-100 space-y-8">
-                <div class="flex gap-6 justify-center lg:justify-start grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
-                    <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank"><i data-lucide="music-2" class="w-5 h-5"></i></a>
-                    <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                </div>
-                <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="flex items-center justify-center gap-3 bg-purple-600 text-white py-6 rounded-[2rem] font-black shadow-2xl hover:bg-purple-950 transition-all uppercase tracking-widest text-xs">
-                    <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions
-                </a>
+            <div>
+                <p class="font-black text-xl text-slate-900 leading-none tracking-tighter uppercase">Pulchowk-03</p>
+                <p class="text-slate-400 font-medium text-sm mt-2 leading-relaxed">Opposite Everest Bank Ltd., Near Labim Mall</p>
             </div>
         </div>
 
+        <!-- Landline -->
+        <div class="flex gap-5 items-start text-left">
+            <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 shrink-0">
+                <i data-lucide="phone-call"></i>
+            </div>
+            <div>
+                <a href="tel:+97715907651" class="font-black text-xl text-slate-900 hover:text-purple-600 transition tracking-tighter leading-none">01-5907651</a>
+                <p class="text-slate-400 text-[10px] font-black tracking-widest uppercase mt-2">Clinic Landline</p>
+            </div>
+        </div>
+
+        <!-- WhatsApp Trio -->
+        <div class="flex gap-5 items-start text-left">
+            <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 shrink-0">
+                <i data-lucide="message-square"></i>
+            </div>
+            <div>
+                <p class="font-black text-slate-900 text-sm tracking-tight leading-relaxed">
+                    9868547991 / 9851193951 <br>
+                    <a href="https://wa.me/9779863201528" class="text-green-600 hover:underline">9863201528 (Main)</a>
+                </p>
+                <p class="text-slate-400 text-[10px] font-black tracking-widest uppercase mt-1">Viber & WhatsApp</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Section (Bypassing Ad-Blockers) -->
+    <div class="mt-12 pt-10 border-t border-slate-100 space-y-8">
+        <div class="flex gap-6 justify-center lg:justify-start grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" class="clinical-social-link">
+                <i data-lucide="instagram"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" class="clinical-social-link">
+                <i data-lucide="facebook"></i>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" class="clinical-social-link">
+                <i data-lucide="music"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" class="clinical-social-link">
+                <i data-lucide="youtube"></i>
+            </a>
+        </div>
+        
+        <!-- Get Directions Link -->
+        <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="flex items-center justify-center gap-3 bg-purple-600 text-white py-6 rounded-[2rem] font-black shadow-2xl hover:bg-purple-950 transition-all uppercase tracking-widest text-xs">
+            <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions
+        </a>
+    </div>
+</div>
         <!-- Column 2: Visual Route Guide (Video) -->
         <div class="relative h-[550px] lg:h-[500px] rounded-[4rem] overflow-hidden shadow-2xl border-[14px] border-white bg-slate-900 group" x-data="{ isMuted: true }">
             <video x-ref="v" autoplay loop muted playsinline oncanplay="this.play()" 
@@ -1691,5 +1708,16 @@
         </div>
     </div>
 </div>
+
+    <script>
+    function refreshAxisIcons() {
+        lucide.createIcons();
+    }
+    // Load icons immediately
+    refreshAxisIcons();
+    // Re-check after 1 second for safety
+    setTimeout(refreshAxisIcons, 1000);
+</script>
+    
 </body>
 </html>
