@@ -1725,9 +1725,25 @@
         </div>
     </div>
 </div>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Library -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <script>
-  lucide.createIcons();
+    // This function runs multiple times to make sure every icon is found and drawn
+    function refreshIcons() {
+        lucide.createIcons();
+    }
+
+    // Run once when page loads
+    window.addEventListener('load', refreshIcons);
+
+    // Run again when Alpine.js is ready
+    document.addEventListener('alpine:init', () => {
+        refreshIcons();
+    });
+
+    // Run one last time after a tiny delay just to be sure
+    setTimeout(refreshIcons, 500);
 </script>
 </body>
 </html>
