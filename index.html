@@ -163,43 +163,85 @@
     </div>
 </div>
 
-    <!-- HERO SECTION (65vh, Balanced Typography) -->
-    <section class="relative h-[65vh] flex items-center justify-center overflow-hidden pt-20">
-        <div class="absolute inset-0 z-0"><img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Axis Physiotherapy Pulchowk"></div>
-        
-        <!-- DUAL SIDE TABS -->
-        <div class="absolute left-0 top-1/2 -translate-y-1/2 z-30 hidden md:block">
-            <div class="flex flex-col items-center gap-6 bg-white/10 backdrop-blur-md border-r border-t border-b border-white/20 py-10 px-3 rounded-r-[2.5rem] text-white">
-                <span class="[writing-mode:vertical-lr] font-bold text-[10px] tracking-[0.3em] uppercase opacity-50">Follow us</span>
-                <a href="https://facebook.com/axisphysiotherapynepal" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                <a href="https://instagram.com/axisphysio.nepal/" target="_blank" class="hover:text-purple-400 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-            </div>
+    <!-- HERO SECTION: 65vh MASTER INTEGRATED VERSION -->
+<section class="relative h-[65vh] w-full flex items-center justify-center overflow-visible pt-20 bg-slate-950">
+    
+    <!-- 1. Background Image (Contained so it doesn't bleed into other sections) -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Axis Physiotherapy Pulchowk">
+    </div>
+    
+    <!-- 2. LEFT SIDE: FLOATING SOCIAL MEDIA TAB (Desktop & Tablet) -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
+        <div class="flex flex-col items-center gap-6 bg-white/10 backdrop-blur-md border-r border-t border-b border-white/20 py-10 px-4 rounded-r-[2.5rem] text-white shadow-2xl">
+            <span class="[writing-mode:vertical-lr] font-black text-[10px] tracking-[0.4em] uppercase opacity-40 mb-2 select-none whitespace-nowrap">
+                Follow Axis
+            </span>
+            <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" rel="noopener" class="hover:text-purple-400 transition-all hover:scale-125"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" rel="noopener" class="hover:text-purple-400 transition-all hover:scale-125"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" rel="noopener" class="hover:text-purple-400 transition-all hover:scale-125"><i data-lucide="music-2" class="w-5 h-5"></i></a>
+            <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" rel="noopener" class="hover:text-purple-400 transition-all hover:scale-125"><i data-lucide="youtube" class="w-5 h-5"></i></a>
         </div>
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 z-30 hidden md:block">
-            <a href="#team" class="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md border-l border-t border-b border-white/20 py-10 px-3 rounded-l-[2.5rem] hover:bg-purple-600 hover:translate-x-[-5px] transition-all group">
-                <i data-lucide="users" class="w-5 h-5 text-purple-300 group-hover:text-white"></i>
-                <span class="[writing-mode:vertical-lr] rotate-180 font-bold text-[11px] tracking-[0.2em] text-white uppercase">Meet our team</span>
-            </a>
+    </div>
+
+    <!-- 3. RIGHT SIDE: FLOATING TEAM TAB (Desktop & Tablet) -->
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 z-50 hidden md:block">
+        <a href="#team" class="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md border-l border-t border-b border-white/20 py-10 px-4 rounded-l-[2.5rem] hover:bg-purple-600 hover:translate-x-[-5px] transition-all group shadow-2xl">
+            <i data-lucide="users" class="w-5 h-5 text-purple-300 group-hover:text-white transition-colors"></i>
+            <span class="[writing-mode:vertical-lr] rotate-180 font-black text-[10px] tracking-[0.4em] text-white uppercase whitespace-nowrap leading-none">
+                Meet our team
+            </span>
+        </a>
+    </div>
+
+    <!-- 4. CENTRAL CONTENT AREA -->
+    <div class="relative z-10 text-center text-white px-4 md:px-6 w-full max-w-7xl flex flex-col items-center">
+        
+        <!-- Trilingual Greetings -->
+        <div class="mb-4 md:mb-6 space-y-1 animate-pulse font-light tracking-[0.3em] text-purple-200 text-xs sm:text-sm uppercase">
+            <p class="nepali-font">नमस्ते! एक्सिस फिजियोथेरापीमा तपाईंलाई स्वागत छ।</p>
+            <p class="nepali-font">ज्वजलपा! एक्सिस फिजियोथेरापीइ लसकुस।</p>
         </div>
 
-        <div class="relative z-10 text-center text-white px-4 w-full max-w-7xl">
-            <div class="mb-4 space-y-1 animate-pulse font-light tracking-[0.3em] text-purple-200 text-xs sm:text-sm uppercase">
-                <p class="nepali-font">नमस्ते! एक्सिस फिजियोथेरापीमा तपाईंलाई स्वागत छ।</p>
-                <p class="nepali-font">ज्वजलपा! एक्सिस फिजियोथेरापीइ लसकुस।</p>
-            </div>
-            <h1 class="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tighter leading-none uppercase whitespace-nowrap">Health. Fitness. Wellness.</h1>
-            <p class="text-xs sm:text-lg max-w-2xl mx-auto mb-10 font-light text-slate-200 leading-relaxed uppercase tracking-wider">Premium recovery and the most trusted <strong>physiotherapy clinic near me</strong> in Pulchowk.</p>
+        <!-- Headline: Straight, Balanced, and Non-breaking -->
+        <h1 class="text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 tracking-tighter leading-none uppercase whitespace-nowrap text-center w-full block">
+            Health. Fitness. Wellness.
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="text-[10px] sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-light text-slate-200 leading-relaxed uppercase tracking-widest">
+            Premium recovery and the most trusted <strong>physiotherapy clinic near me</strong> in Pulchowk.
+        </p>
+        
+        <!-- 6-BUTTON SMART GRID -->
+        <div class="grid grid-cols-2 gap-2.5 md:flex md:flex-row md:gap-3 justify-center items-center w-full max-w-lg mx-auto md:max-w-none">
             
-            <div class="grid grid-cols-2 gap-2.5 md:flex md:flex-row md:gap-3 justify-center items-center w-full max-w-lg mx-auto md:max-w-none">
-                <a href="#free-consultation" class="flex items-center justify-center bg-white text-purple-950 px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-black hover:bg-purple-600 transition shadow-xl uppercase tracking-tighter border border-purple-200">Consultation (FREE)</a>
-                <a href="https://wa.me/9779863201528" class="flex items-center justify-center bg-purple-600 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-black hover:bg-purple-800 transition shadow-xl uppercase tracking-tighter gap-1.5"><i data-lucide="video" class="w-3 h-3 md:w-4 md:h-4"></i> Online Consult</a>
-                <a href="#services" class="flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition uppercase tracking-tighter">Services</a>
-                <a href="#deep-tissue-massage" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter font-sans"><i data-lucide="hand" class="w-3 h-3 md:w-4 md:h-4"></i> Massage</a>
-                <a href="#chiropractic-care" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/10 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter font-sans"><i data-lucide="activity" class="w-3 h-3 md:w-4 md:h-4"></i> Chiro</a>
-                <a href="tel:+97715907651" class="col-span-2 md:col-span-1 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter shadow-inner font-sans"><i data-lucide="phone" class="w-3 h-3 md:w-4 md:h-4"></i> Call Now</a>
-            </div>
+            <a href="#free-consultation" class="flex items-center justify-center bg-white text-purple-950 px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-black hover:bg-purple-600 hover:text-white transition shadow-xl uppercase tracking-tighter border border-purple-200 active:scale-95">
+                Consultation (FREE)
+            </a>
+
+            <a href="https://wa.me/9779863201528" class="flex items-center justify-center bg-purple-600 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-black hover:bg-purple-800 transition shadow-xl uppercase tracking-tighter gap-1.5 active:scale-95">
+                <i data-lucide="video" class="w-3 h-3 md:w-4 md:h-4"></i> Online Consult
+            </a>
+
+            <a href="#services" class="flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition uppercase tracking-tighter">
+                Services
+            </a>
+
+            <a href="#deep-tissue-massage" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter">
+                <i data-lucide="hand" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i> Massage
+            </a>
+
+            <a href="#chiropractic-care" class="flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/10 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter">
+                <i data-lucide="activity" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i> Chiro
+            </a>
+            
+            <a href="tel:+97715907651" class="col-span-2 md:col-span-1 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-2 py-4 md:px-6 rounded-full text-[10px] sm:text-xs md:text-sm font-bold hover:bg-white/20 transition gap-1.5 uppercase tracking-tighter shadow-inner">
+                <i data-lucide="phone" class="w-3 h-3 md:w-4 md:h-4 text-purple-200"></i> Call Now
+            </a>
         </div>
-    </section>
+    </div>
+</section>
         
         <!-- TRUST BAR -->
     <div class="bg-white py-10 border-b">
