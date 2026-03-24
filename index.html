@@ -1567,6 +1567,134 @@
 
     <!-- MODALS SECTION -->
     
+    
+    
+    <!-- 2. LEGAL DISCLOSURE MODAL -->
+    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
+            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
+                <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
+                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase tracking-tighter">Legal Disclosure</h3>
+                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar">
+                        <div>
+                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Medical Disclaimer</h4>
+                            <p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Privacy Standards</h4>
+                            <p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black">
+                    <button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FLOAT WHATSAPP -->
+    <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
+
+    <script>
+        lucide.createIcons();
+        document.addEventListener('alpine:init', () => {
+            Alpine.effect(() => { lucide.createIcons(); });
+        });
+    </script>
+    
+    <!-- DYNAMIC TEAM BIO MODAL (Yesterday Style) -->
+<div x-show="selectedMember" x-cloak class="fixed inset-0 z-[600] overflow-y-auto px-4" role="dialog">
+    <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-purple-950/95 backdrop-blur-xl transition-opacity" @click="selectedMember = null"></div>
+
+        <div class="inline-block align-bottom bg-white rounded-[3rem] text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border-[12px] border-white">
+            <div class="bg-white grid md:grid-cols-2">
+                <!-- Photo Side -->
+                <div class="relative h-64 md:h-full bg-slate-100">
+                    <img :src="selectedMember === 'sherin' ? 'sherin-dp.jpg' : 
+                               selectedMember === 'suruchi' ? 'suruchipp.jpeg' : 
+                               selectedMember === 'pankesh' ? 'pankesh-dp.jpg' : 
+                               selectedMember === 'pasang' ? 'pasang-dp.jpg' : 'khushbu-dp.jpg'" 
+                         class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="p-8 md:p-12 lg:p-16 relative">
+                    <button @click="selectedMember = null" class="absolute top-6 right-6 text-slate-300 hover:text-purple-600 transition">
+                        <i data-lucide="x-circle" class="w-10 h-10"></i>
+                    </button>
+
+                    <!-- Sherin -->
+                    <template x-if="selectedMember === 'sherin'">
+                        <div>
+                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Sherin Shrestha</h3>
+                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Director & Visionary</p>
+                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                <p>Sherin Shrestha leads Axis Physiotherapy with a mission to bring world-class rehabilitation standards to Nepal. Her focus is on clinical excellence and ensuring every patient receives personalized care.</p>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: NHPC Verified</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Suruchi -->
+                    <template x-if="selectedMember === 'suruchi'">
+                        <div>
+                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Suruchi Dev</h3>
+                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Consultant Physiotherapist</p>
+                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                <p>Dr. Suruchi Dev is a highly experienced clinical consultant specializing in complex musculoskeletal assessments and recovery planning.</p>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-1169 PHY</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Pankesh -->
+                    <template x-if="selectedMember === 'pankesh'">
+                        <div>
+                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Pankesh Sharma</h3>
+                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Clinical Physiotherapist</p>
+                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                <p>Specializing in PIVD (Slip Disc) and Sports Injuries, Dr. Pankesh is known for his hands-on manual therapy techniques and high patient success rates.</p>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-1890 PHY</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Pasang -->
+                    <template x-if="selectedMember === 'pasang'">
+                        <div>
+                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Pasang Sherpa</h3>
+                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Consultant Physiotherapist</p>
+                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                <p>Expert in Neurological Rehabilitation and Stroke recovery. Dr. Pasang focuses on restoring functional independence for patients with long-term conditions.</p>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: S-334 PHY</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Khushbu -->
+                    <template x-if="selectedMember === 'khushbu'">
+                        <div>
+                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Khushbu KC</h3>
+                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Clinical Physiotherapist</p>
+                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                <p>Dr. Khushbu leads our <strong>physio home care</strong> units and specializes in general clinical recovery and postnatal rehabilitation.</p>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-2229 PHY</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="mt-12">
+                        <a href="tel:+97715907651" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-purple-950 transition-all shadow-xl">Book with specialist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- 1. CAREER APPLICATION MODAL (Compact No-Scroll Design) -->
 <div x-show="showCareer" 
      x-cloak 
@@ -1699,133 +1827,6 @@
         </div>
     </div>
 </div>
-    
-    <!-- 2. LEGAL DISCLOSURE MODAL -->
-    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
-        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
-            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
-                <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
-                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase tracking-tighter">Legal Disclosure</h3>
-                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar">
-                        <div>
-                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Medical Disclaimer</h4>
-                            <p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p>
-                        </div>
-                        <div>
-                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Privacy Standards</h4>
-                            <p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black">
-                    <button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FLOAT WHATSAPP -->
-    <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
-
-    <script>
-        lucide.createIcons();
-        document.addEventListener('alpine:init', () => {
-            Alpine.effect(() => { lucide.createIcons(); });
-        });
-    </script>
-    
-    <!-- DYNAMIC TEAM BIO MODAL (Yesterday Style) -->
-<div x-show="selectedMember" x-cloak class="fixed inset-0 z-[600] overflow-y-auto px-4" role="dialog">
-    <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
-        <div class="fixed inset-0 bg-purple-950/95 backdrop-blur-xl transition-opacity" @click="selectedMember = null"></div>
-
-        <div class="inline-block align-bottom bg-white rounded-[3rem] text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border-[12px] border-white">
-            <div class="bg-white grid md:grid-cols-2">
-                <!-- Photo Side -->
-                <div class="relative h-64 md:h-full bg-slate-100">
-                    <img :src="selectedMember === 'sherin' ? 'sherin-dp.jpg' : 
-                               selectedMember === 'suruchi' ? 'suruchipp.jpeg' : 
-                               selectedMember === 'pankesh' ? 'pankesh-dp.jpg' : 
-                               selectedMember === 'pasang' ? 'pasang-dp.jpg' : 'khushbu-dp.jpg'" 
-                         class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
-                </div>
-
-                <!-- Text Side -->
-                <div class="p-8 md:p-12 lg:p-16 relative">
-                    <button @click="selectedMember = null" class="absolute top-6 right-6 text-slate-300 hover:text-purple-600 transition">
-                        <i data-lucide="x-circle" class="w-10 h-10"></i>
-                    </button>
-
-                    <!-- Sherin -->
-                    <template x-if="selectedMember === 'sherin'">
-                        <div>
-                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Sherin Shrestha</h3>
-                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Director & Visionary</p>
-                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
-                                <p>Sherin Shrestha leads Axis Physiotherapy with a mission to bring world-class rehabilitation standards to Nepal. Her focus is on clinical excellence and ensuring every patient receives personalized care.</p>
-                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: NHPC Verified</p>
-                            </div>
-                        </div>
-                    </template>
-
-                    <!-- Suruchi -->
-                    <template x-if="selectedMember === 'suruchi'">
-                        <div>
-                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Suruchi Dev</h3>
-                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Consultant Physiotherapist</p>
-                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
-                                <p>Dr. Suruchi Dev is a highly experienced clinical consultant specializing in complex musculoskeletal assessments and recovery planning.</p>
-                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-1169 PHY</p>
-                            </div>
-                        </div>
-                    </template>
-
-                    <!-- Pankesh -->
-                    <template x-if="selectedMember === 'pankesh'">
-                        <div>
-                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Pankesh Sharma</h3>
-                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Clinical Physiotherapist</p>
-                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
-                                <p>Specializing in PIVD (Slip Disc) and Sports Injuries, Dr. Pankesh is known for his hands-on manual therapy techniques and high patient success rates.</p>
-                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-1890 PHY</p>
-                            </div>
-                        </div>
-                    </template>
-
-                    <!-- Pasang -->
-                    <template x-if="selectedMember === 'pasang'">
-                        <div>
-                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Pasang Sherpa</h3>
-                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Consultant Physiotherapist</p>
-                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
-                                <p>Expert in Neurological Rehabilitation and Stroke recovery. Dr. Pasang focuses on restoring functional independence for patients with long-term conditions.</p>
-                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: S-334 PHY</p>
-                            </div>
-                        </div>
-                    </template>
-
-                    <!-- Khushbu -->
-                    <template x-if="selectedMember === 'khushbu'">
-                        <div>
-                            <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Khushbu KC</h3>
-                            <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Clinical Physiotherapist</p>
-                            <div class="space-y-4 text-slate-600 font-light leading-relaxed">
-                                <p>Dr. Khushbu leads our <strong>physio home care</strong> units and specializes in general clinical recovery and postnatal rehabilitation.</p>
-                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-2229 PHY</p>
-                            </div>
-                        </div>
-                    </template>
-
-                    <div class="mt-12">
-                        <a href="tel:+97715907651" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-purple-950 transition-all shadow-xl">Book with specialist</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
     <script>
     function refreshAxisIcons() {
         lucide.createIcons();
@@ -1835,5 +1836,6 @@
     // Re-check after 1 second for safety
     setTimeout(refreshAxisIcons, 1000);
 </script>
+    
 </body>
 </html>
