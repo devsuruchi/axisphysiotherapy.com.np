@@ -172,39 +172,44 @@
         <div class="absolute inset-0 z-0"><img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Axis Physiotherapy Pulchowk"></div>
         
         <!-- DUAL SIDE TABS -->
-        <!-- LEFT SIDE: FLOATING SOCIAL MEDIA TAB -->
-<div class="absolute left-0 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
-    <div class="flex flex-col items-center gap-7 bg-white/10 backdrop-blur-xl border-r border-t border-b border-white/20 py-12 px-4 rounded-r-[3rem] text-white shadow-2xl transition-all duration-500 hover:bg-purple-950/30">
+        <<!-- LEFT SIDE: FLOATING SOCIAL MEDIA TAB (WITH BRIGHT PURPLE GLOW) -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 z-50 hidden lg:block group/master">
+    <!-- The Glow Layer (Hidden until master hover) -->
+    <div class="absolute inset-0 bg-purple-600/40 blur-3xl rounded-r-[3rem] opacity-0 group-hover/master:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+    <!-- The Container -->
+    <div class="relative flex flex-col items-center gap-8 bg-slate-950/40 backdrop-blur-2xl border-r border-t border-b border-white/20 py-12 px-5 rounded-r-[3rem] text-white shadow-2xl transition-all duration-500 group-hover/master:border-purple-500 group-hover/master:bg-purple-950/40 group-hover/master:shadow-[0_0_40px_rgba(139,92,246,0.5)]">
         
-        <!-- Vertical Label: Straight & Bold -->
-        <span class="[writing-mode:vertical-lr] font-black text-[10px] tracking-[0.4em] uppercase text-purple-200 opacity-40 mb-4 select-none whitespace-nowrap leading-none">
+        <!-- Vertical Label: Straight & Extra Bold -->
+        <span class="[writing-mode:vertical-lr] font-black text-[10px] tracking-[0.5em] uppercase text-purple-200 opacity-40 mb-2 select-none whitespace-nowrap leading-none group-hover/master:opacity-100 transition-opacity duration-500">
             Follow Axis
         </span>
 
-        <!-- Precise SVG Icons (Ad-Blocker Proof) -->
-        <div class="flex flex-col gap-7">
+        <!-- SVG Icons (Ad-Blocker Proof) -->
+        <div class="flex flex-col gap-8">
             <!-- Instagram -->
-            <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125">
+            <a href="https://www.instagram.com/axisphysio.nepal/" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125 drop-shadow-[0_0_8px_rgba(168,85,247,0)] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </a>
 
             <!-- Facebook -->
-            <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125">
+            <a href="https://www.facebook.com/axisphysiotherapynepal" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125 drop-shadow-[0_0_8px_rgba(168,85,247,0)] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
 
             <!-- TikTok -->
-            <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125">
+            <a href="https://www.tiktok.com/@axisphysiotherapynepal" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125 drop-shadow-[0_0_8px_rgba(168,85,247,0)] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
             </a>
 
             <!-- YouTube -->
-            <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125">
+            <a href="https://www.youtube.com/@axisphysiotherapy910" target="_blank" rel="noopener" class="text-white hover:text-purple-400 transition-all hover:scale-125 drop-shadow-[0_0_8px_rgba(168,85,247,0)] hover:drop-shadow-[0_0_8_rgba(168,85,247,0.8)]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
             </a>
         </div>
     </div>
 </div>
+            
         <!-- Right SIDE: MEET OUR TEAM TAB -->
         <div class="absolute right-0 top-1/2 -translate-y-1/2 z-30 hidden md:block">
             <a href="#team" class="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md border-l border-t border-b border-white/20 py-10 px-3 rounded-l-[2.5rem] hover:bg-purple-600 hover:translate-x-[-5px] transition-all group">
