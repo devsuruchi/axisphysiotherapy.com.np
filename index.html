@@ -57,7 +57,15 @@
     </style>
 </head>
     
-<body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false, showLegal: false, showCareer: false, activeFaq: 0, isMuted: true, chiroMuted: true, qualification: '', formSubmitted: false }">
+<body class="bg-slate-50 text-slate-900" x-data="{ 
+    mobileMenu: false, 
+    showLegal: false, 
+    showCareer: false, 
+    formSubmitted: false, 
+    qualification: '',
+    activeFaq: 0,
+    isMuted: true
+}">
     
     <!-- TOP INFO BAR -->
     <div class="hidden lg:block bg-purple-950 text-purple-200 py-2.5 text-[10px] uppercase tracking-[0.3em] border-b border-white/5 relative z-[110]">
@@ -1770,15 +1778,40 @@
     </div>
 </div>
     
-    <script>
-    function refreshAxisIcons() {
-        lucide.createIcons();
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+
+    async function submitForm(event) {
+        const form = event.target;
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.innerText = "SENDING...";
+        submitBtn.disabled = true;
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                // This manually triggers the Thank You screen in the modal
+                const alpineData = document.querySelector('body').__x.$data;
+                alpineData.formSubmitted = true;
+                form.reset();
+            } else {
+                alert("Submission failed. Please check the fields.");
+                submitBtn.innerText = "Submit Application";
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            alert("Network error. Try again.");
+            submitBtn.innerText = "Submit Application";
+            submitBtn.disabled = false;
+        }
     }
-    // Load icons immediately
-    refreshAxisIcons();
-    // Re-check after 1 second for safety
-    setTimeout(refreshAxisIcons, 1000);
 </script>
-    
 </body>
 </html>
