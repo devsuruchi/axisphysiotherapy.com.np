@@ -54,6 +54,15 @@
         /* Prevent Ad-Blockers from hiding icons and force correct sizing */
         .clinical-social-link i, 
         .clinical-social-link svg, [data-lucide="instagram"], [data-lucide="facebook"], [data-lucide="youtube"] {    display: inline-block !important; width: 24px !important; height: 24px !important; visibility: visible !important; opacity: 1 !important; }
+    [x-cloak] { display: none !important; }
+
+/* Ensure the modal doesn't show up on page load */
+.modal-overlay {
+    display: none;
+}
+.modal-overlay[style*="display: block"], .modal-overlay:not([style*="display: none"]) {
+    display: flex;
+}
     </style>
 </head>
     
@@ -1708,72 +1717,108 @@
     </div>
 </div>
 
-    <!-- CAREER MODAL: BULLETPROOF VERSION -->
+    <!-- CAREER MODAL: REBUILT & STABLE -->
 <div x-show="showCareer" 
      x-cloak 
-     class="fixed inset-0 z-[999] flex items-center justify-center p-4 overflow-hidden" 
+     class="fixed inset-0 z-[999] flex items-center justify-center p-4" 
      role="dialog">
     
-    <!-- Background Overlay: Darker & More Blur to fix Hero Contrast issue -->
-    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl transition-opacity" 
+    <!-- Dark Backdrop -->
+    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-2xl" 
          @click="showCareer = false; formSubmitted = false"></div>
 
-    <!-- Modal Box -->
-    <div class="relative bg-white rounded-[3rem] w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-2xl border-[10px] border-purple-100 flex flex-col transition-all">
+    <!-- Modal Content Box -->
+    <div class="relative bg-white rounded-[3rem] w-full max-w-5xl max-h-[92vh] shadow-2xl border-[12px] border-purple-100 overflow-hidden flex flex-col z-[1000]">
         
-        <!-- PART 1: THE FORM -->
-        <div x-show="!formSubmitted" class="flex flex-col h-full">
-            <!-- Header -->
-            <div class="px-10 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+        <!-- Header -->
+        <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+            <div>
                 <h3 class="text-2xl font-black uppercase tracking-tighter text-purple-950">Join Axis Team</h3>
-                <button @click="showCareer = false" class="text-slate-300 hover:text-purple-600 transition">
-                    <i data-lucide="x-circle" class="w-8 h-8"></i>
-                </button>
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">We highly appreciate your interest in our vibrant team</p>
             </div>
+            <button @click="showCareer = false" class="text-slate-300 hover:text-purple-600 transition">
+                <i data-lucide="x-circle" class="w-10 h-10"></i>
+            </button>
+        </div>
 
+        <!-- PART A: THE FORM -->
+        <div x-show="!formSubmitted" class="flex-1 overflow-y-auto p-8 md:p-12 custom-scrollbar font-sans">
             <form action="https://formspree.io/f/mzdjqqeg" 
                   method="POST" 
                   enctype="multipart/form-data" 
-                  @submit.prevent="submitForm($event)"
-                  class="flex-1 overflow-y-auto p-10 space-y-8 font-sans">
+                  @submit.prevent="submitForm($event)">
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Fields -->
-                    <div class="space-y-1"><label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Full Name</label><input type="text" name="Name" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:border-purple-600 outline-none text-sm font-medium"></div>
-                    <div class="space-y-1"><label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Age / Sex</label><input type="text" name="AgeSex" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
-                    <div class="space-y-1"><label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Contact</label><input type="tel" name="Phone" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
+                        <input type="text" name="Name" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:border-purple-600 outline-none text-sm font-medium">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Age / Sex</label>
+                        <input type="text" name="AgeSex" required placeholder="e.g. 28 / Female" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Contact No.</label>
+                        <input type="tel" name="Phone" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                    </div>
                     
                     <div class="space-y-1">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Qualification</label>
-                        <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium appearance-none">
-                            <option value="">Select</option><option value="10">10</option><option value="+2">+2</option><option value="BPT">BPT</option><option value="MPT">MPT</option><option value="Others">Others</option>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Qualification</label>
+                        <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                            <option value="">Select</option>
+                            <option value="10">10</option>
+                            <option value="+2">+2</option>
+                            <option value="BPT">BPT</option>
+                            <option value="MPT">MPT</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>
 
-                    <div class="space-y-1" x-show="qualification === 'MPT'" x-cloak x-transition>
-                        <label class="text-[10px] font-black uppercase tracking-widest text-purple-600">MPT Specialization</label>
-                        <input type="text" name="Specialization" placeholder="e.g. Neuro" class="w-full bg-purple-50 border border-purple-100 p-4 rounded-xl outline-none text-sm font-medium">
+                    <!-- MPT Logic -->
+                    <div class="space-y-1" x-show="qualification === 'MPT'" x-cloak>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-purple-600">Specialization</label>
+                        <input type="text" name="Specialization" placeholder="e.g. Neurology" class="w-full bg-purple-50 border border-purple-200 p-4 rounded-xl outline-none text-sm font-medium">
                     </div>
 
-                    <div class="space-y-1"><label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Position</label><select name="Pos" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Physiotherapist</option><option>Therapist</option><option>CPT OJT</option></select></div>
+                    <div class="space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Setting</label>
+                        <select name="Setting" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                            <option>Clinic</option><option>Hospital</option><option>Both</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Time</label>
+                        <select name="Type" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                            <option>Full Time</option><option>Part Time</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2 space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Current Address</label>
+                        <input type="text" name="Address" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
-                    <div class="relative bg-purple-50 border-2 border-dashed border-purple-200 p-6 rounded-2xl text-center group cursor-pointer">
+                <!-- Footer Actions -->
+                <div class="grid md:grid-cols-2 gap-8 items-center border-t pt-8">
+                    <div class="relative bg-purple-50 border-2 border-dashed border-purple-200 p-8 rounded-3xl text-center group">
                         <input type="file" name="CV" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-purple-900">Attach CV (PDF)</p>
+                        <p class="font-black text-purple-900 uppercase text-xs">Attach CV (PDF)</p>
                     </div>
-                    <button type="submit" class="w-full bg-purple-600 text-white p-6 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-purple-950 transition-all">Submit Application</button>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-lg uppercase tracking-widest hover:bg-purple-950 transition-all shadow-xl">
+                        Submit Application
+                    </button>
                 </div>
             </form>
         </div>
 
-        <!-- PART 2: THANK YOU -->
-        <div x-show="formSubmitted" class="flex-1 flex flex-col items-center justify-center p-20 text-center space-y-6">
-            <i data-lucide="party-popper" class="w-16 h-16 text-purple-600"></i>
-            <h3 class="text-5xl font-black uppercase tracking-tighter text-purple-950 leading-none">Thank You.</h3>
-            <p class="text-slate-500 font-light max-w-sm mx-auto">We appreciate your interest in our vibrant team. We will get back to you soon.</p>
-            <button @click="showCareer = false; formSubmitted = false" class="bg-slate-950 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-[10px]">Close</button>
+        <!-- PART B: THANK YOU VIEW -->
+        <div x-show="formSubmitted" class="flex-1 flex flex-col items-center justify-center p-12 text-center">
+            <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-8"><i data-lucide="check" class="w-12 h-12"></i></div>
+            <h3 class="text-5xl font-black uppercase tracking-tighter text-purple-950 mb-4">Thank You.</h3>
+            <p class="text-slate-500 font-light max-w-sm mb-10">Your clinical application has been received. We will get back to you soon.</p>
+            <button @click="showCareer = false; formSubmitted = false" class="bg-slate-950 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs">Return to Axis</button>
         </div>
     </div>
 </div>
@@ -1797,17 +1842,20 @@
             });
 
             if (response.ok) {
-                // This manually triggers the Thank You screen in the modal
-                const alpineData = document.querySelector('body').__x.$data;
-                alpineData.formSubmitted = true;
+                // FORCE THE THANK YOU SCREEN
+                // This targets the body scope and flips the variable
+                const alpine = document.querySelector('body');
+                if (alpine && alpine.__x) {
+                    alpine.__x.$data.formSubmitted = true;
+                }
                 form.reset();
             } else {
-                alert("Submission failed. Please check the fields.");
+                alert("Please check your details and try again.");
                 submitBtn.innerText = "Submit Application";
                 submitBtn.disabled = false;
             }
         } catch (error) {
-            alert("Network error. Try again.");
+            alert("Network error. Please try again.");
             submitBtn.innerText = "Submit Application";
             submitBtn.disabled = false;
         }
