@@ -1179,27 +1179,13 @@
         </div>
     </div>
 
-    <!-- 3. LEGAL MODAL -->
-    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
-        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
-            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
-                <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
-                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase tracking-tighter leading-none">Legal Disclosure</h3>
-                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar">
-                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Medical Disclaimer</h4><p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p></div>
-                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Privacy Standards</h4><p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p></div>
-                    </div>
-                </div>
-                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black"><button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button></div>
-            </div>
-        </div>
-    </div>
+   <!-- FOOTER & MODALS SLOT -->
+    <!-- This single div will now pull in everything from footer.html -->
+    <div id="footer-placeholder"></div>
 
-    <!-- FLOAT WHATSAPP -->
-    <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
-
-    <!-- THE SCRIPT LOADER -->
+    <!-- THE MAGIC LOADER SCRIPT -->
+    <!-- This must be the very last thing before your closing body tag -->
     <script src="components.js"></script>
+
 </body>
 </html>
