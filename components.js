@@ -15,6 +15,7 @@ async function loadAxisComponents() {
         { id: 'about-placeholder', url: 'about.html' },
         { id: 'consult-placeholder', url: 'consultation.html' },
         { id: 'conditions-placeholder', url: 'conditions.html' },
+        { id: 'services-placeholder', url: 'services.html' },
         { id: 'reviews-placeholder', url: 'reviews.html' },
         { id: 'contact-placeholder', url: 'contact.html' },
         { id: 'footer-placeholder', url: 'footer.html' } 
