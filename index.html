@@ -1341,51 +1341,7 @@
     <!-- FLOAT WHATSAPP -->
     <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
 
-    <!-- FINAL SCRIPTS -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        // Initialize Icons
-        function initIcons() {
-            lucide.createIcons();
-        }
-
-        // AJAX Form Submission Logic
-        async function submitForm(event) {
-            const form = event.target;
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('button[type="submit"]');
-            
-            submitBtn.innerText = "SENDING...";
-            submitBtn.disabled = true;
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    // Logic to find Alpine data and toggle view
-                    // This creates a custom event that the <body> listens for
-                    window.dispatchEvent(new CustomEvent('form-success'));
-                    form.reset();
-                } else {
-                    alert("Submission error. Please check your network or fields.");
-                    submitBtn.innerText = "Submit Application";
-                    submitBtn.disabled = false;
-                }
-            } catch (error) {
-                alert("Network error. Please try again.");
-                submitBtn.innerText = "Submit Application";
-                submitBtn.disabled = false;
-            }
-        }
-
-        window.addEventListener('load', initIcons);
-        document.addEventListener('alpine:init', () => {
-            initIcons();
-        });
-    </script>
+    <!-- THE SCRIPT LOADER -->
+    <script src="components.js"></script>
 </body>
 </html>
