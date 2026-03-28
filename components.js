@@ -12,7 +12,8 @@ async function loadAxisComponents() {
         { id: 'header-placeholder', url: 'header.html' },
         { id: 'hero-placeholder', url: 'hero.html' }, // ADD THIS LINE
         { id: 'footer-placeholder', url: 'footer.html' },
-        { id: 'reviews-placeholder', url: 'reviews.html' }
+        { id: 'reviews-placeholder', url: 'reviews.html' },
+        { id: 'contact-placeholder', url: 'find-us.html' }
     ];
 
     for (const component of components) {
