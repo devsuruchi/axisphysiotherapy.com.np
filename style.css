@@ -100,3 +100,19 @@ p, span, li, label {
 /* 6. ALIGNMENT HELPERS */
 .tracking-tighter { letter-spacing: -0.05em; }
 .tracking-widest { letter-spacing: 0.3em; }
+
+/* Sticky Sidebar for Reviews */
+@media (min-width: 1024px) {
+    .lg\:sticky {
+        position: sticky;
+        top: 8rem; /* Adjust based on your nav height */
+        align-self: start;
+    }
+}
+
+/* Background Title for Reviews */
+#reviews .absolute h2 {
+    font-size: 25vw; /* Makes it fluid and huge */
+    line-height: 0.8;
+    color: #e2e8f0; /* Very light slate */
+}
