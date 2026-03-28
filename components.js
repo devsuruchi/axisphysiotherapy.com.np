@@ -10,6 +10,7 @@
 async function loadAxisComponents() {
     const components = [
         { id: 'header-placeholder', url: 'header.html' },
+        { id: 'hero-placeholder', url: 'hero.html' }, // ADD THIS LINE
         { id: 'footer-placeholder', url: 'footer.html' },
         { id: 'reviews-placeholder', url: 'reviews.html' }
     ];
@@ -28,7 +29,7 @@ async function loadAxisComponents() {
         }
     }
 
-    // Initialize icons after HTML is injected
+    // Initialize icons after ALL HTML is injected
     if (window.lucide) {
         lucide.createIcons();
     }
