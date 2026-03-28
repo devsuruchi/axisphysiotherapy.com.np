@@ -1,1 +1,268 @@
 
+ <!-- FOOTER -->
+    <footer class="bg-purple-950 text-white pt-24 pb-12 rounded-t-[5rem] border-t-8 border-purple-600/20 font-sans uppercase">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
+            <div><h5 class="font-black mb-8 uppercase tracking-[0.2em] text-purple-400 text-xs">Care Programs</h5><ul class="space-y-4 text-purple-200/60 text-[11px] font-light"><li>Physiotherapy Near Me</li><li><a href="#" class="font-bold text-purple-300 block uppercase">Physiotherapy at Home</a></li><li><a href="#" class="font-bold text-purple-300 block leading-tight uppercase">Pelvic Floor Physio</a></li><li>Stroke Rehabilitation</li></ul></div>
+            <div><h5 class="font-black mb-8 uppercase tracking-[0.2em] text-purple-400 text-xs">Specialties</h5><ul class="space-y-4 text-purple-200/60 text-[11px] font-light italic"><li>Ortho Rehab</li><li>Sports Physiotherapy</li><li>Geriatric Care</li><li>Pulmonary Rehab</li></ul></div>
+            <div><h5 class="font-black mb-8 uppercase tracking-[0.2em] text-purple-400 text-xs text-left">Quick Links</h5><ul class="space-y-4 text-purple-200/60 text-[11px] font-black uppercase tracking-widest leading-none">
+                <li><button @click="showCareer = true" class="hover:text-white transition flex items-center gap-2 group w-full text-left uppercase font-black">Career <i data-lucide="briefcase" class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-purple-400"></i></button></li>
+                <li><a href="tel:+97715907651" class="hover:text-white transition flex items-center gap-2 group italic font-black">Contact Us <i data-lucide="phone-outgoing" class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-purple-400"></i></a></li>
+                <li class="pt-8 border-t border-white/5 font-black uppercase tracking-tighter italic"><button @click="showLegal = true" class="text-[9px] opacity-40 hover:text-white transition uppercase tracking-widest font-bold font-sans not-italic">Disclaimer & Privacy</button></li>
+            </ul></div>
+            <div><h5 class="font-black mb-8 uppercase tracking-[0.2em] text-purple-400 text-xs">Clinic Info</h5><div class="space-y-8">
+                <a href="https://www.google.com/maps/dir//Axis+Physiotherapy+Pvt.+Ltd.,+Pulchowk+Rd,+Lalitpur+44600" target="_blank" class="block p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition group text-left shadow-inner italic">
+                    <span class="block text-white font-black text-[11px] mb-2 uppercase tracking-widest group-hover:text-purple-400 transition-colors not-italic">Get Direction <i data-lucide="navigation" class="inline w-3 h-3"></i></span>
+                    <span class="text-purple-200/60 text-[10px] italic font-light leading-tight">Pulchowk, Lalitpur (Opposite Everest Bank)</span>
+                </a>
+                <div class="space-y-4">
+                    <a href="mailto:info@axisphysiotherapy.com.np" class="flex items-center gap-3 text-purple-200/60 hover:text-white transition text-[11px] whitespace-nowrap lowercase tracking-normal font-sans not-italic font-medium"><i data-lucide="mail" class="w-4 h-4 text-purple-400 shrink-0"></i> info@axisphysiotherapy.com.np</a>
+                    <a href="tel:+97715907651" class="flex items-center gap-3 text-purple-200/60 hover:text-white transition text-[11px] font-sans not-italic font-medium"><i data-lucide="phone" class="w-4 h-4 text-purple-400 shrink-0"></i> 01-5907651</a>
+                    <div class="flex items-center gap-3 text-purple-400 font-black text-xs pt-2 uppercase tracking-[0.2em] font-sans not-italic"><i data-lucide="file-text" class="w-4 h-4"></i> PAN: 610007697</div>
+                </div>
+            </div></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-purple-400/40 uppercase tracking-[0.4em] font-black text-center md:text-left italic leading-none">
+            <p>&copy; 2026 Axis Physiotherapy Pvt. Ltd. Nepal</p>
+            <div class="flex gap-8 grayscale opacity-50 text-[9px] not-italic uppercase font-bold text-white tracking-widest leading-none"><span>eSewa</span><span>Khalti</span><span>Fonepay</span></div>
+        </div>
+    </footer>
+
+    <!-- MODALS SECTION -->
+    
+    
+    
+    <!-- 2. LEGAL DISCLOSURE MODAL -->
+    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
+            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
+                <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
+                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase italic tracking-tighter">Legal Disclosure</h3>
+                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar italic">
+                        <div>
+                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3 not-italic">Medical Disclaimer</h4>
+                            <p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3 not-italic">Privacy Standards</h4>
+                            <p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black">
+                    <button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FLOAT WHATSAPP -->
+    <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50 font-black"><i data-lucide="message-circle" class="w-8 h-8"></i></a>
+
+    <script>
+        lucide.createIcons();
+        document.addEventListener('alpine:init', () => {
+            Alpine.effect(() => { lucide.createIcons(); });
+        });
+    </script>
+    
+    
+    <!-- ==========================================
+         MODALS SECTION (Master Fixed)
+         ========================================== -->
+
+    <!-- 1. DYNAMIC TEAM BIO MODAL -->
+    <div x-show="selectedMember" x-cloak class="fixed inset-0 z-[600] overflow-y-auto px-4" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-purple-950/95 backdrop-blur-xl transition-opacity" @click="selectedMember = null"></div>
+
+            <!-- Modal Container -->
+            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border-[12px] border-white">
+                <div class="bg-white grid md:grid-cols-2">
+                    <!-- Photo Side -->
+                    <div class="relative h-64 md:h-full bg-slate-100">
+                        <img :src="selectedMember === 'sherin' ? 'sherin-dp.jpg' : 
+                                   selectedMember === 'suruchi' ? 'suruchipp.jpeg' : 
+                                   selectedMember === 'pankesh' ? 'pankesh-dp.jpg' : 
+                                   selectedMember === 'pasang' ? 'pasang-dp.jpg' : 'khushbu-dp.jpg'" 
+                             class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
+                    </div>
+
+                    <!-- Text Side -->
+                    <div class="p-8 md:p-12 lg:p-16 relative">
+                        <button @click="selectedMember = null" class="absolute top-6 right-6 text-slate-300 hover:text-purple-600 transition">
+                            <i data-lucide="x-circle" class="w-10 h-10"></i>
+                        </button>
+
+                        <template x-if="selectedMember === 'sherin'">
+                            <div>
+                                <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Sherin Shrestha</h3>
+                                <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Director & Visionary</p>
+                                <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                    <p>Sherin Shrestha leads Axis Physiotherapy with a mission to bring world-class rehabilitation standards to Nepal. Her focus is on clinical excellence and ensuring every patient receives personalized care.</p>
+                                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: NHPC Verified</p>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template x-if="selectedMember === 'suruchi'">
+                            <div>
+                                <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Suruchi Dev</h3>
+                                <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Consultant Physiotherapist</p>
+                                <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                    <p>Dr. Suruchi Dev is a highly experienced clinical consultant specializing in complex musculoskeletal assessments and recovery planning.</p>
+                                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-1169 PHY</p>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template x-if="selectedMember === 'pankesh'">
+                            <div>
+                                <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Pankesh Kumar Sharma</h3>
+                                <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Physiotherapist</p>
+                                <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                    <p>Specializing in PIVD (Slip Disc) and Sports Injuries, Dr. Pankesh is known for his hands-on manual therapy techniques and high patient success rates.</p>
+                                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-1890 PHY</p>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template x-if="selectedMember === 'pasang'">
+                            <div>
+                                <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Pasang Sherpa</h3>
+                                <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Consultant Physiotherapist</p>
+                                <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                    <p>Expert in Neurological Rehabilitation and Stroke recovery. Dr. Pasang focuses on restoring functional independence for patients with long-term conditions.</p>
+                                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: S-334 PHY</p>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template x-if="selectedMember === 'khushbu'">
+                            <div>
+                                <h3 class="text-4xl font-black text-purple-950 tracking-tighter uppercase mb-2">Dr. Khushbu KC</h3>
+                                <p class="text-purple-600 font-bold uppercase text-xs tracking-widest mb-8">Clinical Physiotherapist</p>
+                                <div class="space-y-4 text-slate-600 font-light leading-relaxed">
+                                    <p>Dr. Khushbu leads our physio home care units and specializes in general clinical recovery and postnatal rehabilitation.</p>
+                                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest pt-4 border-t">Registration: A-2229 PHY</p>
+                                </div>
+                            </div>
+                        </template>
+
+                        <div class="mt-12">
+                            <a href="tel:+97715907651" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-purple-950 transition-all shadow-xl">Book Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. CAREER MODAL: COMPACT NO-SCROLL VERSION -->
+    <div x-show="showCareer" 
+         x-cloak 
+         class="fixed inset-0 z-[999] flex items-center justify-center p-4 overflow-hidden" 
+         role="dialog">
+        
+        <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl transition-opacity" @click="showCareer = false; formSubmitted = false"></div>
+
+        <div class="relative bg-white rounded-[3rem] w-full max-w-5xl max-h-[92vh] shadow-2xl border-[12px] border-purple-100 overflow-hidden flex flex-col z-[1000]">
+            
+            <div x-show="!formSubmitted" class="flex flex-col h-full">
+                <!-- Header -->
+                <div class="px-8 py-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-purple-950">Join Axis Team</h3>
+                        <p class="text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1">We appreciate your interest in our vibrant team</p>
+                    </div>
+                    <button @click="showCareer = false" class="text-slate-300 hover:text-purple-600 transition">
+                        <i data-lucide="x-circle" class="w-10 h-10"></i>
+                    </button>
+                </div>
+
+                <!-- FORM CONTENT -->
+                <form action="https://formspree.io/f/mzdjqqeg" 
+                      method="POST" 
+                      enctype="multipart/form-data" 
+                      @submit.prevent="submitForm($event)"
+                      class="flex-1 overflow-y-auto p-8 md:p-12 custom-scrollbar font-sans">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label><input type="text" name="Name" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:border-purple-600 outline-none text-sm font-medium"></div>
+                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Age / Sex</label><input type="text" name="AgeSex" required placeholder="e.g. 28 / Female" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Contact No.</label><input type="tel" name="Phone" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                        
+                        <div class="space-y-1 text-left">
+                            <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Qualification</label>
+                            <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
+                                <option value="">Select</option>
+                                <option value="10">10</option><option value="+2">+2</option><option value="BPT">BPT</option><option value="MPT">MPT</option><option value="Others">Others</option>
+                            </select>
+                        </div>
+
+                        <!-- MPT Specialization -->
+                        <div class="space-y-1 text-left" x-show="qualification === 'MPT'" x-cloak x-transition>
+                            <label class="text-[9px] font-black uppercase tracking-widest text-purple-600 font-bold ml-1">Specialization</label>
+                            <input type="text" name="Specialization" placeholder="e.g. Neurology" class="w-full bg-purple-50 border border-purple-200 p-4 rounded-xl outline-none text-sm font-medium text-purple-900">
+                        </div>
+
+                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Interested to Join</label><select name="Setting" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Clinic</option><option>Hospital</option><option>Both</option></select></div>
+                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Employment Type</label><select name="Type" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Full Time</option><option>Part Time</option></select></div>
+                        <div class="md:col-span-2 space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Current Address</label><input type="text" name="Address" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 items-center border-t pt-8">
+                        <div class="relative bg-purple-50 border-2 border-dashed border-purple-200 p-8 rounded-3xl text-center group cursor-pointer transition-colors hover:border-purple-600">
+                            <input type="file" name="CV" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            <div class="flex items-center justify-center gap-3"><i data-lucide="upload-cloud" class="text-purple-400"></i><p class="font-black text-purple-900 uppercase text-[10px] tracking-widest">Attach Resume (PDF)</p></div>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-lg uppercase tracking-widest hover:bg-purple-950 transition shadow-xl active:scale-95">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PART 2: THANK YOU VIEW -->
+            <div x-show="formSubmitted" x-transition class="flex-1 flex flex-col items-center justify-center p-12 text-center bg-white">
+                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-8 shadow-inner"><i data-lucide="check" class="w-12 h-12"></i></div>
+                <h3 class="text-5xl font-black uppercase tracking-tighter text-purple-950 mb-4 leading-none">Thank You.</h3>
+                <p class="text-slate-500 text-xs font-bold tracking-widest uppercase mb-10 max-w-sm">Your application has been received. We will get back to you soon.</p>
+                <button @click="showCareer = false; formSubmitted = false" class="bg-slate-950 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs transition-colors hover:bg-purple-600">Return to Axis</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. LEGAL MODAL -->
+    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
+            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
+                <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
+                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase tracking-tighter leading-none">Legal Disclosure</h3>
+                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar">
+                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Medical Disclaimer</h4><p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p></div>
+                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Privacy Standards</h4><p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p></div>
+                    </div>
+                </div>
+                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black"><button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button></div>
+            </div>
+        </div>
+    </div>
+
+ <!-- 3. LEGAL MODAL -->
+    <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
+        <div class="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-purple-950/90 backdrop-blur-xl transition-opacity" @click="showLegal = false"></div>
+            <div class="inline-block align-bottom bg-white rounded-[3rem] text-left shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full border-[12px] border-purple-100/30 overflow-hidden">
+                <div class="bg-white px-12 pt-16 pb-12 leading-relaxed">
+                    <h3 class="text-4xl font-black text-purple-950 mb-10 border-b pb-6 uppercase tracking-tighter leading-none">Legal Disclosure</h3>
+                    <div class="space-y-10 text-slate-600 text-sm font-light h-[40vh] overflow-y-auto pr-6 custom-scrollbar">
+                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Medical Disclaimer</h4><p>Information on this website is for general educational awareness only. Clinical assessment is required for formal diagnosis.</p></div>
+                        <div><h4 class="font-black text-purple-900 uppercase tracking-widest text-[11px] mb-3">Privacy Standards</h4><p>Confidentiality is our clinical priority. We follow the governing data laws of Nepal.</p></div>
+                    </div>
+                </div>
+                <div class="bg-purple-50 px-12 py-8 text-right font-sans uppercase font-black"><button @click="showLegal = false" class="bg-purple-600 text-white px-12 py-4 rounded-3xl tracking-widest text-xs">I Understand</button></div>
+            </div>
+        </div>
+    </div>
+
