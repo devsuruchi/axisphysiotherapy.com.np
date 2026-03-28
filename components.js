@@ -18,6 +18,10 @@ async function loadAxisComponents() {
         { id: 'services-placeholder', url: 'services.html' },
         { id: 'network-placeholder', url: 'partnerships.html' },
         { id: 'training-placeholder', url: 'mentorship.html' },
+        { id: 'team-placeholder', url: 'team.html' },
+        { id: 'alumni-placeholder', url: 'alumni.html' },
+        { id: 'massage-placeholder', url: 'deep-tissue.html' },
+        { id: 'chiro-placeholder', url: 'chiropractic.html' },
         { id: 'reviews-placeholder', url: 'reviews.html' },
         { id: 'contact-placeholder', url: 'contact.html' },
         { id: 'footer-placeholder', url: 'footer.html' } 
