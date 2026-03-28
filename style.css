@@ -116,3 +116,8 @@ p, span, li, label {
     line-height: 0.8;
     color: #e2e8f0; /* Very light slate */
 }
+
+/* Prevent body scroll when mobile menu is active */
+.overflow-hidden {
+    overflow: hidden;
+}
