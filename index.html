@@ -45,17 +45,20 @@
     
 </head>
     
-<body class="bg-slate-50 text-slate-900" x-data="{ 
-    showLegal: false, 
-    showCareer: false, 
-    formSubmitted: false, 
-    qualification: '',
-    activeFaq: 0,
-    isMuted: true,
-    chiroMuted: true,
-    showAlumni: false,
-    selectedMember: null
-}">
+<body class="bg-slate-50 text-slate-900" 
+      x-data="{ 
+        showLegal: false, 
+        showCareer: false, 
+        formSubmitted: false, 
+        qualification: '', 
+        activeFaq: 0, 
+        isMuted: true, 
+        chiroMuted: true, 
+        showAlumni: false, 
+        selectedMember: null 
+      }"
+      @open-career.window="showCareer = true"
+      @form-success.window="formSubmitted = true">
 
     <!-- This is where the header.html content will appear -->
 <div id="header-placeholder"></div>
