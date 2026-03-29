@@ -1,5 +1,6 @@
 /**
- * AXIS PHYSIOTHERAPY - Stable Component Loader
+ * AXIS PHYSIOTHERAPY - Master Component Loader
+ * This script assembles all modular parts into your pages.
  */
 
 async function loadAxisComponents() {
@@ -16,14 +17,12 @@ async function loadAxisComponents() {
         { id: 'training-placeholder', url: 'mentorship.html' },
         { id: 'team-placeholder', url: 'team.html' },
         { id: 'alumni-placeholder', url: 'alumni.html' },
-        { id: 'massage-placeholder', url: 'deep-tissue.html' },
-        { id: 'chiro-placeholder', url: 'chiropractic.html' },
         { id: 'reviews-placeholder', url: 'reviews.html' },
         { id: 'contact-placeholder', url: 'contact.html' },
         { id: 'footer-placeholder', url: 'footer.html' } 
     ];
 
-    // Load one by one for maximum stability
+    // Load all components sequentially for logic stability
     for (const component of components) {
         const container = document.getElementById(component.id);
         if (container) {
@@ -34,32 +33,32 @@ async function loadAxisComponents() {
                     container.innerHTML = html;
                 }
             } catch (err) {
-                console.error(`Error loading ${component.url}:`, err);
+                console.error(`Axis Error: Failed to load ${component.url}`, err);
             }
         }
     }
 
-    // REFRESH ICONS
+    // 1. Refresh Lucide Icons for all new HTML
     if (window.lucide) {
         lucide.createIcons();
     }
 
-    // WAKE UP ALPINE.JS
-    // This ensures the mobile menu and career form "switches" work
+    // 2. Force Alpine.js to recognize new components (Mobile Menu, etc)
     if (window.Alpine) {
         window.Alpine.start();
     }
 }
 
-// CAREER FORM SUBMISSION LOGIC
+/**
+ * Career Form Submission Logic
+ * Sends to Formspree and handles UI feedback
+ */
 async function submitForm(event) {
     const form = event.target;
     const formData = new FormData(form);
     const submitBtn = form.querySelector('button[type="submit"]');
     
-    if (!submitBtn) return;
-
-    const originalBtnText = submitBtn.innerText;
+    const originalText = submitBtn.innerText;
     submitBtn.innerText = "SENDING...";
     submitBtn.disabled = true;
 
@@ -71,27 +70,29 @@ async function submitForm(event) {
         });
 
         if (response.ok) {
-            // Automatically close the form after successful submission
-            alert("Thank you! Your application has been submitted successfully.");
+            // Tell the body the form is done (triggers success logic if any)
+            window.dispatchEvent(new CustomEvent('form-success'));
             
-            // This reaches into the Alpine data to close the modal
+            // Show alert and close
+            alert("Thank you! Your application has been submitted to Axis.");
+            
             const bodyEl = document.querySelector('body');
             if (window.Alpine) {
                 const data = Alpine.$data(bodyEl);
-                data.showCareer = false;
+                data.showCareer = false; // Close Modal
             }
             form.reset();
         } else {
-            alert("There was an error. Please check your internet and try again.");
-            submitBtn.innerText = originalBtnText;
+            alert("Submission error. Please check your data.");
+            submitBtn.innerText = originalText;
             submitBtn.disabled = false;
         }
     } catch (error) {
         alert("Network error. Please try again.");
-        submitBtn.innerText = originalBtnText;
+        submitBtn.innerText = originalText;
         submitBtn.disabled = false;
     }
 }
 
-// Kick off loading when the browser is ready
+// Initialize loading
 document.addEventListener('DOMContentLoaded', loadAxisComponents);
