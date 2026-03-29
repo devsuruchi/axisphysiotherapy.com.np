@@ -42,7 +42,9 @@
                 <a href="#chiropractic-care" class="hover:text-purple-600 transition">Chiropractic</a>
                 <a href="#faqs" class="hover:text-purple-600 transition">FAQs</a>
                 <!-- Career Link (Sends signal to open modal) -->
-                <button @click="$dispatch('open-career')" class="hover:text-purple-600 transition font-bold text-sm uppercase tracking-tight">Career</button>
+                <button @click="$dispatch('open-career')" class="hover:text-purple-600 transition font-bold text-sm tracking-tight">
+    Career
+</button>
                 <a href="#team" class="hover:text-purple-600 transition">Team</a>
                 <a href="https://wellness-adobe.com" target="_blank" class="hover:text-purple-600 transition">Blogs</a>
                 <a href="https://wa.me/9779863201528" class="bg-purple-600 text-white px-6 py-2.5 rounded-full hover:bg-purple-700 transition shadow-lg font-bold text-xs uppercase tracking-tighter active:scale-95">Book Appointment</a>
@@ -88,8 +90,9 @@
             <a href="#about" @click="mobileMenu = false" class="py-5 text-4xl font-black text-white uppercase border-b border-white/5">About</a>
             <a href="#services" @click="mobileMenu = false" class="py-5 text-4xl font-black text-white uppercase border-b border-white/5">Services</a>
             <!-- Career Button (Sends signal to open modal) -->
-            <button @click="mobileMenu = false; $dispatch('open-career')" class="text-left py-5 text-4xl font-black text-white uppercase border-b border-white/5">Career</button>
-        </div>
+            <button @click="$dispatch('open-career')" class="hover:text-purple-600 transition font-bold text-sm tracking-tight">
+    Career
+</button>
 
         <!-- Bottom Action Grid -->
         <div class="mt-auto space-y-4 pb-10">
