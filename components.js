@@ -56,11 +56,10 @@ async function loadAxisComponents() {
 async function submitForm(event) {
     const form = event.target;
     const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
+    const btn = form.querySelector('button[type="submit"]');
     
-    const originalText = "Submit Application";
-    submitBtn.innerText = "SENDING...";
-    submitBtn.disabled = true;
+    btn.innerText = "SENDING...";
+    btn.disabled = true;
 
     try {
         const response = await fetch(form.action, {
@@ -69,29 +68,21 @@ async function submitForm(event) {
             headers: { 'Accept': 'application/json' }
         });
 
-        const result = await response.json();
-
-        if (response.ok || result.success) {
-            // Success Alert
-            alert("Thank you! Your application has been sent to Axis clinical team successfully.");
-            
-            // Automatically close the modal
+        if (response.ok) {
+            // This re-triggers the Alpine data to show the Thank You screen
             const bodyEl = document.querySelector('body');
-            if (window.Alpine) {
-                const alpineData = window.Alpine.$data(bodyEl);
-                alpineData.showCareer = false;
-            }
+            const data = window.Alpine.$data(bodyEl);
+            data.formSubmitted = true;
             form.reset();
         } else {
-            alert("Error: " + (result.message || "Something went wrong. Please check your file size (Max 5MB)."));
-            submitBtn.innerText = originalText;
-            submitBtn.disabled = false;
+            alert("Error: Please ensure the CV link is correct.");
+            btn.innerText = "Submit Application";
+            btn.disabled = false;
         }
     } catch (error) {
-        console.error("Submission Error:", error);
-        alert("Connection Error: Please check your internet and try again.");
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
+        alert("Connection Error. Please try again.");
+        btn.innerText = "Submit Application";
+        btn.disabled = false;
     }
 }
 
