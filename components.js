@@ -56,43 +56,46 @@ async function loadAxisComponents() {
 async function submitForm(event) {
     const form = event.target;
     const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
+    const btn = form.querySelector('button[type="submit"]');
     
-    const originalText = submitBtn.innerText;
-    submitBtn.innerText = "SENDING...";
-    submitBtn.disabled = true;
+    // Save original text
+    const originalBtnText = "Submit Application";
+    btn.innerText = "UPLOADING...";
+    btn.disabled = true;
 
     try {
         const response = await fetch(form.action, {
-            method: form.method,
+            method: 'POST',
             body: formData,
-            headers: { 'Accept': 'application/json' }
+            headers: {
+                'Accept': 'application/json'
+            }
         });
 
+        const result = await response.json();
+
         if (response.ok) {
-            // Tell the body the form is done (triggers success logic if any)
-            window.dispatchEvent(new CustomEvent('form-success'));
+            alert("Success! Your application has been sent to Axis.");
             
-            // Show alert and close
-            alert("Thank you! Your application has been submitted to Axis.");
-            
+            // Close the modal using Alpine.js
             const bodyEl = document.querySelector('body');
             if (window.Alpine) {
                 const data = Alpine.$data(bodyEl);
-                data.showCareer = false; // Close Modal
+                data.showCareer = false;
             }
             form.reset();
         } else {
-            alert("Submission error. Please check your data.");
-            submitBtn.innerText = originalText;
-            submitBtn.disabled = false;
+            // This shows the actual error from Formspree (e.g. "File too large")
+            alert("Error: " + (result.error || "Please check your entries and try again."));
+            btn.innerText = originalBtnText;
+            btn.disabled = false;
         }
     } catch (error) {
-        alert("Network error. Please try again.");
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
+        console.error("Formspree Error:", error);
+        alert("Connection Error: Please ensure your CV is under 5MB and your internet is active.");
+        btn.innerText = originalBtnText;
+        btn.disabled = false;
     }
 }
-
 // Initialize loading
 document.addEventListener('DOMContentLoaded', loadAxisComponents);
