@@ -1,6 +1,5 @@
 /**
- * AXIS PHYSIOTHERAPY - Master Component Loader
- * This script assembles all modular parts into your pages.
+ * AXIS PHYSIOTHERAPY - Master Component Loader (Fixed & Fail-Safe)
  */
 
 async function loadAxisComponents() {
@@ -24,7 +23,7 @@ async function loadAxisComponents() {
         { id: 'footer-placeholder', url: 'footer.html' } 
     ];
 
-    // Load all components sequentially for logic stability
+    // Load all components
     for (const component of components) {
         const container = document.getElementById(component.id);
         if (container) {
@@ -33,40 +32,39 @@ async function loadAxisComponents() {
                 if (response.ok) {
                     const html = await response.text();
                     container.innerHTML = html;
+                } else {
+                    console.warn(`Skipping: ${component.url} not found (404)`);
                 }
             } catch (err) {
-                console.error(`Axis Error: Failed to load ${component.url}`, err);
+                console.error(`Error loading ${component.url}:`, err);
             }
         }
     }
 
-    // 1. Refresh Lucide Icons for all new HTML
+    // 1. Refresh Lucide Icons for all newly injected HTML
     if (window.lucide) {
         lucide.createIcons();
     }
 
-    // 2. Force Alpine.js to recognize new components (Mobile Menu, etc)
+    // 2. Wake up Alpine.js for the new components
+    // If Alpine hasn't started yet, this won't crash.
     if (window.Alpine) {
-        window.Alpine.start();
+        // This is the magic line that makes the mobile menu work
+        window.Alpine.discoverUninitializedComponents((el) => {
+            window.Alpine.initializeComponent(el);
+        });
     }
 }
-// 3. FORCE VIDEO PLAYBACK
-    // Browsers often pause videos loaded via Fetch. This forces them to play.
-    document.querySelectorAll('video').forEach(video => {
-        video.play().catch(() => {
-            console.log("Autoplay blocked by browser; waiting for user interaction.");
-        });
-    });
-}
+
 /**
  * Career Form Submission Logic
- * Sends to Formspree and handles UI feedback
  */
 async function submitForm(event) {
     const form = event.target;
     const formData = new FormData(form);
     const btn = form.querySelector('button[type="submit"]');
     
+    const originalText = "Submit Application";
     btn.innerText = "SENDING...";
     btn.disabled = true;
 
@@ -78,22 +76,26 @@ async function submitForm(event) {
         });
 
         if (response.ok) {
-            // This re-triggers the Alpine data to show the Thank You screen
+            alert("Thank you! Your application has been submitted.");
+            
+            // Close the modal using Alpine.js
             const bodyEl = document.querySelector('body');
-            const data = window.Alpine.$data(bodyEl);
-            data.formSubmitted = true;
+            if (window.Alpine) {
+                const data = Alpine.$data(bodyEl);
+                data.showCareer = false;
+            }
             form.reset();
         } else {
-            alert("Error: Please ensure the CV link is correct.");
-            btn.innerText = "Submit Application";
+            alert("Submission error. Please check your data.");
+            btn.innerText = originalText;
             btn.disabled = false;
         }
     } catch (error) {
-        alert("Connection Error. Please try again.");
-        btn.innerText = "Submit Application";
+        alert("Connection error. Please try again.");
+        btn.innerText = originalText;
         btn.disabled = false;
     }
 }
 
-// Initialize loading
+// Start the loading process
 document.addEventListener('DOMContentLoaded', loadAxisComponents);
