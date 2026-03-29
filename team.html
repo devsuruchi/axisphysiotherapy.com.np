@@ -1,23 +1,177 @@
-<!-- TEAM SECTION (Master Casing & Links) -->
-    <section id="team" class="py-24 bg-white scroll-mt-20 overflow-hidden text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-black text-slate-900 mb-24 uppercase italic tracking-tighter underline decoration-purple-200 underline-offset-8 leading-none">Licensed Specialists</h2>
-            <div class="grid grid-cols-2 lg:grid-cols-5 gap-y-24 gap-x-10 font-sans">
-                <div class="group relative"><a href="#" @click="selectedMember = 'sherin'" class="block outline-none"><img src="sherin-dp.jpg" alt="Sherin Shrestha" class="w-40 h-40 mx-auto rounded-full border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 mb-6 object-cover aspect-square shadow-purple-100 italic"></a><h4 class="font-black text-slate-950 text-xl uppercase tracking-tight italic leading-none">Sherin Shrestha</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Director</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 italic font-black hover:text-purple-600 uppercase">NHPC Verified</a></div>
-                <div class="group relative"><a href="#" @click="selectedMember = 'suruchi'" class="block outline-none"><img src="suruchipp.jpeg" alt="Dr. Suruchi Dev" class="w-40 h-40 mx-auto rounded-full border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 mb-6 object-cover shadow-purple-100 italic"></a><h4 class="font-black text-slate-950 text-xl uppercase tracking-tight italic leading-none">Dr. Suruchi Dev</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3 leading-none">Consultant Physio</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 font-bold hover:text-purple-600 underline decoration-purple-100 uppercase">A-1169 PHY</a></div>
-                <div class="group relative"><a href="#" @click="selectedMember = 'pankesh'" class="block outline-none"><img src="pankesh-dp.jpg" alt="Dr. Pankesh Sharma" class="w-40 h-40 mx-auto rounded-full border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 mb-6 object-cover shadow-purple-100 italic"></a><h4 class="font-black text-slate-950 text-xl uppercase tracking-tight italic leading-none">Dr. Pankesh Sharma</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3 leading-none">Physiotherapist</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 font-bold hover:text-purple-600 underline decoration-purple-100 uppercase">A-1890 PHY</a></div>
-                <div class="group relative"><a href="#" @click="selectedMember = 'pasang'" class="block outline-none"><img src="pasang-dp.jpg" alt="Dr. Pasang Sherpa" class="w-40 h-40 mx-auto rounded-full border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 mb-6 object-cover shadow-purple-100 italic"></a><h4 class="font-black text-slate-950 text-xl uppercase tracking-tight italic leading-none">Dr. Pasang Sherpa</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3 leading-none">Consultant Physio</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 font-bold hover:text-purple-600 underline decoration-purple-100 uppercase">S-334 PHY</a></div>
-                <div class="group relative"><a href="#" @click="selectedMember = 'khushbu'" class="block outline-none"><img src="khushbu-dp.jpg" alt="Dr. Khushbu KC" class="w-40 h-40 mx-auto rounded-full border-4 border-white shadow-2xl group-hover:scale-105 transition-all duration-700 mb-6 object-cover shadow-purple-100 italic"></a><h4 class="font-black text-slate-950 text-xl uppercase tracking-tight italic leading-none">Dr. Khushbu KC</h4><p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3 leading-none">Physiotherapist</p><a href="https://nhpc.gov.np/" target="_blank" class="text-[8px] text-slate-400 font-bold hover:text-purple-600 underline decoration-purple-100 uppercase">A-2229 PHY</a></div>
+<!-- TEAM SECTION: CLINICAL AUTHENTICITY VERSION -->
+<section id="team" class="py-24 bg-white scroll-mt-20 overflow-hidden text-center">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-5xl font-black text-slate-900 mb-24 uppercase tracking-tighter underline decoration-purple-200 underline-offset-8 leading-none">Licensed Specialists</h2>
+        
+        <!-- 1. MAIN SPECIALISTS GRID -->
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-y-24 gap-x-10 font-sans">
+            
+            <!-- Sherin Shrestha (Director) -->
+            <div class="group relative">
+                <a href="#" @click="selectedMember = 'sherin'" class="block outline-none">
+                    <div class="relative w-40 h-40 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+                        <img src="sherin-dp.jpg" alt="Sherin Shrestha" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
+                    </div>
+                </a>
+                <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Sherin Shrestha</h4>
+                <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Director</p>
             </div>
-            <div class="mt-24 pt-20 border-t border-slate-100">
-                <h5 class="text-center text-slate-400 text-[10px] font-black uppercase tracking-[0.5em] mb-16">Clinical Support Team</h5>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-6 text-center font-black uppercase font-sans">
-                    <div class="group"><div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6"><img src="mina-dp.jpg" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 group-hover:border-purple-50"></div><h5 class="text-slate-900 text-sm tracking-tight leading-none italic">Mina Pun</h5><p class="text-[9px] text-purple-500 mt-2 italic">Therapist</p></div>
-                    <div class="group"><div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6"><img src="natisha-dp.jpg" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 group-hover:border-purple-50"></div><h5 class="text-slate-900 text-sm tracking-tight leading-none italic">Natisha Sedhain</h5><p class="text-[9px] text-purple-500 mt-2 italic">Therapist</p></div>
-                    <div class="group"><div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6"><img src="mathura-dp.jpg" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 group-hover:border-purple-50"></div><h5 class="text-slate-900 text-sm tracking-tight leading-none italic">Mathura Silwal</h5><p class="text-[9px] text-purple-500 mt-2 italic">Therapist</p></div>
-                    <div class="group"><div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6"><img src="shining-dp.jpg" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 group-hover:border-purple-50"></div><h5 class="text-slate-900 text-sm tracking-tight leading-none italic">Shining Thapa</h5><p class="text-[9px] text-purple-500 mt-2 italic">Asst. Physio</p></div>
-                    <div class="group"><div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6"><img src="sabita-dp.jpg" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 group-hover:border-purple-50"></div><h5 class="text-slate-900 text-sm tracking-tight leading-none italic">Dr. Sabita Mahat</h5><p class="text-[9px] text-purple-500 mt-2 italic leading-none">Physiotherapist</p></div>
+
+            <!-- Dr. Suruchi Dev -->
+            <div class="group relative">
+                <a href="#" @click="selectedMember = 'suruchi'" class="block outline-none">
+                    <div class="relative w-40 h-40 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+                        <img src="suruchipp.jpeg" alt="Dr. Suruchi Dev" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
+                        <!-- VERIFICATION TICK -->
+                        <div class="absolute bottom-2 right-4 bg-green-500 text-white p-1.5 rounded-full shadow-lg z-20 border-4 border-white">
+                            <i data-lucide="check" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+                <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Dr. Suruchi Dev</h4>
+                <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Consultant Physio</p>
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-[9px] text-green-600 font-black uppercase tracking-tighter">NHPC Verified</span>
+                    <span class="text-[9px] text-slate-300 font-bold">A-1169 PHY</span>
+                </div>
+            </div>
+
+            <!-- Dr. Pankesh Sharma -->
+            <div class="group relative">
+                <a href="#" @click="selectedMember = 'pankesh'" class="block outline-none">
+                    <div class="relative w-40 h-40 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+                        <img src="pankesh-dp.jpg" alt="Dr. Pankesh Sharma" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
+                        <div class="absolute bottom-2 right-4 bg-green-500 text-white p-1.5 rounded-full shadow-lg z-20 border-4 border-white">
+                            <i data-lucide="check" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+                <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Dr. Pankesh Sharma</h4>
+                <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Physiotherapist</p>
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-[9px] text-green-600 font-black uppercase tracking-tighter">NHPC Verified</span>
+                    <span class="text-[9px] text-slate-300 font-bold">A-1890 PHY</span>
+                </div>
+            </div>
+
+            <!-- Dr. Pasang Sherpa -->
+            <div class="group relative">
+                <a href="#" @click="selectedMember = 'pasang'" class="block outline-none">
+                    <div class="relative w-40 h-40 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+                        <img src="pasang-dp.jpg" alt="Dr. Pasang Sherpa" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
+                        <div class="absolute bottom-2 right-4 bg-green-500 text-white p-1.5 rounded-full shadow-lg z-20 border-4 border-white">
+                            <i data-lucide="check" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+                <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Dr. Pasang Sherpa</h4>
+                <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Consultant Physio</p>
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-[9px] text-green-600 font-black uppercase tracking-tighter">NHPC Verified</span>
+                    <span class="text-[9px] text-slate-300 font-bold">S-334 PHY</span>
+                </div>
+            </div>
+
+            <!-- Dr. Khushbu KC -->
+            <div class="group relative">
+                <a href="#" @click="selectedMember = 'khushbu'" class="block outline-none">
+                    <div class="relative w-40 h-40 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+                        <img src="khushbu-dp.jpg" alt="Dr. Khushbu KC" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
+                        <div class="absolute bottom-2 right-4 bg-green-500 text-white p-1.5 rounded-full shadow-lg z-20 border-4 border-white">
+                            <i data-lucide="check" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+                <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Dr. Khushbu KC</h4>
+                <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Physiotherapist</p>
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-[9px] text-green-600 font-black uppercase tracking-tighter">NHPC Verified</span>
+                    <span class="text-[9px] text-slate-300 font-bold">A-2229 PHY</span>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- 2. CLINICAL SUPPORT TEAM -->
+        <div class="mt-24 pt-20 border-t border-slate-100">
+            <h5 class="text-center text-slate-400 text-[10px] font-black uppercase tracking-[0.5em] mb-16">Clinical Support Team</h5>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-6 text-center font-sans">
+                
+                <!-- Mina Pun -->
+                <div class="group">
+                    <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                        <img src="mina-dp.jpg" alt="Mina Pun" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 z-10">
+                        <div class="absolute bottom-0 right-1 bg-green-500 text-white p-1 rounded-full shadow-lg z-20 border-2 border-white">
+                            <i data-lucide="check" class="w-2 h-2"></i>
+                        </div>
+                    </div>
+                    <h5 class="font-black text-slate-900 text-sm tracking-tight leading-none">Mina Pun</h5>
+                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-widest mt-2 mb-1">Therapist</p>
+                    <p class="text-[8px] text-slate-300 font-bold uppercase tracking-tighter">NHPC Verified</p>
+                </div>
+
+                <!-- Natisha Sedhain -->
+                <div class="group">
+                    <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                        <img src="natisha-dp.jpg" alt="Natisha Sedhain" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 z-10">
+                        <div class="absolute bottom-0 right-1 bg-green-500 text-white p-1 rounded-full shadow-lg z-20 border-2 border-white">
+                            <i data-lucide="check" class="w-2 h-2"></i>
+                        </div>
+                    </div>
+                    <h5 class="font-black text-slate-900 text-sm tracking-tight leading-none">Natisha Sedhain</h5>
+                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-widest mt-2 mb-1">Therapist</p>
+                    <p class="text-[8px] text-slate-300 font-bold uppercase tracking-tighter">NHPC Verified</p>
+                </div>
+
+                <!-- Mathura Silwal -->
+                <div class="group">
+                    <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                        <img src="mathura-dp.jpg" alt="Mathura Silwal" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 z-10">
+                        <div class="absolute bottom-0 right-1 bg-green-500 text-white p-1 rounded-full shadow-lg z-20 border-2 border-white">
+                            <i data-lucide="check" class="w-2 h-2"></i>
+                        </div>
+                    </div>
+                    <h5 class="font-black text-slate-900 text-sm tracking-tight leading-none">Mathura Silwal</h5>
+                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-widest mt-2 mb-1">Therapist</p>
+                    <p class="text-[8px] text-slate-300 font-bold uppercase tracking-tighter">NHPC Verified</p>
+                </div>
+
+                <!-- Shining Thapa -->
+                <div class="group">
+                    <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                        <img src="shining-dp.jpg" alt="Shining Thapa" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 z-10">
+                        <div class="absolute bottom-0 right-1 bg-green-500 text-white p-1 rounded-full shadow-lg z-20 border-2 border-white">
+                            <i data-lucide="check" class="w-2 h-2"></i>
+                        </div>
+                    </div>
+                    <h5 class="font-black text-slate-900 text-sm tracking-tight leading-none">Shining Thapa</h5>
+                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-widest mt-2 mb-1">Asst. Physio</p>
+                    <p class="text-[8px] text-slate-300 font-bold uppercase tracking-tighter">NHPC Verified</p>
+                </div>
+
+                <!-- Dr. Sabita Mahat -->
+                <div class="group">
+                    <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto mb-6">
+                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                        <img src="sabita-dp.jpg" alt="Dr. Sabita Mahat" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-xl transition-transform group-hover:scale-105 z-10">
+                        <div class="absolute bottom-0 right-1 bg-green-500 text-white p-1 rounded-full shadow-lg z-20 border-2 border-white">
+                            <i data-lucide="check" class="w-2 h-2"></i>
+                        </div>
+                    </div>
+                    <h5 class="font-black text-slate-900 text-sm tracking-tight leading-none">Dr. Sabita Mahat</h5>
+                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-wider mt-2 mb-1">Physiotherapist</p>
+                    <p class="text-[8px] text-slate-300 font-bold uppercase tracking-tighter">NHPC Verified</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
