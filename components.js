@@ -65,7 +65,6 @@ async function submitForm(event) {
     const formData = new FormData(form);
     const btn = form.querySelector('button[type="submit"]');
     
-    const originalText = "Submit Application";
     btn.innerText = "SENDING...";
     btn.disabled = true;
 
@@ -77,23 +76,22 @@ async function submitForm(event) {
         });
 
         if (response.ok) {
-            alert("Thank you! Your application has been submitted.");
+            // 1. INFORM THE USER
+            alert("Success! Your application has been submitted to Axis Physiotherapy. We will review it shortly.");
             
-            // Close the modal using Alpine.js
+            // 2. AUTOMATICALLY CLOSE MODAL & RESET
             const bodyEl = document.querySelector('body');
-            if (window.Alpine) {
-                const data = Alpine.$data(bodyEl);
-                data.showCareer = false;
-            }
-            form.reset();
+            const alpineData = window.Alpine.$data(bodyEl);
+            
+            alpineData.showCareer = false; // Closes the modal
+            form.reset(); // Clears fields
         } else {
-            alert("Submission error. Please check your data.");
-            btn.innerText = originalText;
-            btn.disabled = false;
+            alert("Error: Please check your connection and try again.");
         }
     } catch (error) {
-        alert("Connection error. Please try again.");
-        btn.innerText = originalText;
+        alert("Connection Error. Please try again.");
+    } finally {
+        btn.innerText = "Submit Application";
         btn.disabled = false;
     }
 }
