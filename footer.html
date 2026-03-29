@@ -159,78 +159,69 @@
         </div>
     </div>
 
-    <!-- 2. CAREER MODAL: COMPACT NO-SCROLL VERSION -->
-    <div x-show="showCareer" 
-         x-cloak 
-         class="fixed inset-0 z-[999] flex items-center justify-center p-4 overflow-hidden" 
-         role="dialog">
-        
-        <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl transition-opacity" @click="showCareer = false; formSubmitted = false"></div>
+    <!-- CAREER MODAL: WEB3FORMS INTEGRATED -->
+<div x-show="showCareer" 
+     x-cloak 
+     x-data="{ qualification: '' }" 
+     class="fixed inset-0 z-[999] flex items-center justify-center p-4 overflow-hidden" 
+     role="dialog">
+    
+    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-3xl transition-opacity" @click="showCareer = false"></div>
 
-        <div class="relative bg-white rounded-[3rem] w-full max-w-5xl max-h-[92vh] shadow-2xl border-[12px] border-purple-100 overflow-hidden flex flex-col z-[1000]">
-            
-            <div x-show="!formSubmitted" class="flex flex-col h-full">
-                <!-- Header -->
-                <div class="px-8 py-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-purple-950">Join Axis Team</h3>
-                        <p class="text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1">We appreciate your interest in our vibrant team</p>
+    <div class="relative bg-white rounded-[3rem] w-full max-w-5xl max-h-[92vh] shadow-2xl border-[12px] border-purple-100 overflow-hidden flex flex-col z-[1000]">
+        
+        <!-- Header & Appreciation -->
+        <div class="px-8 py-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+            <div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-purple-950">Join Axis Team</h3>
+                <p class="text-[10px] font-black text-purple-600 uppercase tracking-widest mt-2">We appreciate your interest in our vibrant clinical community</p>
+            </div>
+            <button @click="showCareer = false" class="text-slate-300 hover:text-purple-600 transition"><i data-lucide="x-circle" class="w-10 h-10"></i></button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-8 md:p-12 custom-scrollbar font-sans">
+            <!-- ACTION UPDATED TO WEB3FORMS -->
+            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" @submit.prevent="submitForm($event)">
+                
+                <!-- WEB3FORMS ACCESS KEY -->
+                <input type="hidden" name="access_key" value="942c5314-7f07-4013-92fb-d42e9a371233">
+                <input type="hidden" name="subject" value="New Career Application - Axis Physiotherapy">
+                <input type="hidden" name="from_name" value="Axis Website Recruitment">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="space-y-1"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Full Name</label><input type="text" name="name" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:border-purple-600 outline-none text-sm font-medium"></div>
+                    <div class="space-y-1"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Age / Sex</label><input type="text" name="age_sex" required placeholder="28 / Female" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                    <div class="space-y-1"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Contact No.</label><input type="tel" name="phone" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                    
+                    <div class="space-y-1">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Qualification</label>
+                        <select name="qualification" x-model="qualification" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium appearance-none">
+                            <option value="">Select</option><option value="10">10</option><option value="+2">+2</option><option value="BPT">BPT</option><option value="MPT">MPT</option><option value="Others">Others</option>
+                        </select>
                     </div>
-                    <button @click="showCareer = false" class="text-slate-300 hover:text-purple-600 transition">
-                        <i data-lucide="x-circle" class="w-10 h-10"></i>
-                    </button>
+
+                    <div class="space-y-1" x-show="qualification === 'MPT'" x-cloak x-transition>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-purple-600 font-bold">MPT Specialization</label>
+                        <input type="text" name="mpt_specialization" placeholder="e.g. Neurology" class="w-full bg-purple-50 border border-purple-200 p-4 rounded-xl outline-none text-sm font-medium text-purple-900">
+                    </div>
+
+                    <div class="space-y-1"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Join Setting</label><select name="join_setting" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Clinic</option><option>Hospital</option><option>Both</option></select></div>
+                    <div class="space-y-1"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Job Type</label><select name="job_type" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Full Time</option><option>Part Time</option></select></div>
+                    <div class="md:col-span-2 space-y-1"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400">Current Address</label><input type="text" name="address" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
                 </div>
 
-                <!-- FORM CONTENT -->
-                <form action="https://formspree.io/f/mzdjqqeg" 
-                      method="POST" 
-                      enctype="multipart/form-data" 
-                      @submit.prevent="submitForm($event)"
-                      class="flex-1 overflow-y-auto p-8 md:p-12 custom-scrollbar font-sans">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label><input type="text" name="Name" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:border-purple-600 outline-none text-sm font-medium"></div>
-                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Age / Sex</label><input type="text" name="AgeSex" required placeholder="e.g. 28 / Female" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
-                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Contact No.</label><input type="tel" name="Phone" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
-                        
-                        <div class="space-y-1 text-left">
-                            <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Qualification</label>
-                            <select name="Qualification" x-model="qualification" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium">
-                                <option value="">Select</option>
-                                <option value="10">10</option><option value="+2">+2</option><option value="BPT">BPT</option><option value="MPT">MPT</option><option value="Others">Others</option>
-                            </select>
-                        </div>
-
-                        <!-- MPT Specialization -->
-                        <div class="space-y-1 text-left" x-show="qualification === 'MPT'" x-cloak x-transition>
-                            <label class="text-[9px] font-black uppercase tracking-widest text-purple-600 font-bold ml-1">Specialization</label>
-                            <input type="text" name="Specialization" placeholder="e.g. Neurology" class="w-full bg-purple-50 border border-purple-200 p-4 rounded-xl outline-none text-sm font-medium text-purple-900">
-                        </div>
-
-                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Interested to Join</label><select name="Setting" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Clinic</option><option>Hospital</option><option>Both</option></select></div>
-                        <div class="space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Employment Type</label><select name="Type" class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"><option>Full Time</option><option>Part Time</option></select></div>
-                        <div class="md:col-span-2 space-y-1 text-left"><label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">Current Address</label><input type="text" name="Address" required class="w-full bg-slate-50 border p-4 rounded-xl outline-none text-sm font-medium"></div>
+                <!-- CV UPLOAD AREA -->
+                <div class="grid md:grid-cols-2 gap-8 items-center border-t pt-10">
+                    <div class="relative bg-purple-50 border-2 border-dashed border-purple-200 p-10 rounded-3xl text-center group cursor-pointer transition-colors hover:border-purple-600">
+                        <input type="file" name="attachment" required accept=".pdf,.doc,.docx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        <div class="flex items-center justify-center gap-3"><i data-lucide="upload-cloud" class="text-purple-400"></i><p class="font-black text-purple-900 uppercase text-xs tracking-tighter">Attach Professional CV (PDF/Word)</p></div>
                     </div>
-
-                    <div class="grid md:grid-cols-2 gap-8 items-center border-t pt-8">
-                        <div class="relative bg-purple-50 border-2 border-dashed border-purple-200 p-8 rounded-3xl text-center group cursor-pointer transition-colors hover:border-purple-600">
-                            <input type="file" name="CV" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                            <div class="flex items-center justify-center gap-3"><i data-lucide="upload-cloud" class="text-purple-400"></i><p class="font-black text-purple-900 uppercase text-[10px] tracking-widest">Attach Resume (PDF)</p></div>
-                        </div>
-                        <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-lg uppercase tracking-widest hover:bg-purple-950 transition shadow-xl active:scale-95">Submit Application</button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- PART 2: THANK YOU VIEW -->
-            <div x-show="formSubmitted" x-transition class="flex-1 flex flex-col items-center justify-center p-12 text-center bg-white">
-                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-8 shadow-inner"><i data-lucide="check" class="w-12 h-12"></i></div>
-                <h3 class="text-5xl font-black uppercase tracking-tighter text-purple-950 mb-4 leading-none">Thank You.</h3>
-                <p class="text-slate-500 text-xs font-bold tracking-widest uppercase mb-10 max-w-sm">Your application has been received. We will get back to you soon.</p>
-                <button @click="showCareer = false; formSubmitted = false" class="bg-slate-950 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs transition-colors hover:bg-purple-600">Return to Axis</button>
-            </div>
+                    <button type="submit" class="w-full bg-purple-600 text-white py-6 rounded-3xl font-black text-lg uppercase tracking-widest hover:bg-purple-950 transition shadow-xl active:scale-95">Submit Application</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
  <!-- 3. LEGAL MODAL -->
     <div x-show="showLegal" x-cloak class="fixed inset-0 z-[300] overflow-y-auto px-4" role="dialog">
