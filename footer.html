@@ -166,6 +166,38 @@
     </div>
 </div>
 
+<!--4. FONEPAY QR MODAL -->
+<div x-show="showPayment" x-cloak class="fixed inset-0 z-[1000] flex items-center justify-center px-4" role="dialog">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 bg-purple-950/95 backdrop-blur-xl transition-opacity" @click="showPayment = false"></div>
+
+    <!-- QR Card -->
+    <div class="relative bg-white rounded-[3rem] w-full max-w-sm shadow-2xl border-[12px] border-white overflow-hidden transform transition-all">
+        <div class="p-8 text-center space-y-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-black text-purple-900 uppercase tracking-tighter">Scan to Pay</h3>
+                <button @click="showPayment = false"><i data-lucide="x" class="w-6 h-6 text-slate-300 hover:text-purple-600 transition"></i></button>
+            </div>
+            
+            <!-- THE QR IMAGE -->
+            <div class="bg-slate-50 p-4 rounded-3xl border-2 border-slate-100 shadow-inner group">
+                <!-- Replace 'fonepay-qr.png' with your actual QR file -->
+                <img src="fonepay-qr.png" alt="Axis Fonepay QR" class="w-full aspect-square object-contain group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <div class="space-y-2">
+                <p class="text-slate-900 font-black uppercase text-sm tracking-tighter">Axis Physiotherapy Pvt. Ltd.</p>
+                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Lalitpur, Nepal</p>
+            </div>
+        </div>
+        
+        <!-- Bottom Banner -->
+        <div class="bg-purple-600 py-4 text-center">
+            <p class="text-white font-black uppercase text-[10px] tracking-[0.3em]">Digital Payment Verified</p>
+        </div>
+    </div>
+</div>
+
 <!-- 4. GLOBAL FLOATING WHATSAPP -->
 <a href="https://wa.me/9779863201528" class="fixed bottom-10 right-10 bg-green-500 text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-[200] border-4 border-white/20 shadow-green-500/50">
     <i data-lucide="message-circle" class="w-8 h-8"></i>
