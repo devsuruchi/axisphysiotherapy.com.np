@@ -17,6 +17,8 @@ async function loadAxisComponents() {
         { id: 'training-placeholder', url: 'mentorship.html' },
         { id: 'team-placeholder', url: 'team.html' },
         { id: 'alumni-placeholder', url: 'alumni.html' },
+        { id: 'massage-placeholder', url: 'deep-tissue.html' },
+        { id: 'chiro-placeholder', url: 'chiropractic.html' },
         { id: 'reviews-placeholder', url: 'reviews.html' },
         { id: 'contact-placeholder', url: 'contact.html' },
         { id: 'footer-placeholder', url: 'footer.html' } 
@@ -48,7 +50,14 @@ async function loadAxisComponents() {
         window.Alpine.start();
     }
 }
-
+// 3. FORCE VIDEO PLAYBACK
+    // Browsers often pause videos loaded via Fetch. This forces them to play.
+    document.querySelectorAll('video').forEach(video => {
+        video.play().catch(() => {
+            console.log("Autoplay blocked by browser; waiting for user interaction.");
+        });
+    });
+}
 /**
  * Career Form Submission Logic
  * Sends to Formspree and handles UI feedback
