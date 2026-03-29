@@ -1,10 +1,6 @@
-
 /**
- * AXIS PHYSIOTHERAPY - Component Loader & Logic
- * This script handles:
- * 1. Loading shared HTML files (Header, Footer, Reviews)
- * 2. Form Submission logic for Careers
- * 3. Lucide Icon initialization
+ * AXIS PHYSIOTHERAPY - Master Component Loader
+ * Version: 2.0 (High Performance)
  */
 
 async function loadAxisComponents() {
@@ -27,7 +23,8 @@ async function loadAxisComponents() {
         { id: 'footer-placeholder', url: 'footer.html' } 
     ];
 
-    for (const component of components) {
+    // Load all components in parallel for maximum speed
+    await Promise.all(components.map(async (component) => {
         const container = document.getElementById(component.id);
         if (container) {
             try {
@@ -36,23 +33,42 @@ async function loadAxisComponents() {
                     container.innerHTML = await response.text();
                 }
             } catch (err) {
-                console.error(`Failed to load ${component.url}:`, err);
+                console.error(`Axis Error: Failed to load ${component.url}`, err);
             }
         }
+    }));
+
+    // 1. RE-INITIALIZE ALPINE.JS
+    // This tells Alpine to look at the new HTML and activate the menus/buttons
+    if (window.Alpine) {
+        window.Alpine.discoverUninitializedComponents((el) => {
+            window.Alpine.initializeComponent(el);
+        });
     }
 
-    // Initialize icons after ALL HTML is injected
+    // 2. RE-INITIALIZE LUCIDE ICONS
     if (window.lucide) {
         lucide.createIcons();
     }
+
+    // 3. FORCE VIDEO AUTOPLAY
+    // Browsers often block video play if injected via JS
+    document.querySelectorAll('video').forEach(video => {
+        video.play().catch(e => console.log("Autoplay waiting for interaction"));
+    });
 }
 
-// AJAX Form Submission Logic (Restored from your request)
+/**
+ * Career Form Submission Logic
+ * Handles Formspree without page refresh
+ */
 async function submitForm(event) {
     const form = event.target;
     const formData = new FormData(form);
     const submitBtn = form.querySelector('button[type="submit"]');
     
+    if (!submitBtn) return;
+
     const originalBtnText = submitBtn.innerText;
     submitBtn.innerText = "SENDING...";
     submitBtn.disabled = true;
@@ -65,18 +81,19 @@ async function submitForm(event) {
         });
 
         if (response.ok) {
-            // Signal Alpine.js that the form was a success
+            // Signal Alpine to show Success state
             window.dispatchEvent(new CustomEvent('form-success'));
             form.reset();
             
-            // Close the modal automatically after 2 seconds for a better user experience
+            // Automatically close modal after 3 seconds
             setTimeout(() => {
-                const bodyEl = document.querySelector('body');
+                const body = document.querySelector('body');
                 if (window.Alpine) {
-                    const data = Alpine.$data(bodyEl);
+                    const data = Alpine.$data(body);
                     data.showCareer = false;
+                    data.formSubmitted = false; // Reset for next time
                 }
-            }, 2000);
+            }, 3000);
 
         } else {
             alert("Submission error. Please check your entries.");
@@ -90,10 +107,13 @@ async function submitForm(event) {
     }
 }
 
-// Start loading when the page is ready
-document.addEventListener('DOMContentLoaded', loadAxisComponents);
-
-// Re-run icons when Alpine triggers updates
+// Global Event Listener for Icons
 document.addEventListener('alpine:init', () => {
-    lucide.createIcons();
+    // Refresh icons whenever Alpine changes the DOM (like opening a modal)
+    Alpine.effect(() => {
+        if (window.lucide) lucide.createIcons();
+    });
 });
+
+// Kick off the loading process
+document.addEventListener('DOMContentLoaded', loadAxisComponents);
