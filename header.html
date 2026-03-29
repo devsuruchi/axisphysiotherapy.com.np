@@ -59,6 +59,7 @@
 
     <!-- 3. FULL-SCREEN MOBILE OVERLAY (SOLID BACKGROUND FIX) -->
     <!-- Removed backdrop-blur and added solid #0a0a0a to fix transparency -->
+   <!-- 3. MOBILE MENU OVERLAY (SOLID DARK BACKGROUND) -->
     <div x-show="mobileMenu" 
          x-cloak 
          x-transition:enter="transition ease-out duration-300"
@@ -68,33 +69,32 @@
          x-transition:leave-start="opacity-100 translate-x-0"
          x-transition:leave-end="opacity-0 translate-x-full"
          class="lg:hidden fixed inset-0 z-[999] flex flex-col p-6 font-sans overflow-hidden"
-         style="background-color: #0a0a0a !important; opacity: 1 !important;">
+         style="background-color: #0a0a0a !important;">
         
         <!-- Menu Header -->
         <div class="flex justify-between items-center mb-10 pt-4 border-b border-white/10 pb-8">
-            <div class="flex flex-col text-left">
-                <span class="font-black text-2xl tracking-tighter text-white uppercase leading-none">AXIS</span>
-                <span class="text-[9px] tracking-[0.3em] font-bold text-purple-400 uppercase">Physiotherapy</span>
+            <div class="flex flex-col text-left text-white">
+                <span class="font-black text-2xl tracking-tighter uppercase leading-none">AXIS</span>
+                <span class="text-[10px] tracking-[0.3em] font-bold text-purple-400 uppercase">Physiotherapy</span>
             </div>
-            <!-- Close Button -->
-            <button @click="mobileMenu = false" class="w-14 h-14 bg-white/10 rounded-full text-white flex items-center justify-center border border-white/10 active:bg-purple-600 transition-all">
+            <button @click="mobileMenu = false" class="w-14 h-14 bg-white/10 rounded-full text-white flex items-center justify-center border border-white/10 active:bg-purple-600">
                 <i data-lucide="x" class="w-8 h-8"></i>
             </button>
         </div>
 
-        <!-- Navigation Links (Normal Case as requested, Straight Fonts) -->
-        <div class="flex flex-col space-y-2 mb-10 overflow-y-auto">
-            <a href="index.html" @click="mobileMenu = false" class="py-5 text-4xl font-black text-white uppercase border-b border-white/5 flex justify-between items-center">
-                Home <i data-lucide="arrow-right" class="w-6 h-6 text-purple-600"></i>
-            </a>
-            <a href="#about" @click="mobileMenu = false" class="py-5 text-4xl font-black text-white uppercase border-b border-white/5">About</a>
-            <a href="#services" @click="mobileMenu = false" class="py-5 text-4xl font-black text-white uppercase border-b border-white/5">Services</a>
-            <!-- Career Button (Sends signal to open modal) -->
-            <button @click="$dispatch('open-career')" class="hover:text-purple-600 transition font-bold text-sm tracking-tight">
-    Career
-</button>
+        <!-- Mobile Links: Straight Fonts, Normal Case -->
+        <div class="flex flex-col space-y-1 mb-10 overflow-y-auto">
+            <a href="index.html" @click="mobileMenu = false" class="py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">Home</a>
+            <a href="#about" @click="mobileMenu = false" class="py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">About</a>
+            <a href="#services" @click="mobileMenu = false" class="py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">Services</a>
+            <a href="#chiropractic-care" @click="mobileMenu = false" class="py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">Chiropractic</a>
+            <a href="#faqs" @click="mobileMenu = false" class="py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">FAQs</a>
+            <a href="#team" @click="mobileMenu = false" class="py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">Team</a>
+            <button @click="mobileMenu = false; $dispatch('open-career')" class="text-left py-4 text-3xl font-black text-white border-b border-white/5 uppercase tracking-tighter">Career</button>
+            <a href="https://wellness-adobe.com" target="_blank" @click="mobileMenu = false" class="py-4 text-3xl font-black text-purple-400 border-b border-white/5 uppercase tracking-tighter flex justify-between items-center">Blogs <i data-lucide="external-link"></i></a>
+        </div>
 
-        <!-- Bottom Action Grid -->
+        <!-- Bottom Action Buttons -->
         <div class="mt-auto space-y-4 pb-10">
             <div class="grid grid-cols-2 gap-4">
                 <a href="tel:+97715907651" class="flex flex-col items-center justify-center gap-3 bg-white/5 border border-white/10 text-white py-8 rounded-[2.5rem] active:bg-purple-600 transition-all">
