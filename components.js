@@ -19,6 +19,7 @@ async function loadAxisComponents() {
         { id: 'massage-placeholder', url: 'deep-tissue.html' },
         { id: 'chiro-placeholder', url: 'chiropractic.html' },
         { id: 'reviews-placeholder', url: 'reviews.html' },
+        { id: 'faqs-placeholder', url: 'faqs.html' },
         { id: 'contact-placeholder', url: 'contact.html' },
         { id: 'footer-placeholder', url: 'footer.html' } 
     ];
