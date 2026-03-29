@@ -52,35 +52,52 @@
                 </div>
             </div>
 
-            <!-- RIGHT SIDE: CINEMATIC IMAGE FRAME WITH FIXED OVERLAY -->
-<div class="relative min-h-[400px] md:min-h-[500px] lg:min-h-full overflow-hidden group">
+           <!-- RIGHT SIDE: CINEMATIC IMAGE WITH REVEAL-ON-HOVER -->
+<div class="relative min-h-[400px] md:min-h-[500px] lg:min-h-full overflow-hidden group cursor-pointer">
     
-    <!-- Main Image -->
+    <!-- Main Image: Zooms slightly on hover -->
     <img src="Deep_tissue_massage_wellnesss_Adobe.jpeg" 
          alt="Clinical Massage" 
-         class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 brightness-[0.8]">
+         class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 brightness-[0.85] group-hover:brightness-[0.7]">
     
-    <!-- Dark Gradient Overlay (Ensures text is always readable) -->
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80"></div>
+    <!-- Dark Gradient Overlay: Fades in on hover -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
     
-    <!-- Glass Label: Responsive sizing -->
-    <div class="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10">
-        <div class="glass p-5 md:p-8 rounded-[2rem] border border-white/10 backdrop-blur-xl transition-all duration-700 group-hover:border-purple-500/50">
+    <!-- THE REVEAL CARD -->
+    <!-- On Desktop (lg): Starts at opacity 0 and 20px lower (translate-y-5) -->
+    <!-- On Hover: Fades in and slides up to its position -->
+    <div class="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 
+                opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 
+                transition-all duration-700 ease-out pointer-events-none">
+        
+        <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/20 backdrop-blur-2xl shadow-2xl">
             
-            <!-- Header: Straight & Bold (900) -->
-            <h4 class="text-white font-black text-lg md:text-xl mb-2 uppercase tracking-tighter leading-none">
-                Scientific Precision
+            <!-- Header: Straight & Black (900) -->
+            <h4 class="text-white font-black text-2xl md:text-3xl mb-4 uppercase tracking-tighter leading-none">
+                Scientific <span class="text-purple-400">Precision</span>
             </h4>
             
-            <!-- Paragraph: Light (300) - Smaller on mobile to save space -->
-            <p class="text-slate-300 text-[11px] md:text-sm leading-relaxed font-light">
+            <!-- Paragraph: Straight & Light (300) -->
+            <p class="text-slate-300 text-sm md:text-lg leading-relaxed font-light">
                 Every session at Axis is supervised by clinical experts to ensure the highest standards of anatomical safety and effectiveness.
             </p>
             
+            <!-- Small Indicator -->
+            <div class="mt-8 pt-8 border-t border-white/10 flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse"></div>
+                <span class="text-[9px] font-black uppercase tracking-[0.4em] text-purple-200">Clinical Protocol Verified</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- TOUCH INDICATOR (Mobile Only) -->
+    <div class="absolute top-6 right-6 md:hidden opacity-100 group-hover:opacity-0 transition-opacity">
+        <div class="bg-white/10 backdrop-blur-md p-3 rounded-full border border-white/20 text-white">
+            <i data-lucide="info" class="w-4 h-4"></i>
         </div>
     </div>
 </div>
-
         </div>
     </div>
 </section>
