@@ -7,16 +7,20 @@
         <div class="grid grid-cols-2 lg:grid-cols-5 gap-y-24 gap-x-10 font-sans">
             
             <!-- Sherin Shrestha (Director) -->
-            <div class="group relative">
-                <a href="#" @click="selectedMember = 'sherin'" class="block outline-none">
-                    <div class="relative w-40 h-40 mx-auto mb-6">
-                        <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
-                        <img src="sherin-dp.jpg" alt="Sherin Shrestha" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
-                    </div>
-                </a>
-                <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Sherin Shrestha</h4>
-                <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Director</p>
-            </div>
+<div class="group relative">
+    <!-- 1. Change href to the actual page name -->
+    <!-- 2. Remove @click="selectedMember = 'sherin'" -->
+    <a href="sherin-shrestha.html" class="block outline-none">
+        <div class="relative w-40 h-40 mx-auto mb-6">
+            <div class="absolute inset-0 rounded-full bg-purple-600 scale-110 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700"></div>
+            <img src="sherin-dp.jpg" alt="Sherin Shrestha" class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-2xl group-hover:scale-105 transition-all z-10">
+        </div>
+        
+        <!-- Moving the Name and Title inside the <a> tag makes them clickable too -->
+        <h4 class="font-black text-slate-950 text-xl tracking-tight leading-none">Sherin Shrestha</h4>
+        <p class="text-[10px] text-purple-600 font-black uppercase mb-2 tracking-widest mt-3">Director</p>
+    </a>
+</div>
 
             <!-- Dr. Suruchi Dev -->
             <div class="group relative">
