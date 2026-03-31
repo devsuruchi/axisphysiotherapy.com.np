@@ -1,112 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience Axis | Clinical Motion Preview</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <style>
-        * { font-style: normal !important; } /* AXIS BRAND STANDARD: NO ITALICS */
-        body { 
-            font-family: 'Inter', sans-serif; 
-            -webkit-font-smoothing: antialiased; 
-            background-color: #ffffff; 
-        }
-        h1, h2, h3 { font-weight: 900; letter-spacing: -0.05em; line-height: 1.1; }
-        p { font-weight: 300; line-height: 1.8; letter-spacing: -0.01em; }
-    </style>
-</head>
-<body class="text-slate-900 selection:bg-purple-100">
-
-    <!-- NAVIGATION -->
-    <nav class="p-6 md:p-10 flex justify-between items-center fixed top-0 w-full z-50 pointer-events-none">
-        <a href="index.html" class="pointer-events-auto flex items-center gap-3 group bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl border border-slate-100 shadow-sm transition-all hover:bg-slate-950 hover:text-white">
-            <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
-            <span class="text-[10px] font-black uppercase tracking-[0.3em]">Axis Home</span>
-        </a>
-    </nav>
-
-    <!-- HEADER SECTION -->
-    <header class="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-48 md:pb-24 text-center">
-        <span class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-lg shadow-purple-200 mb-8">
-            Visual Evidence
-        </span>
-        <h1 class="text-6xl md:text-8xl text-slate-950 uppercase leading-[0.9] tracking-tighter mb-8">
-            The Axis <br> <span class="text-purple-600">Experience.</span>
-        </h1>
-        <p class="text-lg md:text-xl text-slate-400 font-extralight leading-tight uppercase tracking-widest max-w-2xl mx-auto">
-            Witness the intersection of advanced <br> physical therapy and human performance.
-        </p>
-    </header>
-
-    <!-- THE VIDEO EXPERIENCE FRAME -->
-    <main class="pb-32">
-        <div class="max-w-7xl mx-auto px-6">
+<!-- LINK TO EXPERIENCE PAGE: VISUAL BRIDGE -->
+<section id="witness-axis" class="py-24 bg-slate-50 overflow-hidden font-sans">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-white rounded-[4rem] p-12 md:p-20 shadow-xl border border-slate-100 flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left">
             
-            <a href="clinical-action.html" class="group relative block w-full max-w-5xl mx-auto outline-none">
-                
-                <!-- 1. The Professional Frame -->
-                <div class="relative bg-slate-50 p-4 md:p-6 rounded-[4rem] border border-slate-100 shadow-xl transition-all duration-700 group-hover:shadow-[0_40px_80px_-15px_rgba(88,28,135,0.2)] group-hover:-translate-y-2">
-                    
-                    <!-- 2. Video Preview Container -->
-                    <div class="relative aspect-video md:aspect-[21/9] rounded-[3rem] overflow-hidden bg-slate-900 shadow-inner">
-                        
-                        <!-- Silent Looping Background Video Preview -->
-                        <video 
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline 
-                            class="w-full h-full object-cover brightness-[0.5] group-hover:brightness-[0.3] transition-all duration-700 scale-100 group-hover:scale-110"
-                        >
-                            <source src="patient-exercise.mp4" type="video/mp4">
-                        </video>
-
-                        <!-- 3. Centered Play Interface -->
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-                            <div class="w-20 h-20 md:w-28 md:h-28 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-purple-600 group-hover:border-purple-500 group-hover:scale-110">
-                                <i data-lucide="play" class="w-8 h-8 md:w-12 md:h-12 fill-white text-white ml-1.5"></i>
-                            </div>
-                            
-                            <div class="text-center space-y-2">
-                                <span class="block text-[10px] font-black uppercase tracking-[0.5em] text-purple-300 group-hover:text-white transition-colors">Start Experience</span>
-                                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">Watch Recovery <br> in Detail</h2>
-                            </div>
-                        </div>
-
-                        <!-- 4. Corner Live Badge -->
-                        <div class="absolute top-8 right-8 flex items-center gap-3 bg-black/40 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10">
-                            <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                            <span class="text-[9px] font-black uppercase tracking-widest text-white">Live Clinical Clip</span>
-                        </div>
-                    </div>
-
-                    <!-- 5. Bottom Label Bar -->
-                    <div class="mt-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p class="text-slate-400 text-[11px] font-black uppercase tracking-widest leading-none">
-                            Real-world clinical applications at Axis Physiotherapy Pulchowk.
-                        </p>
-                        <div class="flex items-center gap-2 text-purple-600 font-black uppercase text-[10px] tracking-widest">
-                            Access Full Analysis <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-2"></i>
-                        </div>
-                    </div>
+            <div class="flex-1 space-y-6">
+                <div class="flex items-center justify-center lg:justify-start gap-3">
+                    <span class="h-[1px] w-8 bg-purple-600"></span>
+                    <span class="text-purple-600 uppercase tracking-[0.4em] text-[10px] font-black">Clinical Motion</span>
                 </div>
-            </a>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-950 uppercase tracking-tighter leading-none">
+                    Witness the <br> <span class="text-purple-600">Science.</span>
+                </h2>
+                <p class="text-slate-400 font-light uppercase tracking-widest text-[11px] leading-loose max-w-md">
+                    See our evidence-based rehabilitation protocols in action through our clinical video experience.
+                </p>
+            </div>
+
+            <div class="flex-shrink-0">
+                <a href="experience.html" class="group relative flex items-center justify-center w-32 h-32 md:w-48 md:h-48 bg-slate-950 rounded-full text-white overflow-hidden transition-all duration-500 hover:bg-purple-600 hover:scale-110 shadow-2xl">
+                    <!-- Spinning Text Circle (Optional Aesthetic) -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-lucide="play" class="w-8 h-8 md:w-12 md:h-12 fill-white group-hover:scale-125 transition-transform duration-500"></i>
+                    </div>
+                    <!-- The Label -->
+                    <span class="absolute bottom-6 md:bottom-10 text-[8px] md:text-[10px] font-black uppercase tracking-widest opacity-60 group-hover:opacity-100">Watch Now</span>
+                </a>
+            </div>
 
         </div>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="py-20 text-center bg-white border-t border-slate-50">
-        <p class="text-[9px] font-black uppercase tracking-[0.5em] text-slate-300">
-            &copy; 2026 Axis Physiotherapy Pvt. Ltd. | Pulchowk, Lalitpur
-        </p>
-    </footer>
-
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+    </div>
+</section>
