@@ -10,6 +10,7 @@ async function loadAxisComponents() {
         { id: 'about-placeholder', url: 'about.html' },
         { id: 'consult-placeholder', url: 'consultation.html' },
         { id: 'conditions-placeholder', url: 'conditions.html' },
+        { id: 'witness-axis-placeholder', url: 'experience.html' },
         { id: 'services-placeholder', url: 'services.html' },
         { id: 'pricing-placeholder', url: 'pricing.html' },
         { id: 'network-placeholder', url: 'partnerships.html' },
