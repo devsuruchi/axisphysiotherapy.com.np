@@ -1,10 +1,21 @@
 <!-- HERO SECTION: MASTER INTEGRATED VERSION (65vh) -->
 <section class="relative h-[65vh] w-full flex items-center justify-center overflow-visible pt-20 bg-slate-950">
-    
-    <!-- 1. Background Image -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-        <img src="axis-physio-clinic-interior.jpg" class="w-full h-full object-cover brightness-[0.35]" alt="Axis Physiotherapy Pulchowk">
-    </div>
+
+    <!-- 1. Background Video -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+    <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        poster="axis-physio-clinic-interior.jpg" 
+        class="w-full h-full object-cover brightness-[0.35]"
+    >
+        <source src="your-video-filename.mp4" type="video/mp4">
+        <!-- Fallback image if video fails to load -->
+        <img src="axis-physio-clinic-interior.jpg" alt="Axis Physiotherapy Pulchowk">
+    </video>
+</div>
     
     <!-- 2. LEFT SIDE: FLOATING SOCIAL TAB (Glow + Ad-Blocker Proof) -->
     <div class="absolute left-0 top-1/2 -translate-y-1/2 z-50 hidden lg:block group/social">
