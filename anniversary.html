@@ -1,20 +1,18 @@
-<!-- ANNIVERSARY POPUP: FAIL-SAFE VERSION -->
-<div id="anniversary-popup" style="display: none;" class="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+<!-- ANNIVERSARY POPUP: ZERO-FLICKER VERSION -->
+<div id="anniversary-popup" style="display: none; opacity: 0; transition: opacity 0.8s ease;" class="fixed inset-0 z-[10000] flex items-center justify-center p-4">
     
     <!-- Dark Backdrop -->
-    <div onclick="closeAnniversary()" class="absolute inset-0 bg-slate-950/90 backdrop-blur-md"></div>
+    <div onclick="closeAnniversary()" class="absolute inset-0 bg-slate-950/95 backdrop-blur-xl"></div>
 
     <!-- THE FLYER -->
-    <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(88,28,135,0.6)] border-[12px] border-white animate-popup">
+    <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(88,28,135,0.7)] border-[12px] border-white">
         
         <!-- 1. CLINIC INTERIOR BACKGROUND -->
         <div class="absolute inset-0 z-0">
-            <!-- Ensure this image name is exactly correct in your folder -->
-            <img src="axis-physio-clinic-interior.jpg" 
-                 class="w-full h-full object-cover opacity-20 brightness-110" 
-                 alt="Axis Clinic Interior"
-                 onerror="this.style.display='none'"> <!-- Hides image if path is wrong -->
-            <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white/95"></div>
+            <img id="popup-bg-img" src="axis-physio-clinic-interior.jpg" 
+                 class="w-full h-full object-cover opacity-20" 
+                 alt="Axis Clinic">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-white/95"></div>
         </div>
 
         <!-- Close Button -->
@@ -25,33 +23,22 @@
         <!-- FLYER CONTENT AREA -->
         <div class="relative z-10 p-8 md:p-12 flex flex-col items-center text-center">
             
-            <!-- Logo Header -->
             <div class="border-y-[3px] border-slate-950 py-2 px-8 mb-10 inline-block">
                 <h2 class="text-sm font-black uppercase tracking-[0.4em] leading-tight text-slate-950">
                     The Axis <br> Physiotherapy
                 </h2>
             </div>
 
-            <!-- Main Headline -->
             <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-slate-950 mb-8">
                 You're <br> Invited
             </h1>
 
-            <!-- Location -->
-            <div class="bg-slate-900/5 border border-slate-900/10 px-8 py-3 rounded-xl mb-4">
-                <span class="text-sm font-black uppercase tracking-[0.25em] text-slate-700">
-                    Pulchowk Outlet
-                </span>
-            </div>
-
-            <!-- Date Box -->
             <div class="bg-slate-950 text-white px-10 py-5 rounded-2xl mb-8 shadow-2xl">
                 <h3 class="text-3xl md:text-4xl font-black uppercase tracking-widest leading-none">
                     Baisakh 01-10
                 </h3>
             </div>
 
-            <!-- Offers -->
             <div class="w-full border-t border-slate-950/10 pt-8">
                 <p class="text-xl md:text-2xl font-black text-purple-700 uppercase tracking-tighter mb-1">
                     15% OFF Physiotherapy
@@ -64,43 +51,69 @@
                 </p>
             </div>
 
-            <!-- Address -->
             <div class="mt-12 w-full pt-6 border-t-[3px] border-slate-950">
                 <p class="text-[10px] font-black uppercase tracking-widest text-slate-950">
-                    Ground Floor, Koto Building <br> Opp. NIMB Bank, Pulchowk
+                    Pulchowk, Lalitpur • Opp. NIMB Bank
                 </p>
             </div>
 
-            <!-- WhatsApp Link -->
             <a href="https://wa.me/9779863201528?text=Anniversary+Offer" 
-               class="mt-10 bg-purple-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-950 transition-all shadow-xl flex items-center gap-3">
+               class="mt-10 bg-purple-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-950 transition-all shadow-xl">
                 Book Your Slot
             </a>
         </div>
     </div>
 </div>
 
-<style>
-    /* Professional Animations */
-    @keyframes popupOpen {
-        from { opacity: 0; transform: scale(0.9) translateY(20px); }
-        to { opacity: 1; transform: scale(1) translateY(0); }
+<script>
+    /**
+     * PRELOADER LOGIC
+     * This waits for the image to be fully ready before showing the popup
+     */
+    function initAnniversaryPopup() {
+        const popup = document.getElementById('anniversary-popup');
+        const bgImg = document.getElementById('popup-bg-img');
+
+        // Create a temporary image to check loading status
+        const imgLoader = new Image();
+        imgLoader.src = bgImg.src;
+
+        imgLoader.onload = function() {
+            // Only show the popup after 2 seconds AND after image is loaded
+            setTimeout(() => {
+                popup.style.display = 'flex';
+                // Trigger the fade-in
+                setTimeout(() => {
+                    popup.style.opacity = '1';
+                }, 50);
+                
+                if (window.lucide) { lucide.createIcons(); }
+            }, 1500);
+        };
+
+        // Fallback: If image fails to load, show the popup anyway after 3 seconds
+        imgLoader.onerror = function() {
+            setTimeout(() => {
+                popup.style.display = 'flex';
+                popup.style.opacity = '1';
+                if (window.lucide) { lucide.createIcons(); }
+            }, 2000);
+        };
     }
-    .animate-popup { animation: popupOpen 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    function closeAnniversary() {
+        const popup = document.getElementById('anniversary-popup');
+        popup.style.opacity = '0';
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 800);
+    }
+
+    // Run the preloader
+    initAnniversaryPopup();
+</script>
+
+<style>
+    /* Ensure Brand Standards */
     #anniversary-popup * { font-style: normal !important; }
 </style>
-
-<script>
-    // Show popup after 2 seconds
-    setTimeout(() => {
-        const popup = document.getElementById('anniversary-popup');
-        popup.style.display = 'flex';
-        // Re-run Lucide if it's available to show the 'X' icon
-        if (window.lucide) { lucide.createIcons(); }
-    }, 2000);
-
-    // Close function
-    function closeAnniversary() {
-        document.getElementById('anniversary-popup').style.display = 'none';
-    }
-</script>
