@@ -123,6 +123,116 @@
     <!-- THE MAGIC LOADER SCRIPT -->
     <!-- This must be the very last thing before your closing body tag -->
     <script src="components.js"></script>
+<!-- ======================================================= -->
+<!-- ANNIVERSARY POPUP COMPONENT (Makeup Factory Style)    -->
+<!-- ======================================================= -->
+<div id="anniversary-popup" 
+     style="display: none; position: fixed; inset: 0; z-index: 99999; align-items: center; justify-content: center; padding: 1.5rem;">
+    
+    <!-- Backdrop Overlay -->
+    <div onclick="closeAnniversary()" style="position: absolute; inset: 0; background: rgba(2, 6, 23, 0.96); backdrop-filter: blur(15px);"></div>
 
+    <!-- THE FLYER CARD -->
+    <div id="flyer-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position: relative; background: white; width: 100%; max-width: 500px; border-radius: 3rem; overflow: hidden; border: 12px solid white; box-shadow: 0 50px 100px -20px rgba(88, 28, 135, 0.6); text-align: center;">
+        
+        <!-- Clinic Interior Background -->
+        <div style="position: absolute; inset: 0; z-index: 0;">
+            <img id="flyer-bg-img" src="/axis-physio-clinic-interior.jpg" 
+                 style="width: 100%; height: 100%; object-fit: cover; opacity: 0.2;" 
+                 alt="Axis Clinic">
+            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.98), rgba(255,255,255,0.7), rgba(255,255,255,0.98));"></div>
+        </div>
+
+        <!-- Close Button (SVG) -->
+        <button onclick="closeAnniversary()" style="position: absolute; top: 2rem; right: 2rem; color: #94a3b8; background: none; border: none; cursor: pointer; z-index: 50;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <!-- FLYER CONTENT -->
+        <div style="position: relative; z-index: 10; padding: 4rem 2rem;">
+            
+            <div style="border-top: 3px solid #0f172a; border-bottom: 3px solid #0f172a; padding: 0.5rem 2.5rem; margin-bottom: 3rem; display: inline-block;">
+                <h2 style="margin: 0; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #0f172a;">
+                    The Axis <br> Physiotherapy
+                </h2>
+            </div>
+
+            <h1 style="font-size: 5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.06em; color: #0f172a; margin: 0 0 2.5rem 0; line-height: 0.8;">
+                You're <br> Invited
+            </h1>
+
+            <div style="background: #0f172a; color: white; padding: 1.5rem 3rem; border-radius: 1.5rem; margin-bottom: 2.5rem; display: inline-block; box-shadow: 0 20px 40px rgba(88, 28, 135, 0.3);">
+                <h3 style="margin: 0; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1;">
+                    Baisakh 01-10
+                </h3>
+            </div>
+
+            <div style="width: 100%; border-top: 2px solid rgba(15, 23, 42, 0.08); padding-top: 2.5rem;">
+                <p style="margin: 0 0 0.5rem 0; font-size: 1.75rem; font-weight: 900; color: #7e22ce; text-transform: uppercase; letter-spacing: -0.02em;">
+                    15% OFF Physio
+                </p>
+                <p style="margin: 0; font-size: 1.5rem; font-weight: 900; color: #1e293b; text-transform: uppercase; letter-spacing: -0.02em;">
+                    10% OFF Massage
+                </p>
+                <p style="margin: 2rem 0 0 0; font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5em;">
+                    Celebrating 5 Years
+                </p>
+            </div>
+
+            <div style="margin-top: 4rem; width: 100%; border-top: 3px solid #0f172a; padding-top: 1.5rem;">
+                <p style="margin: 0; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; color: #0f172a;">
+                    Pulchowk, Lalitpur • Opp. NIMB Bank
+                </p>
+            </div>
+
+            <!-- Link to the full Anniversary Page -->
+            <a href="/anniversary" 
+               style="display: inline-block; margin-top: 3rem; background: #9333ea; color: white; padding: 1.5rem 4rem; border-radius: 9999px; text-decoration: none; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; box-shadow: 0 20px 40px rgba(147, 51, 234, 0.4);">
+                Details & Booking
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    /**
+     * ZERO-FLICKER PRELOADER
+     */
+    function initAnniversaryPopup() {
+        const popup = document.getElementById('anniversary-popup');
+        const flyer = document.getElementById('flyer-card');
+        const bgImg = document.getElementById('flyer-bg-img');
+
+        const imgPreloader = new Image();
+        imgPreloader.src = bgImg.src;
+
+        const reveal = () => {
+            setTimeout(() => {
+                popup.style.display = 'flex';
+                setTimeout(() => {
+                    flyer.style.opacity = '1';
+                    flyer.style.transform = 'translateY(0)';
+                }, 100);
+            }, 1500); // 1.5 second delay before appearing
+        };
+
+        imgPreloader.onload = reveal;
+        imgPreloader.onerror = reveal; 
+    }
+
+    function closeAnniversary() {
+        const flyer = document.getElementById('flyer-card');
+        const popup = document.getElementById('anniversary-popup');
+        flyer.style.opacity = '0';
+        flyer.style.transform = 'translateY(20px)';
+        setTimeout(() => { popup.style.display = 'none'; }, 800);
+    }
+
+    initAnniversaryPopup();
+</script>
+
+<style>
+    #anniversary-popup * { font-style: normal !important; }
+</style>
 </body>
 </html>
