@@ -125,7 +125,7 @@
     <script src="components.js"></script>
 
             
-            <!-- ANNIVERSARY POPUP: RESPONSIVE & ZERO-FLICKER -->
+           <!-- ANNIVERSARY POPUP: RESPONSIVE, VISIBLE & CLICKABLE -->
 <div id="anniversary-popup" 
      style="display: none; position: fixed; inset: 0; z-index: 99999; align-items: center; justify-content: center; padding: 1rem;">
     
@@ -133,70 +133,79 @@
     <div onclick="closeAnniversary()" style="position: absolute; inset: 0; background: rgba(2, 6, 23, 0.97); backdrop-filter: blur(12px);"></div>
 
     <!-- THE FLYER CARD -->
-    <div id="flyer-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position: relative; background: white; width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto; border-radius: 2.5rem; border: 8px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.6); text-align: center; scrollbar-width: none; -ms-overflow-style: none;">
+    <div id="flyer-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position: relative; background: white; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; border-radius: 2.5rem; border: 10px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.6); text-align: center; scrollbar-width: none; -ms-overflow-style: none;">
         
         <!-- Clinic Interior Background (Enhanced Visibility) -->
-<div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
-    <!-- Increased opacity to 0.5 and added a slight brightness filter -->
-    <img id="flyer-bg-img" src="/axis-physio-clinic-interior.jpg" 
-         style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);" 
-         alt="Axis Clinic">
-    
-    <!-- Softened the white gradient so it doesn't wash out the image -->
-    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.3), rgba(255,255,255,0.9));"></div>
-</div>
+        <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
+            <img id="flyer-bg-img" src="/axis-physio-clinic-interior.jpg" 
+                 style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);" 
+                 alt="Axis Clinic">
+            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.3), rgba(255,255,255,0.95));"></div>
+        </div>
 
         <!-- Close Button -->
-        <button onclick="closeAnniversary()" style="position: absolute; top: 1.25rem; right: 1.25rem; color: #000; background: rgba(255,255,255,0.8); backdrop-filter: blur(4px); border-radius: 50%; width: 40px; height: 40px; border: none; cursor: pointer; z-index: 50; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <button onclick="closeAnniversary()" style="position: absolute; top: 1.25rem; right: 1.25rem; color: #000; background: rgba(255,255,255,0.9); border-radius: 50%; width: 44px; height: 44px; border: none; cursor: pointer; z-index: 50; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
 
         <!-- FLYER CONTENT -->
-        <div style="position: relative; z-index: 10; padding: clamp(2rem, 8vw, 4rem) 1.5rem;">
+        <div style="position: relative; z-index: 10; padding: clamp(2.5rem, 8vw, 4rem) 1.5rem;">
             
             <!-- Logo Header -->
-            <div style="border-top: 2px solid #0f172a; border-bottom: 2px solid #0f172a; padding: 0.4rem 1.5rem; margin-bottom: clamp(1.5rem, 5vw, 2.5rem); display: inline-block;">
-                <h2 style="margin: 0; font-size: clamp(0.7rem, 3vw, 0.85rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; color: #0f172a; line-height: 1.2;">
-                    Axis Physiotherapy<br> Pvt. Ltd.
+            <div style="border-top: 3px solid #0f172a; border-bottom: 3px solid #0f172a; padding: 0.5rem 1.5rem; margin-bottom: clamp(2rem, 6vw, 3rem); display: inline-block;">
+                <h2 style="margin: 0; font-size: clamp(0.75rem, 3vw, 0.9rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #0f172a; line-height: 1.2;">
+                    The Axis <br> Physiotherapy
                 </h2>
             </div>
 
-            <!-- Main Headline (Fluid Scaling) -->
-            <h1 style="font-size: clamp(3rem, 18vw, 5.5rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; color: #0f172a; margin: 0 0 1.5rem 0; line-height: 0.85;">
+            <!-- Main Headline -->
+            <h1 style="font-size: clamp(3.5rem, 18vw, 6rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; color: #0f172a; margin: 0 0 1.5rem 0; line-height: 0.82;">
                 You're <br> Invited
             </h1>
 
             <!-- Date Box -->
-            <div style="background: #0f172a; color: white; padding: 1rem 2rem; border-radius: 1.25rem; margin-bottom: 2rem; display: inline-block; box-shadow: 0 15px 30px rgba(88, 28, 135, 0.3);">
-                <h3 style="margin: 0; font-size: clamp(1.5rem, 8vw, 2.25rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1;">
+            <div style="background: #0f172a; color: white; padding: 1.25rem 2.5rem; border-radius: 1.5rem; margin-bottom: 2.5rem; display: inline-block; box-shadow: 0 20px 40px rgba(88, 28, 135, 0.3);">
+                <h3 style="margin: 0; font-size: clamp(1.75rem, 8vw, 2.5rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1;">
                     Baisakh 01-10
                 </h3>
             </div>
 
             <!-- Offers -->
             <div style="width: 100%; border-top: 1px solid rgba(15, 23, 42, 0.1); padding-top: 2rem;">
-                <p style="margin: 0 0 0.4rem 0; font-size: clamp(1.2rem, 5vw, 1.6rem); font-weight: 900; color: #7e22ce; text-transform: uppercase; letter-spacing: -0.02em;">
+                <p style="margin: 0 0 0.5rem 0; font-size: clamp(1.4rem, 6vw, 1.8rem); font-weight: 900; color: #7e22ce; text-transform: uppercase; letter-spacing: -0.02em;">
                     15% OFF Physio
                 </p>
-                <p style="margin: 0; font-size: clamp(1rem, 4.5vw, 1.4rem); font-weight: 900; color: #1e293b; text-transform: uppercase; letter-spacing: -0.02em;">
+                <p style="margin: 0; font-size: clamp(1.2rem, 5vw, 1.5rem); font-weight: 900; color: #1e293b; text-transform: uppercase; letter-spacing: -0.02em;">
                     10% OFF Massage
                 </p>
-                <p style="margin: 1.5rem 0 0 0; font-size: 9px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.4em;">
-                    Celebrating 5 Years
+                
+                <!-- "Celebrating" Text (Contrast & Size Fixed) -->
+                <p style="margin: 1.5rem 0 0 0; font-size: clamp(11px, 3vw, 13px); font-weight: 900; color: #334155; text-transform: uppercase; letter-spacing: 0.25em;">
+                    Celebrating 5 Years of Excellence
                 </p>
             </div>
 
-            <!-- Address -->
-            <div style="margin-top: clamp(2rem, 8vw, 3.5rem); width: 100%; border-top: 2px solid #0f172a; padding-top: 1rem;">
-                <p style="margin: 0; font-size: clamp(9px, 2.5vw, 11px); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #0f172a;">
-                    Pulchowk, Lalitpur • Opp. Everest Bank
+            <!-- FOOTER: ADDRESS & CLICKABLE BOOKING -->
+            <div style="margin-top: clamp(2.5rem, 8vw, 4rem); width: 100%; border-top: 3px solid #0f172a; padding-top: 1.5rem;">
+                
+                <!-- Clickable WhatsApp Booking Link -->
+                <a href="https://wa.me/9779863201528?text=Anniversary+Offer+Enquiry" 
+                   style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+                    <span style="font-size: 11px; font-weight: 900; color: #16a34a; text-transform: uppercase; letter-spacing: 0.15em;">
+                        ● Tap to Book Now via WhatsApp
+                    </span>
+                </a>
+
+                <!-- Address Text -->
+                <p style="margin: 0; font-size: clamp(10px, 2.5vw, 12px); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #0f172a;">
+                    Pulchowk, Lalitpur • Opp. NIMB Bank
                 </p>
             </div>
 
-            <!-- CTA Button -->
+            <!-- CTA Primary Button -->
             <a href="/anniversary" 
-               style="display: inline-block; margin-top: 2.5rem; background: #9333ea; color: white; padding: 1.25rem 2.5rem; width: 80%; border-radius: 9999px; text-decoration: none; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; box-shadow: 0 15px 35px rgba(147, 51, 234, 0.4);">
-                Details & Booking
+               style="display: inline-block; margin-top: 2.5rem; background: #9333ea; color: white; padding: 1.5rem 2.5rem; width: 85%; border-radius: 9999px; text-decoration: none; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; box-shadow: 0 20px 40px rgba(147, 51, 234, 0.4);">
+                Details & Full Schedule
             </a>
         </div>
     </div>
@@ -236,7 +245,6 @@
 </script>
 
 <style>
-    /* Prevent italics and hide scrollbar for clean look */
     #anniversary-popup * { font-style: normal !important; }
     #flyer-card::-webkit-scrollbar { display: none; }
 </style>
