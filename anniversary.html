@@ -1,31 +1,99 @@
-<div style="width: 500px; height: 500px; background: white; border: 1px solid #ddd; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; position: relative; color: #1a1a1a; text-align: center;">
+<!-- ANNIVERSARY POPUP: INTERIOR BACKGROUND VERSION -->
+<div x-data="{ showAnniversary: false }" 
+     x-init="setTimeout(() => showAnniversary = true, 1500)" 
+     x-show="showAnniversary" 
+     x-cloak 
+     class="fixed inset-0 z-[1000] flex items-center justify-center p-4">
     
-    <!-- Top Logo Bar -->
-    <div style="border-top: 4px solid black; border-bottom: 4px solid black; padding: 5px 20px; margin-top: 10px;">
-        <h2 style="margin: 0; font-weight: 900; font-size: 18px; letter-spacing: 2px;">THE AXIS <br> PHYSIOTHERAPY</h2>
-    </div>
+    <!-- Dark Backdrop -->
+    <div @click="showAnniversary = false" 
+         class="absolute inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity"></div>
 
-    <!-- Main Message -->
-    <h1 style="font-size: 70px; font-weight: 900; margin: 40px 0 10px 0; line-height: 0.8; letter-spacing: -2px;">YOU'RE <br> INVITED</h1>
+    <!-- THE FLYER -->
+    <div x-show="showAnniversary" 
+         x-transition:enter="transition ease-out duration-500"
+         x-transition:enter-start="opacity-0 scale-90 translate-y-10"
+         x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+         class="relative bg-white w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(88,28,135,0.6)] border-[12px] border-white">
+        
+        <!-- 1. CLINIC INTERIOR BACKGROUND -->
+        <div class="absolute inset-0 z-0">
+            <img src="axis-physio-clinic-interior.jpg" 
+                 class="w-full h-full object-cover opacity-20 brightness-110" 
+                 alt="Axis Clinic Interior">
+            <!-- Gradient to ensure text readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white/90"></div>
+        </div>
 
-    <!-- Location -->
-    <div style="background: #f1f5f9; padding: 10px 40px; border-radius: 5px; margin-top: 10px;">
-        <span style="font-weight: 900; font-size: 16px; letter-spacing: 1px;">PULCHOWK CLINIC</span>
-    </div>
+        <!-- Close Button -->
+        <button @click="showAnniversary = false" class="absolute top-6 right-6 text-slate-400 hover:text-slate-950 transition-colors z-50">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
 
-    <!-- The Date -->
-    <div style="background: #1a1a1a; color: white; padding: 15px 50px; border-radius: 5px; margin-top: 15px;">
-        <h3 style="margin: 0; font-weight: 900; font-size: 32px; letter-spacing: 2px;">BAISAKH 01-10</h3>
-    </div>
+        <!-- FLYER CONTENT AREA (z-10 to stay above background) -->
+        <div class="relative z-10 p-8 md:p-12 flex flex-col items-center text-center">
+            
+            <!-- 1. Top Logo Bar -->
+            <div class="border-y-[3px] border-slate-950 py-2 px-8 mb-10 inline-block">
+                <h2 class="text-sm md:text-base font-black uppercase tracking-[0.4em] leading-tight text-slate-950">
+                    The Axis <br> Physiotherapy
+                </h2>
+            </div>
 
-    <!-- The Offer -->
-    <div style="margin-top: 20px; border-top: 1px solid #eee; width: 80%; padding-top: 20px;">
-        <p style="margin: 0; font-weight: 900; font-size: 18px; color: #581C87;">15% OFF PHYSIO | 10% OFF MASSAGE</p>
-        <p style="margin: 5px 0 0 0; font-size: 10px; font-weight: 700; color: #999;">CELEBRATING OUR 5TH ANNIVERSARY</p>
-    </div>
+            <!-- 2. Main Headline (Huge Bold - Makeup Factory Style) -->
+            <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-slate-950 mb-8">
+                You're <br> Invited
+            </h1>
 
-    <!-- Footer Address -->
-    <div style="position: absolute; bottom: 30px; border-top: 2px solid #333; width: 70%; padding-top: 10px;">
-        <p style="margin: 0; font-size: 11px; font-weight: 800; letter-spacing: 1px;">Pulchowk, Ground Floor, OPP NIMB Bank</p>
+            <!-- 3. Location Box -->
+            <div class="bg-slate-900/5 backdrop-blur-sm border border-slate-900/10 px-8 py-3 rounded-xl mb-4">
+                <span class="text-sm md:text-base font-black uppercase tracking-[0.25em] text-slate-700">
+                    Pulchowk Outlet
+                </span>
+            </div>
+
+            <!-- 4. The Date Box (Solid Black) -->
+            <div class="bg-slate-950 text-white px-10 py-5 rounded-2xl mb-8 shadow-2xl scale-105">
+                <h3 class="text-3xl md:text-4xl font-black uppercase tracking-widest leading-none">
+                    Baisakh 01-10
+                </h3>
+            </div>
+
+            <!-- 5. The Offers -->
+            <div class="w-full border-t border-slate-950/10 pt-8 space-y-3">
+                <div class="flex flex-col gap-1">
+                    <p class="text-xl md:text-2xl font-black text-purple-700 uppercase tracking-tighter">
+                        15% OFF Physiotherapy
+                    </p>
+                    <p class="text-lg md:text-xl font-black text-slate-800 uppercase tracking-tighter">
+                        10% OFF Massage
+                    </p>
+                </div>
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mt-4">
+                    Celebrating 5 Years of Excellence
+                </p>
+            </div>
+
+            <!-- 6. Footer Address Bar -->
+            <div class="mt-12 w-full pt-6 border-t-[3px] border-slate-950">
+                <p class="text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-950 leading-relaxed">
+                    Ground Floor, Koto Building <br> Opp. NIMB Bank, Pulchowk
+                </p>
+            </div>
+
+            <!-- WhatsApp Booking -->
+            <a href="https://wa.me/9779863201528?text=I+want+to+book+the+Anniversary+Offer" 
+               class="mt-10 bg-purple-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-xs hover:bg-slate-950 transition-all shadow-2xl active:scale-95 flex items-center gap-3">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                Book Your Slot
+            </a>
+        </div>
+
     </div>
 </div>
+
+<style>
+    /* Prevent any italics in the anniversary popup */
+    #anniversary-popup *, [x-cloak] { font-style: normal !important; display: none !important; }
+    [x-cloak] { display: none !important; }
+</style>
