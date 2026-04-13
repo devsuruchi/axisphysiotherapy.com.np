@@ -9,29 +9,20 @@
     <div id="flyer-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position: relative; background: white; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; border-radius: 2.5rem; border: 10px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.6); text-align: center; scrollbar-width: none; -ms-overflow-style: none;">
         
         <!-- Clinic Interior Background (LIVE VIDEO VERSION) -->
-<div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
-    <!-- 
-        Autoplay: Starts immediately
-        Muted: Required for autoplay to work in browsers
-        Loop: Keeps the motion going forever
-        Playsinline: Works on iPhones/Androids
-    -->
-    <video 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        poster="/axis-physio-clinic-interior.jpg"
-        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);"
-    >
-        <source src="/axis-interior.mp4" type="video/mp4">
-        <!-- Fallback for old browsers -->
-        <img src="/axis-physio-clinic-interior.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-    </video>
-
-    <!-- The "Makeup Factory" White Gradient Overlays -->
-    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.95) 100%);"></div>
-</div>
+        <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                poster="/axis-physio-clinic-interior.jpg"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);"
+            >
+                <source src="/axis-interior.mp4" type="video/mp4">
+                <img src="/axis-physio-clinic-interior.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </video>
+            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.3), rgba(255,255,255,0.95));"></div>
+        </div>
 
         <!-- Close Button -->
         <button onclick="closeAnniversary()" style="position: absolute; top: 1.25rem; right: 1.25rem; color: #000; background: rgba(255,255,255,0.9); border-radius: 50%; width: 44px; height: 44px; border: none; cursor: pointer; z-index: 50; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -44,7 +35,7 @@
             <!-- Logo Header -->
             <div style="border-top: 3px solid #0f172a; border-bottom: 3px solid #0f172a; padding: 0.5rem 1.5rem; margin-bottom: clamp(2rem, 6vw, 3rem); display: inline-block;">
                 <h2 style="margin: 0; font-size: clamp(0.75rem, 3vw, 0.9rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #0f172a; line-height: 1.2;">
-                    Axis Physiotherapy<br> Pvt. ltd.
+                    Axis Physiotherapy<br> Pvt. Ltd.
                 </h2>
             </div>
 
@@ -68,31 +59,25 @@
                 <p style="margin: 0; font-size: clamp(1.2rem, 5vw, 1.5rem); font-weight: 900; color: #1e293b; text-transform: uppercase; letter-spacing: -0.02em;">
                     10% OFF Massage
                 </p>
-                
-                <!-- "Celebrating" Text (Contrast & Size Fixed) -->
                 <p style="margin: 1.5rem 0 0 0; font-size: clamp(11px, 3vw, 13px); font-weight: 900; color: #334155; text-transform: uppercase; letter-spacing: 0.25em;">
                     Celebrating 5 Years of Excellence
                 </p>
             </div>
 
-            <!-- FOOTER: ADDRESS & CLICKABLE BOOKING -->
+            <!-- FOOTER -->
             <div style="margin-top: clamp(2.5rem, 8vw, 4rem); width: 100%; border-top: 3px solid #0f172a; padding-top: 1.5rem;">
-                
-                <!-- Clickable WhatsApp Booking Link -->
                 <a href="https://wa.me/9779863201528?text=Anniversary+Offer+Enquiry" 
                    style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
                     <span style="font-size: 11px; font-weight: 900; color: #16a34a; text-transform: uppercase; letter-spacing: 0.15em;">
                         ● Tap to Book Now via WhatsApp
                     </span>
                 </a>
-
-                <!-- Address Text -->
                 <p style="margin: 0; font-size: clamp(10px, 2.5vw, 12px); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #0f172a;">
                     Pulchowk, Lalitpur • Opp. Everest Bank
                 </p>
             </div>
 
-            <!-- CTA Primary Button -->
+            <!-- CTA -->
             <a href="/anniversary" 
                style="display: inline-block; margin-top: 2.5rem; background: #9333ea; color: white; padding: 1.5rem 2.5rem; width: 85%; border-radius: 9999px; text-decoration: none; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; box-shadow: 0 20px 40px rgba(147, 51, 234, 0.4);">
                 Details & Full Schedule
@@ -102,36 +87,32 @@
 </div>
 
 <script>
-    function initAnniversaryPopup() {
-        const popup = document.getElementById('anniversary-popup');
-        const flyer = document.getElementById('flyer-card');
-        const bgImg = document.getElementById('flyer-bg-img');
-
-        const reveal = () => {
-            setTimeout(() => {
+    // Bulletproof trigger: Waits 2 seconds after page load then shows popup
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const popup = document.getElementById('anniversary-popup');
+            const flyer = document.getElementById('flyer-card');
+            
+            if(popup && flyer) {
                 popup.style.display = 'flex';
+                // Small delay to trigger the CSS transition
                 setTimeout(() => {
                     flyer.style.opacity = '1';
                     flyer.style.transform = 'translateY(0)';
                 }, 100);
-            }, 1800);
-        };
-
-        const imgPreloader = new Image();
-        imgPreloader.src = bgImg.src;
-        imgPreloader.onload = reveal;
-        imgPreloader.onerror = reveal; 
-    }
+            }
+        }, 2000); // 2 second delay
+    });
 
     function closeAnniversary() {
         const flyer = document.getElementById('flyer-card');
         const popup = document.getElementById('anniversary-popup');
-        flyer.style.opacity = '0';
-        flyer.style.transform = 'translateY(20px)';
-        setTimeout(() => { popup.style.display = 'none'; }, 600);
+        if(flyer) flyer.style.opacity = '0';
+        if(flyer) flyer.style.transform = 'translateY(20px)';
+        setTimeout(() => { 
+            if(popup) popup.style.display = 'none'; 
+        }, 600);
     }
-
-    initAnniversaryPopup();
 </script>
 
 <style>
