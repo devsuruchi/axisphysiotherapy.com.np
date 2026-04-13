@@ -1,15 +1,86 @@
-<!-- Date Box (Refined & Balanced) -->
-<div style="background: #7e22ce; color: white; padding: 1rem 2rem; border-radius: 1.25rem; margin-bottom: 2rem; display: inline-block; box-shadow: 0 15px 35px rgba(126, 34, 206, 0.3); text-align: center;">
-    <!-- Primary BS Date -->
-    <h3 style="margin: 0; font-size: clamp(1.1rem, 5vw, 1.4rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">
-        01 to 30 Baishakh 2083
-    </h3>
-    
-    <!-- Thin Divider Line -->
-    <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 0.5rem auto; width: 80%;"></div>
-    
-    <!-- Secondary AD Date (Smaller & Clean) -->
-    <p style="margin: 0; font-size: clamp(0.8rem, 3.5vw, 0.95rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.9;">
-        14 April — 14 May 2026
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axis 5th Anniversary Video Flyer</title>
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #000; margin: 0; padding: 0; overflow: hidden; }
+        * { font-style: normal !important; }
+        /* Professional Gradient Overlay to make Purple Text Pop */
+        .glass-overlay { 
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(250,245,255,0.4) 50%, rgba(255,255,255,0.98) 100%); 
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <!-- THE REEL FRAME (9:16 Aspect Ratio - Perfect for Instagram/WhatsApp) -->
+    <div class="relative w-[360px] h-[640px] bg-white overflow-hidden shadow-2xl border-[12px] border-white rounded-[3.5rem]">
+        
+        <!-- 1. THE VIDEO BACKGROUND -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover brightness-110">
+                <source src="axis-interior.mp4" type="video/mp4">
+            </video>
+            <!-- Gradient Filter -->
+            <div class="absolute inset-0 glass-overlay"></div>
+        </div>
+
+        <!-- 2. FLYER CONTENT -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-between py-14 px-8 text-center">
+            
+            <!-- Top Bar: Logo -->
+            <div class="border-y-[3px] border-[#7e22ce] py-2 px-8">
+                <h2 class="text-[11px] font-black uppercase tracking-[0.4em] text-[#7e22ce] leading-tight">
+                    Axis Physiotherapy<br>Pvt. Ltd.
+                </h2>
+            </div>
+
+            <!-- Main Message: Invitation -->
+            <div class="space-y-2">
+                <p class="text-[10px] font-black uppercase tracking-[0.5em] text-[#9333ea]">5th Anniversary Event</p>
+                <h1 class="text-7xl font-black uppercase tracking-tighter leading-[0.82] text-[#581c87]">
+                    You're <br> Invited
+                </h1>
+            </div>
+
+            <!-- The Date Box (Purple) -->
+            <div class="bg-[#7e22ce] text-white p-5 rounded-3xl shadow-2xl w-full max-w-[260px] border-2 border-white/20">
+                <p class="text-base font-black uppercase tracking-widest leading-none mb-1">
+                    01 to 30 Baishakh 2083
+                </p>
+                <div class="h-[1px] background-white/30 my-2 w-full"></div>
+                <p class="text-[10px] font-bold uppercase tracking-widest opacity-90">
+                    14 April — 14 May 2026
+                </p>
+            </div>
+
+            <!-- The Offers -->
+            <div class="space-y-1 w-full border-t border-[#7e22ce]/20 pt-6">
+                <p class="text-2xl font-black text-[#9333ea] uppercase tracking-tighter">15% OFF Physio</p>
+                <p class="text-xl font-black text-[#6b21a8] uppercase tracking-tighter">10% OFF Massage</p>
+                <p class="text-[9px] font-black text-[#94a3b8] uppercase tracking-[0.5em] mt-4">Celebrating 5 Years</p>
+            </div>
+
+            <!-- Footer: Location -->
+            <div class="w-full pt-4 border-t-[3px] border-[#7e22ce]">
+                <p class="text-[10px] font-black uppercase tracking-widest text-[#581c87] leading-relaxed">
+                    Pulchowk, Lalitpur • Opp. Everest Bank <br>
+                    <span class="text-[#16a34a] font-black animate-pulse">● Tap to Book via WhatsApp</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- UI HELPER (Not part of the video) -->
+    <div class="fixed bottom-6 text-white/30 text-[10px] uppercase tracking-widest font-black">
+        READY FOR SCREEN RECORDING
+    </div>
+
+</body>
+</html>
