@@ -135,13 +135,30 @@
     <!-- THE FLYER CARD -->
     <div id="flyer-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position: relative; background: white; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; border-radius: 2.5rem; border: 10px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.6); text-align: center; scrollbar-width: none; -ms-overflow-style: none;">
         
-        <!-- Clinic Interior Background (Enhanced Visibility) -->
-        <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
-            <img id="flyer-bg-img" src="/axis-physio-clinic-interior.jpg" 
-                 style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);" 
-                 alt="Axis Clinic">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.3), rgba(255,255,255,0.95));"></div>
-        </div>
+        <!-- Clinic Interior Background (LIVE VIDEO VERSION) -->
+<div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
+    <!-- 
+        Autoplay: Starts immediately
+        Muted: Required for autoplay to work in browsers
+        Loop: Keeps the motion going forever
+        Playsinline: Works on iPhones/Androids
+    -->
+    <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        poster="/axis-physio-clinic-interior.jpg"
+        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);"
+    >
+        <source src="/axis-interior.mp4" type="video/mp4">
+        <!-- Fallback for old browsers -->
+        <img src="/axis-physio-clinic-interior.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+    </video>
+
+    <!-- The "Makeup Factory" White Gradient Overlays -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.95) 100%);"></div>
+</div>
 
         <!-- Close Button -->
         <button onclick="closeAnniversary()" style="position: absolute; top: 1.25rem; right: 1.25rem; color: #000; background: rgba(255,255,255,0.9); border-radius: 50%; width: 44px; height: 44px; border: none; cursor: pointer; z-index: 50; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
