@@ -1,76 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axis 5th Anniversary Video Flyer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow: hidden; background: #000; }
-        * { font-style: normal !important; text-transform: none; }
-    </style>
-</head>
-<body class="flex items-center justify-center h-screen w-screen">
+<!-- ANNIVERSARY POPUP: RESPONSIVE, VISIBLE & CLICKABLE -->
+<div id="anniversary-popup" 
+     style="display: none; position: fixed; inset: 0; z-index: 99999; align-items: center; justify-content: center; padding: 1rem;">
+    
+    <!-- Backdrop Overlay -->
+    <div onclick="closeAnniversary()" style="position: absolute; inset: 0; background: rgba(2, 6, 23, 0.97); backdrop-filter: blur(12px);"></div>
 
-    <!-- THE VIDEO BACKGROUND -->
-    <div class="absolute inset-0 z-0">
-        <video autoplay muted loop playsinline class="w-full h-full object-cover brightness-[0.7]">
-            <source src="axis-exercises.mp4" type="video/mp4">
-        </video>
-        <!-- Overlay for readability -->
-        <div class="absolute inset-0 bg-white/60"></div>
-    </div>
-
-    <!-- THE FLYER CONTENT -->
-    <div class="relative z-10 w-[90%] max-w-[500px] aspect-[9/16] bg-white/90 backdrop-blur-md border-[12px] border-white shadow-2xl flex flex-col items-center justify-center p-10 text-center rounded-[3rem]">
+    <!-- THE FLYER CARD -->
+    <div id="flyer-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); position: relative; background: white; width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto; border-radius: 2.5rem; border: 10px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.6); text-align: center; scrollbar-width: none; -ms-overflow-style: none;">
         
-        <!-- Top Logo Bar -->
-        <div class="border-y-[3px] border-slate-950 py-2 px-8 mb-12">
-            <h2 class="text-base font-black uppercase tracking-[0.4em] text-slate-950">
-                The Axis <br> Physiotherapy
-            </h2>
-        </div>
+        <!-- Clinic Interior Background (LIVE VIDEO VERSION) -->
+<div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
+    <!-- 
+        Autoplay: Starts immediately
+        Muted: Required for autoplay to work in browsers
+        Loop: Keeps the motion going forever
+        Playsinline: Works on iPhones/Androids
+    -->
+    <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        poster="/axis-physio-clinic-interior.jpg"
+        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(1.1) contrast(1.1);"
+    >
+        <source src="/axis-interior.mp4" type="video/mp4">
+        <!-- Fallback for old browsers -->
+        <img src="/axis-physio-clinic-interior.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+    </video>
 
-        <!-- Main Message -->
-        <h1 class="text-7xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-slate-950 mb-10">
-            You're <br> Invited
-        </h1>
+    <!-- The "Makeup Factory" White Gradient Overlays -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.95) 100%);"></div>
+</div>
 
-        <!-- Location Box -->
-        <div class="bg-slate-950/5 border border-slate-950/10 px-8 py-3 rounded-xl mb-6">
-            <span class="text-sm font-black uppercase tracking-[0.3em] text-slate-600">
-                Pulchowk Outlet
-            </span>
-        </div>
+        <!-- Close Button -->
+        <button onclick="closeAnniversary()" style="position: absolute; top: 1.25rem; right: 1.25rem; color: #000; background: rgba(255,255,255,0.9); border-radius: 50%; width: 44px; height: 44px; border: none; cursor: pointer; z-index: 50; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
 
-        <!-- Date Box -->
-        <div class="bg-slate-950 text-white px-10 py-6 rounded-3xl mb-10 shadow-2xl">
-            <h3 class="text-3xl md:text-4xl font-black uppercase tracking-widest leading-none">
-                Baisakh 01-10
-            </h3>
-        </div>
+        <!-- FLYER CONTENT -->
+        <div style="position: relative; z-index: 10; padding: clamp(2.5rem, 8vw, 4rem) 1.5rem;">
+            
+            <!-- Logo Header -->
+            <div style="border-top: 3px solid #0f172a; border-bottom: 3px solid #0f172a; padding: 0.5rem 1.5rem; margin-bottom: clamp(2rem, 6vw, 3rem); display: inline-block;">
+                <h2 style="margin: 0; font-size: clamp(0.75rem, 3vw, 0.9rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #0f172a; line-height: 1.2;">
+                    Axis Physiotherapy<br> Pvt. ltd.
+                </h2>
+            </div>
 
-        <!-- The Offer -->
-        <div class="w-full border-t border-slate-950/10 pt-8 space-y-2">
-            <p class="text-2xl font-black text-purple-700 uppercase tracking-tight">
-                15% Off Physio
-            </p>
-            <p class="text-xl font-black text-slate-800 uppercase tracking-tight">
-                10% Off Massage
-            </p>
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em] mt-6">
-                Celebrating 5 Years
-            </p>
-        </div>
+            <!-- Main Headline -->
+            <h1 style="font-size: clamp(3.5rem, 18vw, 6rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; color: #0f172a; margin: 0 0 1.5rem 0; line-height: 0.82;">
+                You're <br> Invited
+            </h1>
 
-        <!-- Footer Address -->
-        <div class="absolute bottom-10 w-[80%] pt-6 border-t-[3px] border-slate-950">
-            <p class="text-[10px] font-black uppercase tracking-widest text-slate-950 leading-relaxed">
-                Pulchowk, Lalitpur • Opp. NIMB Bank
-            </p>
+            <!-- Date Box -->
+            <div style="background: #0f172a; color: white; padding: 1.25rem 2.5rem; border-radius: 1.5rem; margin-bottom: 2.5rem; display: inline-block; box-shadow: 0 20px 40px rgba(88, 28, 135, 0.3);">
+                <h3 style="margin: 0; font-size: clamp(1.75rem, 8vw, 2.5rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1;">
+                    Baisakh 01-30
+                </h3>
+            </div>
+
+            <!-- Offers -->
+            <div style="width: 100%; border-top: 1px solid rgba(15, 23, 42, 0.1); padding-top: 2rem;">
+                <p style="margin: 0 0 0.5rem 0; font-size: clamp(1.4rem, 6vw, 1.8rem); font-weight: 900; color: #7e22ce; text-transform: uppercase; letter-spacing: -0.02em;">
+                    15% OFF Physio
+                </p>
+                <p style="margin: 0; font-size: clamp(1.2rem, 5vw, 1.5rem); font-weight: 900; color: #1e293b; text-transform: uppercase; letter-spacing: -0.02em;">
+                    10% OFF Massage
+                </p>
+                
+                <!-- "Celebrating" Text (Contrast & Size Fixed) -->
+                <p style="margin: 1.5rem 0 0 0; font-size: clamp(11px, 3vw, 13px); font-weight: 900; color: #334155; text-transform: uppercase; letter-spacing: 0.25em;">
+                    Celebrating 5 Years of Excellence
+                </p>
+            </div>
+
+            <!-- FOOTER: ADDRESS & CLICKABLE BOOKING -->
+            <div style="margin-top: clamp(2.5rem, 8vw, 4rem); width: 100%; border-top: 3px solid #0f172a; padding-top: 1.5rem;">
+                
+                <!-- Clickable WhatsApp Booking Link -->
+                <a href="https://wa.me/9779863201528?text=Anniversary+Offer+Enquiry" 
+                   style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+                    <span style="font-size: 11px; font-weight: 900; color: #16a34a; text-transform: uppercase; letter-spacing: 0.15em;">
+                        ● Tap to Book Now via WhatsApp
+                    </span>
+                </a>
+
+                <!-- Address Text -->
+                <p style="margin: 0; font-size: clamp(10px, 2.5vw, 12px); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #0f172a;">
+                    Pulchowk, Lalitpur • Opp. Everest Bank
+                </p>
+            </div>
+
+            <!-- CTA Primary Button -->
+            <a href="/anniversary" 
+               style="display: inline-block; margin-top: 2.5rem; background: #9333ea; color: white; padding: 1.5rem 2.5rem; width: 85%; border-radius: 9999px; text-decoration: none; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; box-shadow: 0 20px 40px rgba(147, 51, 234, 0.4);">
+                Details & Full Schedule
+            </a>
         </div>
     </div>
+</div>
 
-</body>
-</html>
+<script>
+    function initAnniversaryPopup() {
+        const popup = document.getElementById('anniversary-popup');
+        const flyer = document.getElementById('flyer-card');
+        const bgImg = document.getElementById('flyer-bg-img');
+
+        const reveal = () => {
+            setTimeout(() => {
+                popup.style.display = 'flex';
+                setTimeout(() => {
+                    flyer.style.opacity = '1';
+                    flyer.style.transform = 'translateY(0)';
+                }, 100);
+            }, 1800);
+        };
+
+        const imgPreloader = new Image();
+        imgPreloader.src = bgImg.src;
+        imgPreloader.onload = reveal;
+        imgPreloader.onerror = reveal; 
+    }
+
+    function closeAnniversary() {
+        const flyer = document.getElementById('flyer-card');
+        const popup = document.getElementById('anniversary-popup');
+        flyer.style.opacity = '0';
+        flyer.style.transform = 'translateY(20px)';
+        setTimeout(() => { popup.style.display = 'none'; }, 600);
+    }
+
+    initAnniversaryPopup();
+</script>
+
+<style>
+    #anniversary-popup * { font-style: normal !important; }
+    #flyer-card::-webkit-scrollbar { display: none; }
+</style>
