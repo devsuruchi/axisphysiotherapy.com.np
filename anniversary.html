@@ -1,96 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axis Flyer Capture</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <style>
-        body { background: #000; margin: 0; display: flex; align-items: center; justify-content: center; min-h-screen; font-family: 'Inter', sans-serif; }
-        * { font-style: normal !important; }
-    </style>
-</head>
-<body>
-
-    <!-- 9:16 REEL FRAME (Perfect for Social Media) -->
-    <div id="capture-area" class="relative w-[380px] h-[675px] bg-white overflow-hidden shadow-2xl border-[12px] border-white rounded-[3rem] text-center">
+<!-- STANDALONE ANNIVERSARY FLYER (NO POPUP) -->
+<div style="display: flex; align-items: center; justify-content: center; padding: 2rem; background-color: #f8fafc; min-height: 100vh; font-family: 'Inter', sans-serif;">
+    
+    <!-- THE FLYER CARD -->
+    <div style="position: relative; background: white; width: 100%; max-width: 480px; border-radius: 2.5rem; overflow: hidden; border: 12px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.3); text-align: center;">
         
-        <!-- Video Background -->
-        <div class="absolute inset-0 z-0">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-40 grayscale-[0.2]">
-                <source src="axis-interior.mp4" type="video/mp4">
+        <!-- 1. CLINIC VIDEO BACKGROUND -->
+        <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                poster="/axis-physio-clinic-interior.jpg"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: brightness(1.1) contrast(1.1);"
+            >
+                <source src="/axis-interior.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white/95"></div>
+            <!-- Purple-Tinted White Gradient Overlay -->
+            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, rgba(250,245,255,0.4) 50%, rgba(255,255,255,0.98) 100%);"></div>
         </div>
 
-        <!-- Content Area -->
-        <div class="relative z-10 h-full flex flex-col items-center justify-between py-12 px-6">
+        <!-- 2. FLYER CONTENT -->
+        <div style="position: relative; z-index: 10; padding: 4rem 1.5rem;">
             
-            <!-- Logo Header -->
-            <div class="border-y-[3px] border-[#7e22ce] py-2 px-8 inline-block">
-                <h2 class="text-[11px] font-black uppercase tracking-[0.4em] text-[#7e22ce] leading-tight">
-                    Axis Physiotherapy<br>Pvt. Ltd.
+            <!-- Logo Header (Purple Borders & Text) -->
+            <div style="border-top: 3px solid #7e22ce; border-bottom: 3px solid #7e22ce; padding: 0.5rem 1.5rem; margin-bottom: 3rem; display: inline-block;">
+                <h2 style="margin: 0; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #7e22ce; line-height: 1.2;">
+                    Axis Physiotherapy
                 </h2>
             </div>
 
-            <!-- Main Headline -->
-            <h1 class="text-6xl font-black uppercase tracking-tighter leading-[0.82] text-[#581c87]">
+            <!-- Main Headline (All Purple) -->
+            <h1 style="font-size: clamp(3.5rem, 15vw, 5.5rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; color: #581c87; margin: 0 0 1.5rem 0; line-height: 0.82;">
                 You're <br> Invited
             </h1>
 
-            <!-- Date Box -->
-            <div class="bg-[#7e22ce] text-white p-4 rounded-2xl shadow-xl w-full max-w-[280px]">
-                <p class="text-sm font-black uppercase tracking-widest leading-none mb-1">
+            <!-- Date Box (Purple) -->
+            <div style="background: #7e22ce; color: white; padding: 1rem 2rem; border-radius: 1.25rem; margin-bottom: 2.5rem; display: inline-block; box-shadow: 0 15px 35px rgba(126, 34, 206, 0.3);">
+                <h3 style="margin: 0; font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">
                     01 to 30 Baishakh 2083
-                </p>
-                <div class="h-[1px] bg-white/20 my-2 w-full"></div>
-                <p class="text-[10px] font-bold uppercase tracking-widest opacity-90">
+                </h3>
+                <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 0.5rem auto; width: 80%;"></div>
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.9;">
                     14 April — 14 May 2026
                 </p>
             </div>
 
-            <!-- Offers -->
-            <div class="w-full border-t border-[#7e22ce]/20 pt-6">
-                <p class="text-2xl font-black text-[#9333ea] uppercase tracking-tighter">15% OFF Physio</p>
-                <p class="text-xl font-black text-[#6b21a8] uppercase tracking-tighter opacity-80">10% OFF Massage</p>
-                <p class="text-[10px] font-black text-[#7e22ce] uppercase tracking-[0.4em] mt-4">
-                    Celebrating 5 Years
+            <!-- Offers (All Purple) -->
+            <div style="width: 100%; border-top: 1px solid rgba(126, 34, 206, 0.2); padding-top: 2rem;">
+                <p style="margin: 0 0 0.5rem 0; font-size: 1.6rem; font-weight: 900; color: #9333ea; text-transform: uppercase; letter-spacing: -0.02em;">
+                    15% OFF Physiotherapy
+                </p>
+                <p style="margin: 0; font-size: 1.3rem; font-weight: 900; color: #6b21a8; text-transform: uppercase; letter-spacing: -0.02em;">
+                    10% OFF Massage
+                </p>
+                
+                <p style="margin: 1.5rem 0 0 0; font-size: 12px; font-weight: 900; color: #7e22ce; text-transform: uppercase; letter-spacing: 0.25em;">
+                    Celebrating 5 Years of Excellence
                 </p>
             </div>
 
-            <!-- Footer -->
-            <div class="w-full pt-4 border-t-[3px] border-[#7e22ce]">
-                <p class="text-[10px] font-black uppercase tracking-widest text-[#581c87] leading-relaxed">
-                    Pulchowk, Lalitpur • Opp. Everest Bank <br>
-                    <span class="text-[#16a34a] font-black animate-pulse">● Book Now via WhatsApp</span>
+            <!-- FOOTER: CLICKABLE BOOKING -->
+            <div style="margin-top: 3.5rem; width: 100%; border-top: 3px solid #7e22ce; padding-top: 1.5rem;">
+                <a href="https://wa.me/9779863201528?text=Anniversary+Offer+Enquiry" 
+                   style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+                    <span style="font-size: 11px; font-weight: 900; color: #16a34a; text-transform: uppercase; letter-spacing: 0.15em;">
+                        ● Tap to Book Now via WhatsApp
+                    </span>
+                </a>
+                <p style="margin: 0; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #581c87;">
+                    Pulchowk, Lalitpur • Opp. Everest Bank
                 </p>
             </div>
+
+            <!-- Simple Secondary Button -->
+            <a href="/anniversary" 
+               style="display: inline-block; margin-top: 2.5rem; background: #9333ea; color: white; padding: 1.25rem 2.5rem; width: 85%; border-radius: 9999px; text-decoration: none; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; box-shadow: 0 15px 35px rgba(147, 51, 234, 0.4);">
+                Details & Full Schedule
+            </a>
         </div>
     </div>
-
-    <!-- ACTION BUTTONS (Hidden during capture) -->
-    <div class="fixed bottom-4 flex gap-4">
-        <button onclick="downloadImage()" class="bg-purple-600 text-white px-6 py-3 rounded-full font-black uppercase text-xs">Download as JPEG</button>
-        <p class="text-white/40 text-[10px] uppercase mt-4">For Video: Screen record this screen</p>
-    </div>
-
-    <script>
-        function downloadImage() {
-            const btn = event.target;
-            btn.innerText = "Generating...";
-            html2canvas(document.querySelector("#capture-area"), {
-                scale: 3, // High quality
-                useCORS: true,
-                backgroundColor: "#ffffff"
-            }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = 'Axis-Anniversary-Flyer.jpg';
-                link.href = canvas.toDataURL("image/jpeg", 0.9);
-                link.click();
-                btn.innerText = "Download as JPEG";
-            });
-        }
-    </script>
-</body>
-</html>
+</div>
