@@ -1,83 +1,128 @@
-<!-- STANDALONE ANNIVERSARY FLYER (NO POPUP) -->
-<div style="display: flex; align-items: center; justify-content: center; padding: 2rem; background-color: #f8fafc; min-height: 100vh; font-family: 'Inter', sans-serif;">
-    
-    <!-- THE FLYER CARD -->
-    <div style="position: relative; background: white; width: 100%; max-width: 480px; border-radius: 2.5rem; overflow: hidden; border: 12px solid white; box-shadow: 0 40px 100px -20px rgba(88, 28, 135, 0.3); text-align: center;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axis Video Flyer Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <style>
+        body { background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: screen; font-family: 'Inter', sans-serif; }
+        * { font-style: normal !important; }
+        /* Hidden from video recording */
+        #controls { margin-top: 20px; z-index: 100; }
+    </style>
+</head>
+<body>
+
+    <!-- THE FLYER AREA (This is what will be recorded) -->
+    <div id="flyer-capture" class="relative w-[360px] h-[640px] bg-white overflow-hidden shadow-2xl border-[10px] border-white rounded-[3rem] text-center">
         
-        <!-- 1. CLINIC VIDEO BACKGROUND -->
-        <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
-            <video 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                poster="/axis-physio-clinic-interior.jpg"
-                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: brightness(1.1) contrast(1.1);"
-            >
-                <source src="/axis-interior.mp4" type="video/mp4">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video id="bgVideo" autoplay muted loop playsinline class="w-full h-full object-cover opacity-50">
+                <source src="axis-interior.mp4" type="video/mp4">
             </video>
-            <!-- Purple-Tinted White Gradient Overlay -->
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, rgba(250,245,255,0.4) 50%, rgba(255,255,255,0.98) 100%);"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/30 to-white/95"></div>
         </div>
 
-        <!-- 2. FLYER CONTENT -->
-        <div style="position: relative; z-index: 10; padding: 4rem 1.5rem;">
-            
-            <!-- Logo Header (Purple Borders & Text) -->
-            <div style="border-top: 3px solid #7e22ce; border-bottom: 3px solid #7e22ce; padding: 0.5rem 1.5rem; margin-bottom: 3rem; display: inline-block;">
-                <h2 style="margin: 0; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #7e22ce; line-height: 1.2;">
+        <!-- Content Area -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-between py-12 px-6">
+            <!-- Logo -->
+            <div class="border-y-[3px] border-[#7e22ce] py-1 px-8">
+                <h2 class="text-[11px] font-black uppercase tracking-[0.4em] text-[#7e22ce] leading-tight">
                     Axis Physiotherapy
                 </h2>
             </div>
 
-            <!-- Main Headline (All Purple) -->
-            <h1 style="font-size: clamp(3.5rem, 15vw, 5.5rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; color: #581c87; margin: 0 0 1.5rem 0; line-height: 0.82;">
+            <!-- Message -->
+            <h1 class="text-6xl font-black uppercase tracking-tighter leading-[0.82] text-[#581c87]">
                 You're <br> Invited
             </h1>
 
-            <!-- Date Box (Purple) -->
-            <div style="background: #7e22ce; color: white; padding: 1rem 2rem; border-radius: 1.25rem; margin-bottom: 2.5rem; display: inline-block; box-shadow: 0 15px 35px rgba(126, 34, 206, 0.3);">
-                <h3 style="margin: 0; font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">
-                    01 to 30 Baishakh 2083
-                </h3>
-                <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 0.5rem auto; width: 80%;"></div>
-                <p style="margin: 0; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.9;">
-                    14 April — 14 May 2026
-                </p>
+            <!-- Dates -->
+            <div style="background: #7e22ce; color: white; padding: 1rem 1.5rem; border-radius: 1.25rem; width: 100%; max-width: 260px; box-shadow: 0 15px 30px rgba(126, 34, 206, 0.3);">
+                <p class="text-sm font-black uppercase tracking-widest leading-none mb-2">01 to 30 Baishakh 2083</p>
+                <div class="h-[1px] bg-white/20 mb-2"></div>
+                <p class="text-[10px] font-bold uppercase tracking-widest opacity-90">14 April — 14 May 2026</p>
             </div>
 
-            <!-- Offers (All Purple) -->
-            <div style="width: 100%; border-top: 1px solid rgba(126, 34, 206, 0.2); padding-top: 2rem;">
-                <p style="margin: 0 0 0.5rem 0; font-size: 1.6rem; font-weight: 900; color: #9333ea; text-transform: uppercase; letter-spacing: -0.02em;">
-                    15% OFF Physiotherapy
-                </p>
-                <p style="margin: 0; font-size: 1.3rem; font-weight: 900; color: #6b21a8; text-transform: uppercase; letter-spacing: -0.02em;">
-                    10% OFF Massage
-                </p>
-                
-                <p style="margin: 1.5rem 0 0 0; font-size: 12px; font-weight: 900; color: #7e22ce; text-transform: uppercase; letter-spacing: 0.25em;">
-                    Celebrating 5 Years of Excellence
-                </p>
+            <!-- Offers -->
+            <div class="w-full border-t border-[#7e22ce]/20 pt-4">
+                <p class="text-2xl font-black text-[#9333ea] uppercase tracking-tighter">15% OFF Physio</p>
+                <p class="text-xl font-black text-[#6b21a8] uppercase tracking-tighter">10% OFF Massage</p>
+                <p class="text-[9px] font-black text-[#7e22ce] uppercase tracking-[0.5em] mt-4">Celebrating 5 Years</p>
             </div>
 
-            <!-- FOOTER: CLICKABLE BOOKING -->
-            <div style="margin-top: 3.5rem; width: 100%; border-top: 3px solid #7e22ce; padding-top: 1.5rem;">
-                <a href="https://wa.me/9779863201528?text=Anniversary+Offer+Enquiry" 
-                   style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
-                    <span style="font-size: 11px; font-weight: 900; color: #16a34a; text-transform: uppercase; letter-spacing: 0.15em;">
-                        ● Tap to Book Now via WhatsApp
-                    </span>
-                </a>
-                <p style="margin: 0; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #581c87;">
+            <!-- Footer -->
+            <div class="w-full pt-4 border-t-[3px] border-[#7e22ce]">
+                <p class="text-[9px] font-black uppercase tracking-widest text-[#581c87]">
                     Pulchowk, Lalitpur • Opp. Everest Bank
                 </p>
             </div>
-
-            <!-- Simple Secondary Button -->
-            <a href="/anniversary" 
-               style="display: inline-block; margin-top: 2.5rem; background: #9333ea; color: white; padding: 1.25rem 2.5rem; width: 85%; border-radius: 9999px; text-decoration: none; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; box-shadow: 0 15px 35px rgba(147, 51, 234, 0.4);">
-                Details & Full Schedule
-            </a>
         </div>
     </div>
-</div>
+
+    <!-- UI CONTROLS -->
+    <div id="controls">
+        <button id="recordBtn" onclick="startCapture()" class="bg-purple-600 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs shadow-2xl hover:bg-purple-700 transition-all">
+            Start Recording (10 Seconds)
+        </button>
+        <p id="status" class="text-white/40 text-[10px] uppercase mt-4 text-center">Video will download automatically after 10s</p>
+    </div>
+
+    <!-- html2canvas or mediaRecorder script -->
+    <script>
+        async function startCapture() {
+            const btn = document.getElementById('recordBtn');
+            const status = document.getElementById('status');
+            const flyer = document.getElementById('flyer-capture');
+            
+            btn.innerText = "Recording...";
+            btn.disabled = true;
+
+            // Capture the stream from the computer screen/window
+            try {
+                const stream = await navigator.mediaDevices.getDisplayMedia({
+                    video: { frameRate: 30 }
+                });
+
+                const mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: 'video/webm;codecs=vp9'
+                });
+
+                const chunks = [];
+                mediaRecorder.ondataavailable = e => chunks.push(e.data);
+                
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(chunks, { type: 'video/mp4' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Axis-Anniversary-Flyer.mp4';
+                    a.click();
+                    
+                    // Stop all tracks
+                    stream.getTracks().forEach(track => track.stop());
+                    
+                    btn.innerText = "Start Recording (10 Seconds)";
+                    btn.disabled = false;
+                };
+
+                mediaRecorder.start();
+                
+                // Automatically stop after 10 seconds
+                setTimeout(() => {
+                    mediaRecorder.stop();
+                }, 10000);
+
+            } catch (err) {
+                console.error("Error: " + err);
+                alert("Please allow screen capture to record the video.");
+                btn.innerText = "Start Recording (10 Seconds)";
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
