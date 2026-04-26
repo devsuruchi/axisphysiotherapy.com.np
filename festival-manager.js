@@ -5,16 +5,6 @@
 
 const FESTIVAL_OFFERS = [
     {
-        id: "anniversary-5",
-        name: "5th Anniversary Celebration",
-        startDate: "2026-04-14", // Baisakh 01, 2083
-        endDate: "2026-05-14",   // Baisakh 30, 2083
-        title: "You're Invited",
-        offerPhysio: "15% OFF Physio",
-        offerMassage: "10% OFF Massage",
-        link: "/anniversary"
-    },
-    {
         id: "dashain-2083",
         name: "Dashain Special",
         startDate: "2026-10-10", // Example dates
