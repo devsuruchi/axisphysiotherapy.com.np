@@ -1,102 +1,185 @@
-/**
- * AXIS GIFT SHOP LOGIC
- */
-const VOUCHERS = [
-    {
-        id: "mothers-day-package",
-        occasion: "Mother's Day Special",
-        category: "Parents",
-        startDate: "2026-04-15", // Adjust for Baisakh
-        endDate: "2026-05-10",
-        name: "Mom's Wellness Retreat",
-        description: "60 min Deep Tissue Massage + Posture Analysis",
-        price: "2,500",
-        image: "/axis-physio-clinic-interior.jpg", 
-        badge: "Most Popular",
-        discount: "15% OFF"
-    },
-    {
-        id: "anniversary-special",
-        occasion: "5th Anniversary",
-        category: "Wellness",
-        startDate: "2026-04-01",
-        endDate: "2026-05-30",
-        name: "Full Body Recovery",
-        description: "2 Specialized Physio Sessions for any pain",
-        price: "3,200",
-        image: "/axis-physio-clinic-interior.jpg",
-        badge: "Bestseller",
-        discount: "Rs. 500 OFF"
-    },
-    {
-        id: "fathers-day-rehab",
-        occasion: "Father's Day",
-        category: "Parents",
-        startDate: "2026-08-15",
-        endDate: "2026-09-10",
-        name: "Dad's Mobility Voucher",
-        description: "Stroke/Neuro consultation + 1 trial session",
-        price: "1,800",
-        image: "/axis-physio-clinic-interior.jpg",
-        badge: "Limited",
-        discount: "Special Offer"
-    }
-];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Shop | Axis Physiotherapy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        * { font-style: normal !important; }
+        .product-card { transition: all 0.3s ease-out; }
+        .product-card:hover { transform: translateY(-10px); }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900">
 
-let activeVoucher = null;
-
-function renderShop() {
-    const today = new Date();
-    const grid = document.getElementById('gift-grid');
-    if (!grid) return;
-
-    const currentOffers = VOUCHERS.filter(v => {
-        const start = new Date(v.startDate);
-        const end = new Date(v.endDate);
-        return today >= start && today <= end;
-    });
-
-    grid.innerHTML = currentOffers.map(v => `
-        <div class="product-card bg-white rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
-            <div class="relative h-48 md:h-64 overflow-hidden">
-                <img src="${v.image}" class="w-full h-full object-cover" alt="${v.name}">
-                <div class="absolute top-3 left-3 flex flex-col gap-2">
-                    <span class="promo-badge">${v.badge}</span>
-                    <span class="bg-white text-purple-600 text-[9px] font-black px-2 py-1 rounded shadow-sm uppercase">${v.discount}</span>
-                </div>
-            </div>
-            <div class="p-5 flex flex-col flex-1">
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">${v.occasion}</span>
-                <h3 class="font-black text-slate-900 text-sm md:text-base leading-tight mb-2">${v.name}</h3>
-                <p class="text-[11px] text-slate-500 font-medium mb-4 line-clamp-2">${v.description}</p>
-                <div class="mt-auto pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span class="font-black text-lg text-slate-900">Rs. ${v.price}</span>
-                    <button onclick="openPayment('${v.id}')" class="bg-purple-600 text-white px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-tighter hover:bg-slate-950 transition-all">Buy Now</button>
-                </div>
-            </div>
+    <!-- Simple Nav -->
+    <nav class="bg-white border-b p-6 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-black text-purple-700 tracking-tighter">AXIS<span class="text-slate-400">GIFTS</span></a>
+            <a href="/" class="text-xs font-bold uppercase text-slate-400">← Back to Axis Home</a>
         </div>
-    `).join('');
-}
+    </nav>
 
-function openPayment(id) {
-    activeVoucher = VOUCHERS.find(v => v.id === id);
-    document.getElementById('selected-voucher-name').innerText = activeVoucher.name;
-    document.getElementById('selected-price').innerText = "Rs. " + activeVoucher.price;
-    document.getElementById('payment-modal').style.display = 'flex';
-}
+    <!-- Commercial Hero -->
+    <header class="bg-white py-16 px-6 border-b">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 text-slate-950">Give the Gift of <span class="text-purple-600">Health.</span></h1>
+            <p class="text-slate-500 uppercase tracking-[0.2em] text-xs font-bold">Select a wellness voucher for your loved ones in Nepal</p>
+        </div>
+    </header>
 
-function closePayment() {
-    document.getElementById('payment-modal').style.display = 'none';
-}
+    <!-- Gift Grid Container -->
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <!-- This is the ID the script looks for -->
+        <div id="gift-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Vouchers will appear here -->
+        </div>
 
-function generateReceipt() {
-    document.getElementById('payment-modal').style.display = 'none';
-    document.getElementById('r-id').innerText = "AX-GIFT-" + Math.floor(1000 + Math.random() * 9000);
-    document.getElementById('r-name').innerText = activeVoucher.name;
-    document.getElementById('r-price').innerText = "Rs. " + activeVoucher.price;
-    document.getElementById('r-date').innerText = new Date().toLocaleDateString('en-GB');
-    document.getElementById('receipt-container').style.display = 'flex';
-    if(window.lucide) lucide.createIcons();
-}
+        <!-- If script fails or no dates match -->
+        <div id="no-offers" class="hidden text-center py-20">
+            <p class="text-slate-400 font-bold uppercase tracking-widest">No active vouchers found for today.</p>
+        </div>
+    </main>
 
-window.addEventListener('DOMContentLoaded', renderShop);
+    <!-- PAYMENT MODAL -->
+    <div id="payment-modal" style="display:none;" class="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
+        <div class="bg-white w-full max-w-sm rounded-[3rem] p-10 text-center relative shadow-2xl">
+            <h3 id="selected-voucher-name" class="text-2xl font-black uppercase mb-2">Voucher</h3>
+            <p id="selected-price" class="text-purple-600 font-black text-3xl mb-8">Rs. 0</p>
+            
+            <div class="bg-slate-50 p-6 rounded-3xl mb-8 border-2 border-dashed border-slate-200">
+                <img src="/axis-qr-code.jpg" alt="Axis QR" class="w-48 h-48 mx-auto rounded-xl mb-4 shadow-md">
+                <p class="text-[10px] font-black text-slate-400 uppercase">Scan to pay (FonePay/Any App)</p>
+            </div>
+
+            <button onclick="generateReceipt()" class="w-full bg-purple-600 text-white py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-xl hover:bg-slate-950 transition-all">
+                I Have Paid • Get Receipt
+            </button>
+            <button onclick="closePayment()" class="mt-6 text-slate-400 font-bold text-[10px] uppercase">Cancel</button>
+        </div>
+    </div>
+
+    <!-- RECEIPT -->
+    <div id="receipt-container" style="display:none;" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-white">
+        <div class="max-w-md w-full border-2 border-slate-100 p-12 rounded-[3rem] text-center shadow-2xl">
+            <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-lg">
+                <i data-lucide="check" class="w-10 h-10"></i>
+            </div>
+            <h2 class="text-3xl font-black uppercase mb-2">Success!</h2>
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-10">Axis Physiotherapy Receipt</p>
+            
+            <div class="space-y-4 text-left border-y py-8 mb-10 font-bold text-sm uppercase">
+                <div class="flex justify-between"><span class="text-slate-400">Item:</span> <span id="r-name" class="text-purple-600"></span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Paid:</span> <span id="r-price" class="text-slate-900"></span></div>
+                <div class="flex justify-between"><span class="text-slate-400">Date:</span> <span id="r-date" class="text-slate-900"></span></div>
+            </div>
+
+            <p class="bg-purple-50 p-4 rounded-2xl text-[11px] text-purple-700 font-bold uppercase leading-relaxed mb-10">
+                Please screenshot this and WhatsApp it to 9863201528 to receive your digital gift card.
+            </p>
+
+            <button onclick="window.print()" class="bg-slate-950 text-white w-full py-4 rounded-full font-black uppercase text-xs mb-4">Print / Save PDF</button>
+            <button onclick="location.reload()" class="text-slate-400 font-black uppercase text-[10px]">Back to Shop</button>
+        </div>
+    </div>
+
+    <script>
+        // DATA ARRAY: Dates set to cover all of 2026 to ensure visibility
+        const VOUCHERS = [
+            {
+                id: "anniversary-5",
+                occasion: "5th Anniversary Special",
+                name: "Elite Wellness Voucher",
+                description: "Valid for 2 Sessions of specialized Physio or 1 Deep Tissue Massage.",
+                price: "2,500",
+                discount: "15% OFF",
+                startDate: "2025-01-01", 
+                endDate: "2026-12-31" 
+            },
+            {
+                id: "mothers-day-gift",
+                occasion: "Mother's Day Gift",
+                name: "Mom's Health Package",
+                description: "Full Consultation + Home Exercise Plan + Therapeutic Massage.",
+                price: "1,500",
+                discount: "LIMITED",
+                startDate: "2025-01-01",
+                endDate: "2026-12-31"
+            },
+            {
+                id: "fathers-day-gift",
+                occasion: "Father's Day Gift",
+                name: "Dad's Mobility Pass",
+                description: "Neurological assessment and functional mobility session.",
+                price: "1,800",
+                discount: "POPULAR",
+                startDate: "2025-01-01",
+                endDate: "2026-12-31"
+            }
+        ];
+
+        let activeVoucher = null;
+
+        function renderGifts() {
+            const today = new Date();
+            const grid = document.getElementById('gift-grid');
+            const noOffers = document.getElementById('no-offers');
+            
+            // Filter only active dates
+            const active = VOUCHERS.filter(v => {
+                const start = new Date(v.startDate);
+                const end = new Date(v.endDate);
+                return today >= start && today <= end;
+            });
+
+            if (active.length === 0) {
+                noOffers.classList.remove('hidden');
+                return;
+            }
+
+            grid.innerHTML = active.map(v => `
+                <div class="product-card bg-white p-10 rounded-[3rem] border border-slate-100 shadow-xl relative overflow-hidden flex flex-col">
+                    <div class="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-black px-6 py-2 rounded-bl-3xl uppercase tracking-widest">
+                        ${v.discount}
+                    </div>
+                    <span class="text-purple-600 font-black text-[10px] uppercase tracking-[0.3em] block mb-6">${v.occasion}</span>
+                    <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-4 leading-none">${v.name}</h3>
+                    <p class="text-slate-500 text-sm font-light mb-10 flex-1">${v.description}</p>
+                    <div class="pt-8 border-t border-slate-50 flex items-center justify-between">
+                        <span class="text-2xl font-black text-slate-950">Rs. ${v.price}</span>
+                        <button onclick="openPayment('${v.id}')" class="bg-slate-950 text-white px-8 py-3 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-purple-600 transition-all shadow-lg">Buy Gift</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            if(window.lucide) lucide.createIcons();
+        }
+
+        function openPayment(id) {
+            activeVoucher = VOUCHERS.find(v => v.id === id);
+            document.getElementById('selected-voucher-name').innerText = activeVoucher.name;
+            document.getElementById('selected-price').innerText = "Rs. " + activeVoucher.price;
+            document.getElementById('payment-modal').style.display = 'flex';
+        }
+
+        function closePayment() {
+            document.getElementById('payment-modal').style.display = 'none';
+        }
+
+        function generateReceipt() {
+            document.getElementById('payment-modal').style.display = 'none';
+            document.getElementById('r-name').innerText = activeVoucher.name;
+            document.getElementById('r-price').innerText = "Rs. " + activeVoucher.price;
+            document.getElementById('r-date').innerText = new Date().toLocaleDateString('en-GB');
+            document.getElementById('receipt-container').style.display = 'flex';
+            if(window.lucide) lucide.createIcons();
+        }
+
+        // Run immediately
+        renderGifts();
+    </script>
+</body>
+</html>
