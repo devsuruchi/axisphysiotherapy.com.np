@@ -6,94 +6,104 @@
     <title>Gift Shop | Axis Physiotherapy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         [x-cloak] { display: none !important; }
-        * { font-style: normal !important; }
-        .product-card { transition: all 0.3s ease-out; }
-        .product-card:hover { transform: translateY(-10px); }
+        * { font-style: normal !important; font-family: 'Inter', sans-serif; }
+        .product-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .product-card:hover { transform: translateY(-12px); shadow-2xl; }
+        /* Professional backdrop blur for Nav */
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-900">
+<body class="bg-purple-50 text-slate-900">
 
     <!-- Simple Nav -->
-    <nav class="bg-white border-b p-6 shadow-sm">
+    <nav class="glass-nav border-b border-purple-100 p-6 sticky top-0 z-[100]">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="/" class="text-2xl font-black text-purple-700 tracking-tighter">AXIS<span class="text-slate-400">GIFTS</span></a>
-            <a href="/" class="text-xs font-bold uppercase text-slate-400">← Back to Axis Home</a>
+            <a href="/" class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600 flex items-center gap-2 group">
+                <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i> Axis Home
+            </a>
         </div>
     </nav>
 
     <!-- Commercial Hero -->
-    <header class="bg-white py-16 px-6 border-b">
+    <header class="py-20 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 text-slate-950">Give the Gift of <span class="text-purple-600">Health.</span></h1>
-            <p class="text-slate-500 uppercase tracking-[0.2em] text-xs font-bold">Select a wellness voucher for your loved ones in Nepal</p>
+            <span class="bg-purple-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-6 inline-block">Official Gift Registry</span>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-6 text-slate-950 leading-none">Give the Gift <br> of <span class="text-purple-600">Health.</span></h1>
+            <p class="text-slate-500 uppercase tracking-[0.3em] text-[11px] font-bold max-w-xl mx-auto leading-loose">
+                Select an exclusive wellness voucher for your family and loved ones in Nepal.
+            </p>
         </div>
     </header>
 
     <!-- Gift Grid Container -->
-    <main class="max-w-7xl mx-auto px-6 py-20">
-        <!-- This is the ID the script looks for -->
-        <div id="gift-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <!-- Vouchers will appear here -->
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div id="gift-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Vouchers will be injected here -->
         </div>
 
         <!-- If script fails or no dates match -->
-        <div id="no-offers" class="hidden text-center py-20">
-            <p class="text-slate-400 font-bold uppercase tracking-widest">No active vouchers found for today.</p>
+        <div id="no-offers" class="hidden text-center py-20 bg-white rounded-[3rem] border-2 border-dashed border-purple-200">
+            <i data-lucide="calendar" class="w-12 h-12 text-purple-200 mx-auto mb-4"></i>
+            <p class="text-purple-400 font-black uppercase tracking-widest text-xs">No active vouchers found for today.</p>
         </div>
     </main>
 
     <!-- PAYMENT MODAL -->
     <div id="payment-modal" style="display:none;" class="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
-        <div class="bg-white w-full max-w-sm rounded-[3rem] p-10 text-center relative shadow-2xl">
-            <h3 id="selected-voucher-name" class="text-2xl font-black uppercase mb-2">Voucher</h3>
+        <div class="bg-white w-full max-w-sm rounded-[3rem] p-10 text-center relative shadow-2xl border-[12px] border-white">
+            <h3 id="selected-voucher-name" class="text-2xl font-black uppercase tracking-tighter mb-2 text-slate-950">Voucher</h3>
             <p id="selected-price" class="text-purple-600 font-black text-3xl mb-8">Rs. 0</p>
             
-            <div class="bg-slate-50 p-6 rounded-3xl mb-8 border-2 border-dashed border-slate-200">
-                <img src="/axis-qr-code.jpg" alt="Axis QR" class="w-48 h-48 mx-auto rounded-xl mb-4 shadow-md">
-                <p class="text-[10px] font-black text-slate-400 uppercase">Scan to pay (FonePay/Any App)</p>
+            <div class="bg-purple-50 p-6 rounded-3xl mb-8 border-2 border-dashed border-purple-200">
+                <img src="/axis-qr-code.jpg" alt="Axis QR" class="w-48 h-48 mx-auto rounded-2xl mb-4 shadow-md object-cover">
+                <p class="text-[10px] font-black text-purple-400 uppercase tracking-widest leading-tight">Scan to pay with any <br> Nepali banking App</p>
             </div>
 
-            <button onclick="generateReceipt()" class="w-full bg-purple-600 text-white py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-xl hover:bg-slate-950 transition-all">
+            <button onclick="generateReceipt()" class="w-full bg-purple-600 text-white py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-xl hover:bg-slate-950 transition-all active:scale-95">
                 I Have Paid • Get Receipt
             </button>
-            <button onclick="closePayment()" class="mt-6 text-slate-400 font-bold text-[10px] uppercase">Cancel</button>
+            <button onclick="closePayment()" class="mt-6 text-slate-400 font-black text-[10px] uppercase tracking-widest hover:text-purple-600 transition-colors">Cancel Purchase</button>
         </div>
     </div>
 
     <!-- RECEIPT -->
-    <div id="receipt-container" style="display:none;" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-white">
-        <div class="max-w-md w-full border-2 border-slate-100 p-12 rounded-[3rem] text-center shadow-2xl">
+    <div id="receipt-container" style="display:none;" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-purple-50 overflow-y-auto">
+        <div class="max-w-md w-full bg-white border-2 border-purple-100 p-12 rounded-[4rem] text-center shadow-2xl relative">
             <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-lg">
                 <i data-lucide="check" class="w-10 h-10"></i>
             </div>
-            <h2 class="text-3xl font-black uppercase mb-2">Success!</h2>
-            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-10">Axis Physiotherapy Receipt</p>
+            <h2 class="text-3xl font-black uppercase tracking-tighter mb-2 text-slate-950">Payment Success</h2>
+            <p class="text-purple-400 text-[10px] font-black uppercase tracking-[0.4em] mb-10">Axis Physiotherapy Receipt</p>
             
-            <div class="space-y-4 text-left border-y py-8 mb-10 font-bold text-sm uppercase">
-                <div class="flex justify-between"><span class="text-slate-400">Item:</span> <span id="r-name" class="text-purple-600"></span></div>
-                <div class="flex justify-between"><span class="text-slate-400">Paid:</span> <span id="r-price" class="text-slate-900"></span></div>
-                <div class="flex justify-between"><span class="text-slate-400">Date:</span> <span id="r-date" class="text-slate-900"></span></div>
+            <div class="space-y-5 text-left border-y border-purple-50 py-10 mb-10 font-black text-xs uppercase tracking-tighter">
+                <div class="flex justify-between items-center"><span class="text-slate-400">Gift Item:</span> <span id="r-name" class="text-purple-600 text-right"></span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-400">Total Paid:</span> <span id="r-price" class="text-slate-950"></span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-400">Auth Date:</span> <span id="r-date" class="text-slate-900"></span></div>
             </div>
 
-            <p class="bg-purple-50 p-4 rounded-2xl text-[11px] text-purple-700 font-bold uppercase leading-relaxed mb-10">
-                Please screenshot this and WhatsApp it to 9863201528 to receive your digital gift card.
+            <p class="bg-purple-600 p-5 rounded-3xl text-[10px] text-white font-black uppercase leading-loose mb-10 tracking-widest">
+                Screenshot this receipt and WhatsApp it to 9863201528 to receive your digital gift card.
             </p>
 
-            <button onclick="window.print()" class="bg-slate-950 text-white w-full py-4 rounded-full font-black uppercase text-xs mb-4">Print / Save PDF</button>
-            <button onclick="location.reload()" class="text-slate-400 font-black uppercase text-[10px]">Back to Shop</button>
+            <div class="flex flex-col gap-4">
+                <button onclick="window.print()" class="bg-slate-950 text-white w-full py-4 rounded-full font-black uppercase text-xs tracking-widest active:scale-95">Save Receipt (PDF)</button>
+                <button onclick="location.reload()" class="text-slate-400 font-black uppercase text-[10px] tracking-[0.4em]">Return to Shop</button>
+            </div>
         </div>
     </div>
 
     <script>
-        // DATA ARRAY: Dates set to cover all of 2026 to ensure visibility
+        // DATA ARRAY: Active for all of 2026
         const VOUCHERS = [
             {
                 id: "anniversary-5",
-                occasion: "5th Anniversary Special",
+                occasion: "5th Anniversary",
                 name: "Elite Wellness Voucher",
-                description: "Valid for 2 Sessions of specialized Physio or 1 Deep Tissue Massage.",
+                description: "Valid for 2 Sessions of specialized Physiotherapy or 1 Professional Deep Tissue Massage.",
                 price: "2,500",
                 discount: "15% OFF",
                 startDate: "2025-01-01", 
@@ -101,19 +111,19 @@
             },
             {
                 id: "mothers-day-gift",
-                occasion: "Mother's Day Gift",
-                name: "Mom's Health Package",
-                description: "Full Consultation + Home Exercise Plan + Therapeutic Massage.",
+                occasion: "Mother's Day",
+                name: "Mother's Health Gift",
+                description: "Complete Consultation + Personalized Home Exercise Plan + Therapeutic Recovery Therapy.",
                 price: "1,500",
-                discount: "LIMITED",
+                discount: "BESTSELLER",
                 startDate: "2025-01-01",
                 endDate: "2026-12-31"
             },
             {
                 id: "fathers-day-gift",
-                occasion: "Father's Day Gift",
+                occasion: "Father's Day",
                 name: "Dad's Mobility Pass",
-                description: "Neurological assessment and functional mobility session.",
+                description: "Focused Neurological assessment and one functional mobility restoration session.",
                 price: "1,800",
                 discount: "POPULAR",
                 startDate: "2025-01-01",
@@ -128,7 +138,6 @@
             const grid = document.getElementById('gift-grid');
             const noOffers = document.getElementById('no-offers');
             
-            // Filter only active dates
             const active = VOUCHERS.filter(v => {
                 const start = new Date(v.startDate);
                 const end = new Date(v.endDate);
@@ -136,21 +145,22 @@
             });
 
             if (active.length === 0) {
+                grid.classList.add('hidden');
                 noOffers.classList.remove('hidden');
                 return;
             }
 
             grid.innerHTML = active.map(v => `
-                <div class="product-card bg-white p-10 rounded-[3rem] border border-slate-100 shadow-xl relative overflow-hidden flex flex-col">
-                    <div class="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-black px-6 py-2 rounded-bl-3xl uppercase tracking-widest">
+                <div class="product-card bg-white p-12 rounded-[3.5rem] border border-purple-100 shadow-xl hover:shadow-2xl relative overflow-hidden flex flex-col">
+                    <div class="absolute top-0 right-0 bg-purple-600 text-white text-[9px] font-black px-5 py-2 rounded-bl-3xl uppercase tracking-widest">
                         ${v.discount}
                     </div>
-                    <span class="text-purple-600 font-black text-[10px] uppercase tracking-[0.3em] block mb-6">${v.occasion}</span>
-                    <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tighter mb-4 leading-none">${v.name}</h3>
-                    <p class="text-slate-500 text-sm font-light mb-10 flex-1">${v.description}</p>
-                    <div class="pt-8 border-t border-slate-50 flex items-center justify-between">
+                    <span class="text-purple-600 font-black text-[10px] uppercase tracking-[0.4em] block mb-6">${v.occasion}</span>
+                    <h3 class="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-6 leading-none">${v.name}</h3>
+                    <p class="text-slate-500 text-sm font-light mb-12 flex-1 leading-relaxed uppercase tracking-tight">${v.description}</p>
+                    <div class="pt-8 border-t border-purple-50 flex items-center justify-between">
                         <span class="text-2xl font-black text-slate-950">Rs. ${v.price}</span>
-                        <button onclick="openPayment('${v.id}')" class="bg-slate-950 text-white px-8 py-3 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-purple-600 transition-all shadow-lg">Buy Gift</button>
+                        <button onclick="openPayment('${v.id}')" class="bg-slate-950 text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-purple-600 transition-all shadow-lg active:scale-95">Buy Gift</button>
                     </div>
                 </div>
             `).join('');
@@ -178,8 +188,7 @@
             if(window.lucide) lucide.createIcons();
         }
 
-        // Run immediately
-        renderGifts();
+        document.addEventListener('DOMContentLoaded', renderGifts);
     </script>
 </body>
 </html>
