@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Shop | Axis Physiotherapy</title>
+    <title>Gift Registry | Axis Physiotherapy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -11,122 +11,131 @@
         [x-cloak] { display: none !important; }
         * { font-style: normal !important; font-family: 'Inter', sans-serif; }
         
-        /* Premium Background Animation */
+        /* Intensified Purple Theme */
         body { 
-            background-color: #f3e8ff; /* Tailwind bg-purple-100 */
-            background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5) 0%, transparent 50%),
-                              radial-gradient(circle at 100% 100%, rgba(216, 180, 254, 0.4) 0%, transparent 50%);
+            background-color: #ddd6fe; /* Tailwind bg-purple-200 */
+            background-image: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
             min-height: 100vh;
         }
 
         .product-card { 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
+            border: 1px solid rgba(139, 92, 246, 0.1);
         }
         .product-card:hover { 
-            transform: translateY(-12px); 
-            box-shadow: 0 40px 80px -15px rgba(88, 28, 135, 0.2); 
+            transform: translateY(-15px); 
+            box-shadow: 0 50px 80px -20px rgba(88, 28, 135, 0.3); 
+            border-color: rgba(139, 92, 246, 0.5);
         }
 
         .glass-nav { 
-            background: rgba(255, 255, 255, 0.7); 
-            backdrop-filter: blur(20px); 
-            border-bottom: 1px solid rgba(216, 180, 254, 0.3);
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(25px); 
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        /* Hero Purple Section */
+        .hero-purple {
+            background: linear-gradient(135deg, #581c87 0%, #7e22ce 100%);
         }
     </style>
 </head>
-<body class="text-slate-900 selection:bg-purple-200">
+<body class="text-slate-900 selection:bg-purple-300">
 
     <!-- Nav -->
-    <nav class="glass-nav p-6 sticky top-0 z-[100]">
+    <nav class="glass-nav p-5 sticky top-0 z-[100]">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-black text-purple-800 tracking-tighter">AXIS<span class="text-purple-400">GIFTS</span></a>
-            <a href="/" class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700 flex items-center gap-2 group">
+            <a href="/" class="text-2xl font-black text-purple-800 tracking-tighter">AXIS<span class="text-purple-500">GIFTS</span></a>
+            <a href="/" class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-700 flex items-center gap-2 group bg-purple-50 px-5 py-2 rounded-full border border-purple-100 shadow-sm">
                 <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i> Axis Home
             </a>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="py-20 px-6 text-center">
-        <div class="max-w-7xl mx-auto">
-            <span class="bg-purple-800 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-6 inline-block shadow-lg shadow-purple-200">
-                Gift Registry 2083
+    <!-- Header: Deep Purple Boutique Style -->
+    <header class="hero-purple py-24 px-6 text-center text-white mb-20 relative overflow-hidden">
+        <!-- Floating shapes for depth -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/20 rounded-full translate-x-1/4 translate-y-1/4 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-8 inline-block">
+                Exclusive Gift Registry
             </span>
-            <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-6 text-slate-950 leading-none">
-                The Gift of <br> <span class="text-purple-700">Wellness.</span>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-8 leading-[0.85]">
+                Share <br> <span class="text-purple-300">Wellness.</span>
             </h1>
-            <p class="text-purple-900/60 uppercase tracking-[0.2em] text-[11px] font-bold max-w-xl mx-auto leading-loose">
-                Celebrate your loved ones with specialized healthcare <br> and professional rehabilitation vouchers.
+            <p class="text-purple-100/80 uppercase tracking-[0.3em] text-[11px] font-bold max-w-xl mx-auto leading-loose">
+                Professional health vouchers for parents, <br> family, and loved ones in Nepal.
             </p>
         </div>
     </header>
 
     <!-- Main Grid -->
-    <main class="max-w-7xl mx-auto px-6 pb-32">
-        <div id="gift-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <main class="max-w-7xl mx-auto px-6 pb-40">
+        <div id="gift-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <!-- Vouchers injected via JavaScript -->
         </div>
 
         <!-- No Offers Message -->
-        <div id="no-offers" class="hidden text-center py-20 bg-white/40 rounded-[3rem] border-2 border-dashed border-purple-300">
-            <i data-lucide="gift" class="w-12 h-12 text-purple-300 mx-auto mb-4"></i>
-            <p class="text-purple-800 font-black uppercase tracking-widest text-xs">No active vouchers for this date.</p>
+        <div id="no-offers" class="hidden text-center py-32 bg-white/50 rounded-[4rem] border-2 border-dashed border-purple-400">
+            <i data-lucide="gift" class="w-16 h-16 text-purple-400 mx-auto mb-4 opacity-50"></i>
+            <p class="text-purple-900 font-black uppercase tracking-widest text-xs">No active vouchers available today.</p>
         </div>
     </main>
 
     <!-- PAYMENT MODAL -->
-    <div id="payment-modal" style="display:none;" class="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
-        <div class="bg-white w-full max-w-sm rounded-[3.5rem] p-10 text-center relative shadow-2xl border-[12px] border-purple-50">
+    <div id="payment-modal" style="display:none;" class="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-xl">
+        <div class="bg-white w-full max-w-sm rounded-[4rem] p-10 text-center relative shadow-2xl border-[15px] border-purple-50">
             <h3 id="selected-voucher-name" class="text-2xl font-black uppercase tracking-tighter mb-2 text-slate-950">Voucher</h3>
-            <p id="selected-price" class="text-purple-700 font-black text-3xl mb-8">Rs. 0</p>
+            <p id="selected-price" class="text-purple-700 font-black text-4xl mb-8">Rs. 0</p>
             
-            <div class="bg-purple-50 p-6 rounded-[2rem] mb-8 border-2 border-dashed border-purple-200">
-                <!-- Replace with your actual QR code image path -->
-                <img src="/axis-qr-code.jpg" alt="Axis QR" class="w-48 h-48 mx-auto rounded-2xl mb-4 shadow-md object-cover">
-                <p class="text-[10px] font-black text-purple-600 uppercase tracking-widest leading-tight">Scan to pay with FonePay <br> or any Nepali Banking App</p>
+            <div class="bg-purple-100/50 p-6 rounded-[2.5rem] mb-10 border-2 border-dashed border-purple-300">
+                <img src="/axis-qr-code.jpg" alt="Axis QR" class="w-52 h-52 mx-auto rounded-3xl mb-4 shadow-xl object-cover border-4 border-white">
+                <p class="text-[10px] font-black text-purple-700 uppercase tracking-widest leading-tight">Scan to pay with FonePay <br> or Mobile Banking</p>
             </div>
 
-            <button onclick="generateReceipt()" class="w-full bg-purple-700 text-white py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-xl hover:bg-slate-950 transition-all active:scale-95">
+            <button onclick="generateReceipt()" class="w-full bg-purple-700 text-white py-5 rounded-full font-black uppercase text-xs tracking-widest shadow-2xl hover:bg-purple-900 transition-all active:scale-95 shadow-purple-200">
                 Confirm Payment
             </button>
-            <button onclick="closePayment()" class="mt-6 text-slate-400 font-black text-[10px] uppercase tracking-widest hover:text-purple-700 transition-colors">Cancel Purchase</button>
+            <button onclick="closePayment()" class="mt-8 text-slate-400 font-black text-[10px] uppercase tracking-widest hover:text-purple-700 transition-colors">Go Back</button>
         </div>
     </div>
 
     <!-- RECEIPT -->
-    <div id="receipt-container" style="display:none;" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-purple-100 overflow-y-auto">
-        <div class="max-w-md w-full bg-white border-4 border-white p-12 rounded-[4rem] text-center shadow-2xl relative">
+    <div id="receipt-container" style="display:none;" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-purple-700 overflow-y-auto">
+        <div class="max-w-md w-full bg-white border-8 border-purple-600/10 p-12 rounded-[4rem] text-center shadow-2xl relative">
             <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-xl">
                 <i data-lucide="check-check" class="w-10 h-10"></i>
             </div>
-            <h2 class="text-3xl font-black uppercase tracking-tighter mb-2 text-slate-950">Success</h2>
-            <p class="text-purple-600 text-[10px] font-black uppercase tracking-[0.4em] mb-10">Axis Physiotherapy Receipt</p>
+            <h2 class="text-3xl font-black uppercase tracking-tighter mb-2 text-slate-950 leading-none">Gift Voucher <br> Reserved</h2>
+            <p class="text-purple-600 text-[10px] font-black uppercase tracking-[0.4em] mb-12">Axis Physiotherapy Pvt. Ltd.</p>
             
-            <div class="space-y-5 text-left border-y border-purple-50 py-10 mb-10 font-black text-xs uppercase tracking-tighter">
-                <div class="flex justify-between items-center"><span class="text-slate-400">Order:</span> <span id="r-name" class="text-purple-700 text-right"></span></div>
-                <div class="flex justify-between items-center"><span class="text-slate-400">Total:</span> <span id="r-price" class="text-slate-950"></span></div>
-                <div class="flex justify-between items-center"><span class="text-slate-400">Date:</span> <span id="r-date" class="text-slate-900"></span></div>
+            <div class="space-y-6 text-left border-y-2 border-purple-50 py-12 mb-12 font-black text-xs uppercase tracking-tighter">
+                <div class="flex justify-between items-center"><span class="text-slate-300">Gift Type:</span> <span id="r-name" class="text-purple-700 text-right"></span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-300">Amount Paid:</span> <span id="r-price" class="text-slate-950"></span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-300">Auth Date:</span> <span id="r-date" class="text-slate-900"></span></div>
             </div>
 
-            <div class="bg-purple-700 p-6 rounded-[2.5rem] text-[11px] text-white font-black uppercase leading-loose mb-10 tracking-widest shadow-lg">
-                Please screenshot this receipt and WhatsApp it to 9863201528 to activate your gift.
+            <div class="bg-purple-900 p-8 rounded-[3rem] text-[11px] text-purple-100 font-black uppercase leading-relaxed mb-10 tracking-widest shadow-2xl">
+                <span class="text-white">Important:</span> Screenshot this and WhatsApp it to <br> <span class="text-purple-300 text-base leading-loose">9863201528</span> <br> to get your voucher.
             </div>
 
             <div class="flex flex-col gap-4">
-                <button onclick="window.print()" class="bg-slate-950 text-white w-full py-4 rounded-full font-black uppercase text-xs tracking-widest">Save PDF</button>
+                <button onclick="window.print()" class="bg-slate-950 text-white w-full py-5 rounded-full font-black uppercase text-xs tracking-widest">Download Receipt</button>
                 <button onclick="location.reload()" class="text-slate-400 font-black uppercase text-[10px] tracking-[0.4em]">Back to Shop</button>
             </div>
         </div>
     </div>
 
     <script>
-        // DATA ARRAY: Dates set to cover all of 2026
         const VOUCHERS = [
             {
                 id: "anniversary-5",
-                occasion: "5th Anniversary",
-                name: "Clinical Recovery Voucher",
-                description: "Valid for 2 Sessions of specialized Physiotherapy or 1 Deep Tissue Massage treatment.",
+                occasion: "5th Anniversary Special",
+                name: "Elite Wellness Voucher",
+                description: "Access to 2 specialized Physiotherapy sessions or 1 premium Deep Tissue Massage session.",
                 price: "2,500",
                 discount: "15% OFF",
                 startDate: "2025-01-01", 
@@ -134,9 +143,9 @@
             },
             {
                 id: "mothers-day-gift",
-                occasion: "Mother's Day",
+                occasion: "Mother's Day Gift",
                 name: "Mom's Health Package",
-                description: "Consultation + Home Exercise Roadmap + Specialized Therapeutic Bodywork Session.",
+                description: "Full clinical consultation + customized home exercise plan + restorative therapeutic session.",
                 price: "1,500",
                 discount: "BESTSELLER",
                 startDate: "2025-01-01",
@@ -144,9 +153,9 @@
             },
             {
                 id: "fathers-day-gift",
-                occasion: "Father's Day",
+                occasion: "Father's Day Gift",
                 name: "Dad's Mobility Pass",
-                description: "Focused Neurological assessment and one functional restoration session for seniors.",
+                description: "Comprehensive Neuro-Orthopedic assessment and one functional restoration session for seniors.",
                 price: "1,800",
                 discount: "POPULAR",
                 startDate: "2025-01-01",
@@ -174,16 +183,16 @@
             }
 
             grid.innerHTML = active.map(v => `
-                <div class="product-card bg-white p-12 rounded-[3.5rem] border-2 border-white shadow-xl hover:shadow-2xl relative overflow-hidden flex flex-col">
-                    <div class="absolute top-0 right-0 bg-purple-700 text-white text-[9px] font-black px-6 py-2 rounded-bl-3xl uppercase tracking-widest">
+                <div class="product-card bg-white p-12 rounded-[4rem] shadow-2xl relative overflow-hidden flex flex-col">
+                    <div class="absolute top-0 right-0 bg-purple-700 text-white text-[9px] font-black px-8 py-2.5 rounded-bl-3xl uppercase tracking-[0.2em]">
                         ${v.discount}
                     </div>
-                    <span class="text-purple-700 font-black text-[10px] uppercase tracking-[0.4em] block mb-6">${v.occasion}</span>
-                    <h3 class="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-6 leading-none">${v.name}</h3>
-                    <p class="text-slate-500 text-sm font-light mb-12 flex-1 leading-relaxed uppercase tracking-tight">${v.description}</p>
+                    <span class="text-purple-700 font-black text-[10px] uppercase tracking-[0.4em] block mb-8">${v.occasion}</span>
+                    <h3 class="text-3xl font-black text-slate-950 uppercase tracking-tighter mb-6 leading-[0.9]">${v.name}</h3>
+                    <p class="text-slate-400 text-xs font-light mb-12 flex-1 leading-relaxed uppercase tracking-widest">${v.description}</p>
                     <div class="pt-8 border-t border-purple-50 flex items-center justify-between">
-                        <span class="text-2xl font-black text-slate-950">Rs. ${v.price}</span>
-                        <button onclick="openPayment('${v.id}')" class="bg-purple-700 text-white px-8 py-3.5 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-slate-950 transition-all shadow-lg active:scale-95">Buy Gift</button>
+                        <span class="text-3xl font-black text-slate-950">Rs.${v.price}</span>
+                        <button onclick="openPayment('${v.id}')" class="bg-purple-700 text-white px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-slate-950 transition-all shadow-xl active:scale-95 shadow-purple-100">Claim Gift</button>
                     </div>
                 </div>
             `).join('');
