@@ -120,19 +120,18 @@
     </div>
 
     <script>
-        // DATA ARRAY: Dates set to cover all of 2026
-        const VOUCHERS = [
-            {
-                id: "anniversary-5",
-                occasion: "5th Anniversary",
-                name: "Clinical Recovery Voucher",
-                description: "Valid for 2 Sessions of specialized Physiotherapy or 1 Deep Tissue Massage treatment.",
-                price: "2,500",
-                discount: "15% OFF",
-                startDate: "2025-01-01", 
-                endDate: "2026-12-31" 
-            },
-            const VOUCHERS = [
+        // DATA ARRAY: Corrected and Cleaned for Axis Physiotherapy
+const VOUCHERS = [
+    {
+        id: "anniversary-5",
+        occasion: "5th Anniversary",
+        name: "Clinical Recovery Voucher",
+        description: "Valid for 2 Sessions of specialized Physiotherapy or 1 Deep Tissue Massage treatment.",
+        price: "2,500",
+        discount: "15% OFF",
+        startDate: "2025-01-01", 
+        endDate: "2026-12-31" 
+    },
     {
         id: "relaxation-massage-60",
         occasion: "For Alltime",
@@ -152,30 +151,28 @@
         discount: "Best Value",
         startDate: "2025-01-01", 
         endDate: "2026-12-31" 
+    },
+    {
+        id: "mothers-day-gift",
+        occasion: "Mother's Day",
+        name: "Mom's Health Package",
+        description: "Consultation + Home Exercise Roadmap + Specialized Therapeutic Bodywork Session.",
+        price: "1,500",
+        discount: "BESTSELLER",
+        startDate: "2025-01-01",
+        endDate: "2026-12-31"
+    },
+    {
+        id: "fathers-day-gift",
+        occasion: "Father's Day",
+        name: "Dad's Mobility Pass",
+        description: "Focused Neurological assessment and one functional restoration session for seniors.",
+        price: "1,800",
+        discount: "POPULAR",
+        startDate: "2025-01-01",
+        endDate: "2026-12-31"
     }
 ];
-            {
-                id: "mothers-day-gift",
-                occasion: "Mother's Day",
-                name: "Mom's Health Package",
-                description: "Consultation + Home Exercise Roadmap + Specialized Therapeutic Bodywork Session.",
-                price: "1,500",
-                discount: "BESTSELLER",
-                startDate: "2025-01-01",
-                endDate: "2026-12-31"
-            },
-            {
-                id: "fathers-day-gift",
-                occasion: "Father's Day",
-                name: "Dad's Mobility Pass",
-                description: "Focused Neurological assessment and one functional restoration session for seniors.",
-                price: "1,800",
-                discount: "POPULAR",
-                startDate: "2025-01-01",
-                endDate: "2026-12-31"
-            }
-        ];
-
         let activeVoucher = null;
 
         function renderGifts() {
