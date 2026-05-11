@@ -1,1 +1,28 @@
-
+<section id="availability" class="py-24 bg-purple-50 font-sans text-center">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-black text-slate-950 uppercase tracking-tighter mb-8">Ready to start?</h2>
+        
+        <div class="inline-block">
+            <!-- PASTE THE GOOGLE CODE HERE -->
+            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+            <script>
+            (function() {
+              var target = document.currentScript;
+              window.addEventListener('load', function() {
+                calendar.schedulingButton.load({
+                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ13a1FF24esdwiD0x7rmC1gEwaXug8N-cY1iItdvg9Rp6yd7Psdn-nXVyKT2j1cPPYNr1dVSV_u?gv=true',
+                  color: '#7e22ce', // AXIS PURPLE
+                  label: 'Check Available Slots',
+                  target,
+                });
+              });
+            })();
+            </script>
+        </div>
+        
+        <p class="mt-8 text-slate-400 text-[10px] font-black uppercase tracking-widest">
+            Confirmed via Google Calendar instantly
+        </p>
+    </div>
+</section>
